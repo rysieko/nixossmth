@@ -126,6 +126,7 @@
      spotify-cli-linux
      htop
      spotify
+     godot
  # brave-browser
    ];
    fonts.packages = with pkgs.nerd-fonts; [
@@ -138,6 +139,9 @@
   programs.git = {
     enable = true;
   };
+  programs.neovim = {
+    enable = true;
+    };
  # nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;

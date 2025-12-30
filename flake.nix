@@ -16,7 +16,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     # use "nixos", or your hostname as the name of the configuration
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix

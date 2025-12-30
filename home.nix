@@ -41,7 +41,7 @@
       enable = true;
       userName = "rysieko";
       userEmail = "rrx9506@gmail.com";
-      extraConfig = {
+      settings = {
         init.defaultBranch = "main";
       };
     };
@@ -82,4 +82,3 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
-#nice

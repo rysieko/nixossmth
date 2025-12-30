@@ -32,10 +32,10 @@ wayland.windowManager.hyprland.settings = {
   };
 
   decoration = {
-    rounding = 7;
+    rounding = 0;
     active_opacity = 1;
     inactive_opacity = 0.8;
-
+    border_size = 0;
     shadow = {
       enabled = true;
       range = 4;
