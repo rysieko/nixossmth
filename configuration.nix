@@ -128,6 +128,7 @@
      spotify
      godot
      mangohud
+     gamemode
  # brave-browser
    ];
    fonts.packages = with pkgs.nerd-fonts; [
