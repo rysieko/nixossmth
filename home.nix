@@ -39,10 +39,11 @@
   };
   programs.git = {
       enable = true;
-      userName = "rysieko";
-      userEmail = "rrx9506@gmail.com";
       settings = {
         init.defaultBranch = "main";
+        user = {
+          name = "rysieko";
+          email = "rrx9506@gmail.com";
       };
     };
 
