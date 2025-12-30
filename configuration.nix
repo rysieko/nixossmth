@@ -127,6 +127,7 @@
      htop
      spotify
      godot
+     mangohud
  # brave-browser
    ];
    fonts.packages = with pkgs.nerd-fonts; [
