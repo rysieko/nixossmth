@@ -46,7 +46,7 @@
           email = "rrx9506@gmail.com";
       };
     };
-
+  };
 	
   programs.rofi = {
     enable = true;
