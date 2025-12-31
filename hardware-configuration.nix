@@ -24,6 +24,26 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/mnt/C:" =
+    { device = "/dev/disk/by-uuid/904E60224E5FFF7A";
+      fsType = "ntfs";
+    };
+
+  fileSystems."/mnt/NVME" =
+    { device = "/dev/disk/by-uuid/FEBE7F63BE7F12FF";
+      fsType = "ntfs";
+    };
+
+  fileSystems."/mnt/SSD" =
+    { device = "/dev/disk/by-uuid/7404D7E804D7AAFE";
+      fsType = "ntfs";
+    };
+
+  fileSystems."/mnt/Czwarty" =
+    { device = "/dev/disk/by-uuid/B642967642963B57";
+      fsType = "ntfs";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/41118c18-a7a5-446d-85f7-37945aa07c74"; }
     ];

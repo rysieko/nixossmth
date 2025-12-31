@@ -107,6 +107,7 @@ wayland.windowManager.hyprland.settings = {
       "$mainMod, 8, workspace, 10" # NOTE: code:19 = key 0
       "$mainMod, F, fullscreen, 0"
       "$mainMod, Escape, exec, pkill -9 gamescope"
+      "$mainMod, F1, exec, pkill -9 steam"
       "Ctrl, 1, movetoworkspace, 1" # NOTE: code:10 = key 1"
       "Ctrl, 2, movetoworkspace, 2" # NOTE: code:11 = key 2
       "Ctrl, 3, movetoworkspace, 3" # NOTE: code:12 = key 3
