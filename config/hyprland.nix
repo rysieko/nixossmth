@@ -139,7 +139,7 @@ wayland.windowManager.hyprland.settings = {
     "workspace 5, tag:codeeditor*"
     "workspace 2, tag:gamelaunch*"
     "workspace 3, tag:im*"
-    "workspace 4, tag:games*"
+    "workspace 5, tag:games*"
     "workspace 6, tag:*screanshare*"
     "suppressevent maximize, class:.*"
     "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
