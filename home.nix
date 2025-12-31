@@ -75,9 +75,10 @@
 
   home.sessionVariables = {
      mainMod ="SUPER";	
-     EDITOR = "nano";
+     EDITOR = "nvim";
      XCURSOR_SIZE = 24;
      HYPRCURSOR_SIZE = 24;
+     XDG_TERMINAL_COMMAND = "kitty";
   };
 
   # Let Home Manager install and manage itself.

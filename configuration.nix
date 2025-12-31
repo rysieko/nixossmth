@@ -32,8 +32,9 @@
     "ipv6.method" = "ignore";
     "ipv6.never-default" = "true";
   };  
- 
- 
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true; 
   services.resolved.enable = true;
 
   #auto updates
@@ -112,7 +113,6 @@
      hyprland-qt-support
      git
      cliphist
-     udiskie
      discord
      prismlauncher
      lutris
@@ -129,7 +129,8 @@
      godot
      mangohud
      gamemode
- # brave-browser
+     udiskie
+     wine
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	fira-code

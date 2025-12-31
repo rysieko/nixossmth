@@ -106,7 +106,7 @@ wayland.windowManager.hyprland.settings = {
       "$mainMod, 8, workspace, 9" # NOTE: code:18 = key 9
       "$mainMod, 8, workspace, 10" # NOTE: code:19 = key 0
       "$mainMod, F, fullscreen, 0"
-      "$mainMod, Escape, exec, pkill -9"
+      "$mainMod, Escape, exec, pkill -9 gamescope"
       "Ctrl, 1, movetoworkspace, 1" # NOTE: code:10 = key 1"
       "Ctrl, 2, movetoworkspace, 2" # NOTE: code:11 = key 2
       "Ctrl, 3, movetoworkspace, 3" # NOTE: code:12 = key 3
@@ -123,7 +123,7 @@ wayland.windowManager.hyprland.settings = {
   bindd = [
    "$mainMod, mouse_down, next workspace, workspace, e+1"
    "$mainMod, mouse_up, previous workspace, workspace, e-1"
-   "$mainMod, period, next workspace, workspace, e+1"
+   "$mainMod, period, next workspace, workspace, ie+1"
    "$mainMod, comma, previous workspace, workspace, e-1"
   ];
 
