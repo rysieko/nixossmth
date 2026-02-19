@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
-
+  services.displayManager.ly.enable = true; # TRUE
   # Use the superior (for dual boot) EFI boot loader.
   boot.loader.grub = {
     enable = true;
@@ -49,13 +49,14 @@
   nix.settings.auto-optimise-store = true;
   #flakes and nix command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
   services.xserver.layout = "pl";
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   nixpkgs.config.allowUnfree = true;
   # Select internationalisation properties.
    i18n.defaultLocale = "pl_PL.UTF-8";
@@ -121,8 +122,7 @@
      candy-icons
      catppuccin-grub    
      rofi
-     rose-pine-hyprcursor
-     rose-pine-cursor
+     nordzy-theme
      fastfetch
      spotify-cli-linux
      htop
@@ -134,11 +134,11 @@
      wine
    ];
    fonts.packages = with pkgs.nerd-fonts; [
-	fira-code
-	droid-sans-mono
-	noto
-	hack
-	ubuntu
+	  fira-code
+	  droid-sans-mono
+	  noto
+	  hack
+	  ubuntu
    ];
   programs.git = {
     enable = true;
@@ -149,7 +149,7 @@
  # nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
-  #  package = pkgs.steam-millennium; 
+    package = pkgs.steam-millennium; 
     };
   
 
