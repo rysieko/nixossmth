@@ -93,7 +93,7 @@ wayland.windowManager.hyprland.settings = {
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u"
       "$mainMod, down, movefocus, d"
-      "$mainMod, Delete, exec, hyprctl dispatch exit 0"
+      "$mainMod, Delete, exec, wpctultil"
       "$mainMod, n, exec, spotifycli --next"
       "$mainMod, b, exec, spotifycli --prev"
       "$mainMod, p, exec, spotifycli --playpause"			
@@ -131,29 +131,29 @@ wayland.windowManager.hyprland.settings = {
   ];
 
   windowrule = [
-    "tag +browser, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr|[Ff]irefox-bin)$"
-    "tag +games, class:^(gamescope)$"
-    "tag +gamelaunch, class:^(steam)$"
-    "tag +gamelaunch, title:^([Ll]utris)$"
-    "tag +im, class:^([Dd]iscord)$"
-    "tag +file-manager, class:^([Tt]hunar)$"
-    "tag +codeeditor, class:^(VSCode|code-url-handler)$"
-    "tag +screanshare, class:(obs-studio)$"
-    "workspace 1, tag:browser*"
-    "workspace 5, tag:codeeditor*"
-    "workspace 2, tag:gamelaunch*"
-    "workspace 3, tag:im*"
-    "workspace 5, tag:games*"
-    "workspace 6, tag:*screanshare*"
-    "suppressevent maximize, class:.*"
-    "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+    "tag +browser, match:class firefox"
+    "tag +games, match:class gamescope"
+    "tag +gamelaunch, match:class steam"
+    "tag +gamelaunch, match:title lutris"
+    "tag +im, match:class discord"
+    "tag +file-manager, match:class thunar"
+    "tag +codeeditor, match:class VSCode"
+    "tag +screanshare, match:class obs-studio"
+    "workspace 1, match:tag browser*"
+    "workspace 5, match:tag codeeditor*"
+    "workspace 2, match:tag gamelaunch*"
+    "workspace 3, match:tag im*"
+    "workspace 5, match:tag games*"
+    "workspace 6, match:tag *screanshare*"
+    "suppressevent maximize, match:class .*"
+    "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
     ];
   };
 services.hyprpaper.enable = true;
 services.hyprpaper.settings = {
+    monitor = "DP-1";
     ipc = "on";
     splash = false;
-    preload = "~/nordic.jpg";
-    wallpaper = "DP-1, ~/nordic.jpg";
+    fit_mode = "cover";
   };
 }  
