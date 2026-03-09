@@ -65,9 +65,9 @@
   ];
 
   home.file = {
-    
+     
   };
-
+  xdg.configFile."hyprtoolkit".source = ./config/hyprtoolkit.conf
   home.sessionVariables = {
      mainMod ="SUPER";	
      EDITOR = "nvim";

@@ -122,9 +122,9 @@
      spotify
      godot
      mangohud
-     gamemode
      udiskie
      wine
+     hyprshutdown
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code
