@@ -11,14 +11,12 @@
       inputs.home-manager.nixosModules.default
     ];
   services.displayManager.ly.enable = true; # TRUE
-  # Use the superior (for dual boot) EFI boot loader.
-  boot.loader.grub = {
+  # use limine as a bootloader
+  boot.loader.limine= { 
     enable = true;
-    efiSupport = true;
-    useOSProber = true;
-    device = "nodev";
-    theme = pkgs.catppuccin-grub;
-  };
+    boot.loader.limine.efiSupport = true;
+
+
   boot.loader.efi.canTouchEfiVariables = true;
   networking = {
     hostName = "nixsolvesthis";
@@ -49,11 +47,6 @@
   nix.settings.auto-optimise-store = true;
   #flakes and nix command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
   services.xserver.layout = "pl";
@@ -146,7 +139,7 @@
   programs.neovim = {
     enable = true;
     };
- # nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
     package = pkgs.steam-millennium; 
