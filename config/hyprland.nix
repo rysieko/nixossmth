@@ -49,6 +49,7 @@ wayland.windowManager.hyprland.settings = {
   misc = {
     force_default_wallpaper = -1;
     disable_hyprland_logo = true;
+    middle_click_paste = false;
   };
 
   decoration = {
@@ -83,7 +84,7 @@ wayland.windowManager.hyprland.settings = {
 
     animation = [
      "global, 1, 10, default"
-     "border, 1, 5.39, easeOutQuint"
+     "border, 1, 5.39, easeOutQuint"e
      "windows, 1, 4.79, easeOutQuint"
      "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
      "windowsOut, 1, 1.49, linear, popin 87%" #nice
@@ -184,14 +185,5 @@ wayland.windowManager.hyprland.settings = {
     "suppressevent maximize, match:class .*"
     "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
     ];
-  };
-services.hyprpaper.enable = true;
-services.hyprpaper.settings = {
-  wallpaper {
-    monitor = "DP-1";
-    ipc = "on";
-    fit_mode = "cover";
-    };
-    splash = false;
   };
 }  
