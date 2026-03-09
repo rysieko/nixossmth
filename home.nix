@@ -5,6 +5,7 @@
     ./config/hyprland.nix
     ./config/kitty.nix
     ./config/hyprpanel.nix
+    ./config/spicetify.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -20,6 +21,8 @@
    size = 24;
   }; 
   gtk = {
+    ];
+    theme = s
     enable = true;
     theme = {
       name = "Nordic"; # The name of the theme to be used
@@ -48,14 +51,6 @@
     };
   };
 	
-  programs.rofi = {
-    enable = true;
-    theme = "Arc-Dark";
-    #package = pkgs.rofi;
-    #borderWidth = 0;
-    #scrollbar = true;
-    #terminal = pkgs.kitty;
-  };
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

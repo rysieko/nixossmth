@@ -10,18 +10,36 @@ wayland.windowManager.hyprland.settings = {
   "$terminal" = "kitty";
   "$menu" = "rofi -show drun";
   exec-once  = [
-  "hyprpanel"
+  "waybar"
+  "swaync"
   "hyprpaper"
   "steam --console"
-  "discord"
+  "hyprpaper"
+  "hypridle"
+  "vesktop"
   "systemctl --user start hyprpolkitagent"
   "udiskie"
   "wl-paste --type text --watch cliphist store"
   "wl-paste --type image --watch cliphist store"
   "steam"	
+  "spotify"
+  "kdeconnectd"
   ];
 
-  monitor = "DP-1,highres highrr,0x0,1";
+  monitorv2 {
+  output = "DP-1";
+  mode = "2560x1440@144";
+  position = "0x0";
+  scale = 1;
+  bitdepth = 10;
+  cm = auto;
+  vrr = 1;
+  supports_hdr = 1;
+  supports_wide_color = 1;
+  sdr_max_luminance = 200;
+  sdr_eotf = 1;
+  #auto_hdr = 1
+  } 
   kb_layout = "pl";
   dwindle = {
     pseudotile = true;
@@ -94,6 +112,7 @@ wayland.windowManager.hyprland.settings = {
       "$mainMod, up, movefocus, u"
       "$mainMod, down, movefocus, d"
       "$mainMod, Delete, exec, wpctultil"
+      "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
       "$mainMod, n, exec, spotifycli --next"
       "$mainMod, b, exec, spotifycli --prev"
       "$mainMod, p, exec, spotifycli --playpause"			
@@ -110,16 +129,22 @@ wayland.windowManager.hyprland.settings = {
       "$mainMod, F, fullscreen, 0"
       "$mainMod, Escape, exec, pkill -9 gamescope"
       "$mainMod, F1, exec, pkill -9 steam"
-      "Ctrl, 1, movetoworkspace, 1" # NOTE: code:10 = key 1"
-      "Ctrl, 2, movetoworkspace, 2" # NOTE: code:11 = key 2
-      "Ctrl, 3, movetoworkspace, 3" # NOTE: code:12 = key 3
-      "Ctrl, 4, movetoworkspace, 4" # NOTE: code:13 = key 4
-      "Ctrl, 5, movetoworkspace, 5" # NOTE: code:14 = key 5
-      "Ctrl, 6, movetoworkspace, 6" # NOTE: code:15 = key 6 
-      "Ctrl, 7, movetoworkspace, 7" # NOTE: code:16 = key 7 
-      "Ctrl, 8, movetoworkspace, 8" # NOTE: code:17 = key 8
-      "Ctrl, 9, movetoworkspace, 9" # NOTE: code:18 = key 9
-      "Ctrl, 0, movetoworkspace, 10" # NOTE: code:19 = key 0		
+      "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
+      "$mainMod, Print, exec, grim -g \"$(slurp)\" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send \"Screenshot\" \"Screenshot of the region taken\" -t 1000"
+      "$mainMod, C, exec, protonvpn connect | notify-send \"VPN\" \"VPN connected\"" 
+      "$mainMod, V, exec, protonvpn disconnect | notify-send \"VPN\" \"VPN disconnected\""
+      "Ctrl Shift, 1, movetoworkspace, 1" # NOTE: code:10 = key 1"
+      "Ctrl Shift, 2, movetoworkspace, 2" # NOTE: code:11 = key 2
+      "Ctrl Shift, 3, movetoworkspace, 3" # NOTE: code:12 = key 3
+      "Ctrl Shift, 4, movetoworkspace, 4" # NOTE: code:13 = key 4
+      "Ctrl Shift, 5, movetoworkspace, 5" # NOTE: code:14 = key 5
+      "Ctrl Shift, 6, movetoworkspace, 6" # NOTE: code:15 = key 6 
+      "Ctrl Shift, 7, movetoworkspace, 7" # NOTE: code:16 = key 7 
+      "Ctrl Shift, 8, movetoworkspace, 8" # NOTE: code:17 = key 8
+      "Ctrl Shift, 9, movetoworkspace, 9" # NOTE: code:18 = key 9
+      "Ctrl Shift, 0, movetoworkspace, 10" # NOTE: code:19 = key 0	
+      "$mainMod, mouse_up, workspace, e-1"
+      "$mainMod, mouse_down, workspace, e+1"
      ];      
    
 
@@ -129,6 +154,11 @@ wayland.windowManager.hyprland.settings = {
    "$mainMod, period, next workspace, workspace, ie+1"
    "$mainMod, comma, previous workspace, workspace, e-1"
   ];
+  bindm = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
+      ]
+    
 
   windowrule = [
     "tag +browser, match:class firefox"
@@ -136,24 +166,32 @@ wayland.windowManager.hyprland.settings = {
     "tag +gamelaunch, match:class steam"
     "tag +gamelaunch, match:title lutris"
     "tag +im, match:class discord"
-    "tag +file-manager, match:class thunar"
-    "tag +codeeditor, match:class VSCode"
-    "tag +screanshare, match:class obs-studio"
+    "tag +file-manager, match:class nemo"
+    "tag +codeeditor, match:class code-oss"
+    
+    "tag +screanshare, match:class com.obsproject.Studio"
+    "tag +music, match:class spotify"
     "workspace 1, match:tag browser*"
     "workspace 5, match:tag codeeditor*"
-    "workspace 2, match:tag gamelaunch*"
+    "windowrule = workspace 2, float on, match:tag gamelaunch"
     "workspace 3, match:tag im*"
     "workspace 5, match:tag games*"
+    "windowrule = workspace 2, float on,match:tag music"
     "workspace 6, match:tag *screanshare*"
+    "windowrule = workspace 2,float on, match:class org.kde.kdeconnect.app"
+    "float on, match:class kitty"
+    "float on, match:class hyprland-share-picker"
     "suppressevent maximize, match:class .*"
     "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
     ];
   };
 services.hyprpaper.enable = true;
 services.hyprpaper.settings = {
+  wallpaper {
     monitor = "DP-1";
     ipc = "on";
-    splash = false;
     fit_mode = "cover";
+    };
+    splash = false;
   };
 }  
