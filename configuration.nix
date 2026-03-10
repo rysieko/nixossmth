@@ -14,7 +14,9 @@
   # use limine as a bootloader
   boot.loader.limine= { 
     enable = true;
-    boot.loader.limine.efiSupport = true;
+    efiSupport = true;
+    style.wallpaper = [ ./config/nordic.jpg ];
+    style.interface.resolution = "2560x1440" ;
   };
   boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
   fileSystems = {
@@ -153,7 +155,7 @@
   
 
   programs.gamescope.enable = true;
-  #system.copySystemConfiguration = true;
+  system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
