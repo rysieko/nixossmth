@@ -73,17 +73,17 @@
 
     input-field = [
       {
-        monitor = DP-1
-        size = "20%, 5%"
-        outline_thickness = 3
-        inner_color =  "rgb(79, 133, 163)"
-        outer_color = "rgb(26, 57, 78)"
-        check_color = "rgb(163, 190, 140)"
-        fail_color = "rgb(191, 97, 106)"
+        monitor = DP-1;
+        size = "20%, 5%";
+        outline_thickness = 3;
+        inner_color =  "rgb(79, 133, 163)";
+        outer_color = "rgb(26, 57, 78)";
+        check_color = "rgb(163, 190, 140)";
+        fail_color = "rgb(191, 97, 106)";
 
-        font_color = "rgb(190, 206, 219)"
-        fade_on_empty = true 
-        rounding = 0
+        font_color = "rgb(190, 206, 219)";
+        fade_on_empty = true; 
+        rounding = 0;
 
         font_family = $font
         placeholder_text = "Input password"
