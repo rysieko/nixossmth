@@ -158,8 +158,8 @@ wayland.windowManager.hyprland.settings = {
   bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
-      ]
-    
+      ];
+
 
   windowrule = [
     "tag +browser, match:class firefox"
@@ -184,6 +184,6 @@ wayland.windowManager.hyprland.settings = {
     "float on, match:class hyprland-share-picker"
     "suppressevent maximize, match:class .*"
     "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
-    ];
-  };
+   ];
+  }
 }  
