@@ -91,20 +91,20 @@
 
     # uncomment to use a letter instead of a dot to indicate the typed password
     # dots_text_format = *
-    # dots_size = 0.4
-        dots_spacing = 0.3
+    # dots_size = 0.4;
+      dots_spacing = 0.3;
 
     # uncomment to use an input indicator that does not show the password length (similar to swaylock's input indicator)
-    # hide_input = true
+    # hide_input = true;
 
-        position = 0, -20
-        halign = "center"
-        valign = "center"
+        position = "0, -20";
+        halign = "center";
+        valign = "center";
       }
     ];
   };
   xdg.configFile."hypr/hyprtoolkit.conf".source = ./hyprtoolkitconf;
-
+}
 
 
 
