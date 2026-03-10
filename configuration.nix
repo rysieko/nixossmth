@@ -15,7 +15,12 @@
   boot.loader.limine= { 
     enable = true;
     boot.loader.limine.efiSupport = true;
-
+  };
+  fileSystems = {
+  "/".options = [ "compress=zstd" ];
+  "/home".options = [ "compress=zstd" ];
+  "/nix".options = [ "compress=zstd" "noatime" ];
+  };
 
   boot.loader.efi.canTouchEfiVariables = true;
   networking = {

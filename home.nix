@@ -21,8 +21,6 @@
    size = 24;
   }; 
   gtk = {
-    ];
-    theme = s
     enable = true;
     theme = {
       name = "Nordic"; # The name of the theme to be used
@@ -46,7 +44,7 @@
         init.defaultBranch = "main";
         user = {
           name = "rysieko";
-          email = "rrx9506@gmail.com";
+          email = "rrx9506@proton.me";
       };
     };
   };
