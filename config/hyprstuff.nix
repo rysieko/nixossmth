@@ -85,13 +85,13 @@
         fade_on_empty = true; 
         rounding = 0;
 
-        font_family = $font
-        placeholder_text = "Input password"
-        fail_text = $PAMFAIL
+        font_family = $font;
+        placeholder_text = "Input password";
+        fail_text = $PAMFAIL;
 
-    # uncomment to use a letter instead of a dot to indicate the typed password
-    # dots_text_format = *
-    # dots_size = 0.4;
+  
+     dots_text_format = "#"
+     dots_size = 0.4;
       dots_spacing = 0.3;
 
     # uncomment to use an input indicator that does not show the password length (similar to swaylock's input indicator)
