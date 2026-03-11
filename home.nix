@@ -5,7 +5,6 @@
     ./config/hyprland.nix
     ./config/kitty.nix
     ./config/hyprpanel.nix
-    ./config/spicetify.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
