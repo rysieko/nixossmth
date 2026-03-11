@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-	  ./config/spicetify.nix
     ];
   services.displayManager.ly.enable = true; # TRUE
   # use limine as a bootloader
