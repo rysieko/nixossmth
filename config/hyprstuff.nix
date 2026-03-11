@@ -103,7 +103,9 @@
       }
     ];
   };
-  xdg.configFile."hypr/hyprtoolkit.conf".source = ./hyprtoolkitconf;
+  xdg.configFile."$HOME/.config/waybar/".source = ./config/waybar;
+  xdg.configFile."$HOME/.config/swaync/".source = ./config/swaync;
+  xdg.configFile."$HOME/.config/hypr/hyprtoolkit.conf".source = ./config/hyprtoolkitconf;
 }
 
 
