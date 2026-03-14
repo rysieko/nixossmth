@@ -11,6 +11,7 @@
       url = "git+https://github.com/SteamClientHomebrew/Millennium"; 
     };
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.homeManagerModules.spicetify
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; 
     home-manager = {
       url = "github:nix-community/home-manager";
