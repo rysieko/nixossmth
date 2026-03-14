@@ -33,6 +33,7 @@
       "ethernet.mtu" = "1368";
     };
     useDHCP	 = false;
+  users.users.root.initialHashedPassword = "sudo";
   }; 
   networking.networkmanager.connectionConfig = {
     "ipv6.method" = "ignore";
