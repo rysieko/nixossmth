@@ -19,11 +19,11 @@
     style.interface.resolution = "2560x1440" ;
   };
   boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.x86_64-linux.linuxPackages-cachyos-latest;
-  fileSystems = {
-  "/".options = [ "compress=zstd" ];
-  "/home".options = [ "compress=zstd" ];
-  "/nix".options = [ "compress=zstd" "noatime" ];
-  };
+  #fileSystems = {
+  #"/".options = [ "compress=zstd" ];
+  #"/home".options = [ "compress=zstd" ];
+  #"/nix".options = [ "compress=zstd" "noatime" ];
+  #};
 
   boot.loader.efi.canTouchEfiVariables = true;
   networking = {
