@@ -1,0 +1,215 @@
+
+:root {
+  --cc-bg: rgba(59, 66, 82, 0.75);
+
+  --noti-border-color: 136, 192, 208;
+  --noti-bg: 46, 52, 64;
+  --noti-bg-alpha: 0.85;
+  --noti-bg-darker: 38, 44, 60;
+  --noti-bg-hover: rgb(67, 76, 94);
+  --noti-bg-focus: rgba(76, 86, 106, 0.6);
+
+  --noti-close-bg: rgba(136, 192, 208, 0.15);
+  --noti-close-bg-hover: rgba(136, 192, 208, 0.3);
+
+  --text-color: rgb(236, 239, 244);
+  --text-color-disabled: rgb(174, 182, 194);
+
+  --bg-selected: rgb(136, 192, 208);
+
+  --notification-icon-size: 64px;
+  --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
+  --notification-group-icon-size: 32px;
+
+  --border: 1px solid rgba(var(--noti-border-color), 0.35);
+  --border-radius: 14px;
+
+  --notification-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 6px 18px rgba(0, 0, 0, 0.6);
+
+  --font-size-body: 15px;
+  --font-size-summary: 16px;
+
+  --hover-transition: background 0.15s ease-in-out;
+  --group-collapse-transition: opacity 400ms ease-in-out;
+}
+
+/* -------------------- Base Windows -------------------- */
+notificationwindow,
+blankwindow {
+  background: transparent;
+}
+
+/* -------------------- Close Button -------------------- */
+.close-button {
+  background: var(--noti-close-bg);
+  color: var(--text-color);
+  border-radius: 100%;
+  margin: 8px;
+  min-width: 24px;
+  min-height: 24px;
+  border: none;
+}
+
+.close-button:hover {
+  background: var(--noti-close-bg-hover);
+  transition: var(--hover-transition);
+}
+
+/* -------------------- Notification Rows -------------------- */
+.notification-row {
+  background: none;
+  outline: none;
+}
+
+.notification-row:focus {
+  background: var(--noti-bg-focus);
+}
+
+.notification-row .notification-background {
+  padding: 6px 12px;
+}
+
+/* -------------------- Notification -------------------- */
+.notification {
+  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  border-radius: var(--border-radius);
+  border: var(--border);
+  box-shadow: var(--notification-shadow);
+}
+
+/* -------------------- Default Action -------------------- */
+.notification-default-action {
+  padding: 6px;
+  background: transparent;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  transition: var(--hover-transition);
+}
+
+.notification-default-action:hover {
+  background: var(--noti-bg-hover);
+}
+
+/* -------------------- Content -------------------- */
+.notification-content {
+  padding: 4px;
+}
+
+.notification-content .image {
+  -gtk-icon-size: var(--notification-icon-size);
+  border-radius: 100%;
+  margin: 6px;
+}
+
+.notification-content .app-icon {
+  -gtk-icon-size: var(--notification-app-icon-size);
+  margin: 6px;
+}
+
+.summary,
+.time {
+  font-size: var(--font-size-summary);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.body {
+  font-size: var(--font-size-body);
+  color: var(--text-color);
+}
+
+/* -------------------- Inline Reply -------------------- */
+.inline-reply-entry {
+  background: var(--noti-bg-darker);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+
+.inline-reply-button {
+  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+
+.inline-reply-button:hover {
+  background: var(--noti-bg-hover);
+}
+
+/* -------------------- Notification Groups -------------------- */
+.notification-group {
+  transition: opacity var(--group-collapse-transition);
+}
+
+.notification-group.collapsed.not-expanded {
+  opacity: 0.4;
+}
+
+/* -------------------- Control Center -------------------- */
+.control-center {
+  background: var(--cc-bg);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+/* -------------------- Floating Notifications -------------------- */
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
+}
+
+
+/* -------------------- Base Widget -------------------- */
+.widget {
+  margin: 8px;
+  padding: 8px;
+  background: rgba(46, 52, 64, 0.6);
+  border-radius: var(--border-radius);
+}
+
+/* -------------------- Widget Titles -------------------- */
+.widget-title > label {
+  font-size: 1.4rem;
+  color: rgb(136, 192, 208);
+}
+
+/* -------------------- DND Widget -------------------- */
+.widget-dnd label {
+  color: var(--text-color);
+}
+
+/* -------------------- MPRIS -------------------- */
+:root {
+  --mpris-album-art-overlay: rgba(46, 52, 64, 0.65);
+  --mpris-button-hover: rgba(136, 192, 208, 0.25);
+  --mpris-album-art-icon-size: 96px;
+}
+
+.widget-mpris-player {
+  margin: 16px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.7);
+}
+
+.widget-mpris-overlay {
+  background: var(--mpris-album-art-overlay);
+}
+
+.widget-mpris-overlay button:hover {
+  background: var(--mpris-button-hover);
+}
+
+/* -------------------- Volume Widget -------------------- */
+.widget-volume row image {
+  -gtk-icon-size: 24px;
+}

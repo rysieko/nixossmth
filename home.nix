@@ -5,7 +5,7 @@
     ./config/hyprland.nix
     ./config/kitty.nix
     ./config/hyprpanel.nix
-	./config/spicetify.nix
+	  ./config/spicetify.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -70,7 +70,9 @@
   home.file = {
      
   };
-  xdg.configFile."hyprtoolkit".source = ./config/hyprtoolkit.conf
+  xdg.configFile."~/.config/hypr/hyprtoolkit.conf".source = ./config/hyprtoolkit.conf;
+  xdg.configFile."~/.config/swaync/".source = ./config/swaync/;
+  xdg.configFile."~/.config/waybar/".source = ./config/waybar/;
   home.sessionVariables = {
      mainMod ="SUPER";	
      EDITOR = "nvim";
