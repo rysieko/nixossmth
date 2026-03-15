@@ -66,7 +66,7 @@
   hardware.graphics.enable32Bit = true;
   #hardware.opengl.driSupport = true;
   #hardware.opengl.driSupport32Bit = true;
-  
+  programs.hyprland.enable = true ;  
   # Enable the Desktop Environment.
   services.displayManager.sddm.wayland.enable = true;
   # Enable CUPS to print documents.
