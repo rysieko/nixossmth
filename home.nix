@@ -70,8 +70,11 @@
      
   };
   xdg.configFile."~/.config/hypr/hyprtoolkit.conf".source = ./config/hyprtoolkit.conf;
-  xdg.configFile."~/.config/swaync/".source = ./config/swaync/;
-  xdg.configFile."~/.config/waybar/".source = ./config/waybar/;
+  xdg.configFile."~/.config/swaync/config.json".source = ./config/swaync/config.json;
+  xdg.configFile."~/.config/swaync/configSchema.json".source = ./config/swaync/configSchema.json;
+  xdg.configFile."~/.config/swaync/style.css".source = ./config/swaync/style.css ;
+  xdg.configFile."~/.config/waybar/config.jsonc".source = ./config/waybar/config.jsonc;
+  xdg.configFile."~/.config/waybar/style.css".source = ./config/waybar/style.css;
   home.sessionVariables = {
      mainMod ="SUPER";	
      EDITOR = "nvim";
