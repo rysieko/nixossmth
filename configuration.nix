@@ -135,6 +135,7 @@
      slurp
      swaync
      wlogout
+     nixos.gh
 
    ];
    fonts.packages = with pkgs.nerd-fonts; [
