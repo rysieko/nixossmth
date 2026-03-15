@@ -5,7 +5,7 @@
   services.hyprpaper.settings = {
     wallpaper = {
       monitor = "DP-1";
-      path = ./config/nordic.jpg
+      path = ./config/nordic.jpg;
       ipc = "on";
       fit_mode = "cover";
       };
@@ -21,18 +21,18 @@
 
     listener = [
       {
-        timeout = 180                                # 3min.
-        on-timeout = "brightnessctl -s set 10"         # set monitor backlight to minimum, avoid 0 on OLED monitor.
-        on-resume = "brightnessctl -r"        # monitor backlight restore.
-      };
+        timeout = 180;                             # 3min.
+        on-timeout = "brightnessctl -s set 10";         # set monitor backlight to minimum, avoid 0 on OLED monitor.
+        on-resume = "brightnessctl -r";        # monitor backlight restore.
+      }
       {
-        timeout = 180                                          # 3min.
-        on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0" 
-        on-resume = "brightnessctl -rd rgb:kbd_backlight"
+        timeout = 180 ;                                         # 3min.
+        on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0"; 
+        on-resume = "brightnessctl -rd rgb:kbd_backlight";
       }
       {
         timeout = 300;                                 # 5min
-        on-timeout = "loginctl lock-session"
+        on-timeout = "loginctl lock-session";
       }
       {
         timeout = 330;                                                    # 5.5min
@@ -40,13 +40,13 @@
         on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
       }
       {
-        timeout = 1800                                # 30min
+        timeout = 1800;                             # 30min
         on-timeout = "systemctl suspend";
       }
     ];
   };
-  services.hyprlock.enable = true;
-  services.hyprlock.settings = {
+  programs.hyprlock.enable = true;
+  programs.hyprlock.settings = {
     general = {
       hide_cursor = true;
       ignore_empty_input = true;
@@ -74,7 +74,7 @@
 
     input-field = [
       {
-        monitor = DP-1;
+        monitor = "DP-1";
         size = "20%, 5%";
         outline_thickness = 3;
         inner_color =  "rgb(79, 133, 163)";
@@ -86,12 +86,12 @@
         fade_on_empty = true; 
         rounding = 0;
 
-        font_family = $font;
+        font_family = "noto";
         placeholder_text = "Input password";
-        fail_text = $PAMFAIL;
+        fail_text = "$PAMFAIL";
 
   
-     dots_text_format = "#"
+     dots_text_format = "#";
      dots_size = 0.4;
       dots_spacing = 0.3;
 

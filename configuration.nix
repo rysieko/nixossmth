@@ -43,6 +43,8 @@
     enable = true;
     dates = "weekly";
   };
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
   #auto cleanup
   nix.gc.automatic = true;
   nix.gc.dates = "daily";

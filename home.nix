@@ -3,6 +3,7 @@
 {
   imports = [
     ./config/hyprland.nix
+    ./config/hyprstuff.nix
     ./config/kitty.nix
 #    ./config/spicetify.nix
   ];
@@ -69,8 +70,8 @@
      
   };
   xdg.configFile."~/.config/hypr/hyprtoolkit.conf".source = ./config/hyprtoolkit.conf;
-  xdg.configFile."~/.config/swaync/".source = ./config/swaync;
-  xdg.configFile."~/.config/waybar/".source = ./config/waybar;
+  xdg.configFile."~/.config/swaync/".source = ./config/swaync/;
+  xdg.configFile."~/.config/waybar/".source = ./config/waybar/;
   home.sessionVariables = {
      mainMod ="SUPER";	
      EDITOR = "nvim";
