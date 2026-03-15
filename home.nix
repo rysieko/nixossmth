@@ -1,17 +1,20 @@
-{ config, pkgs, osConfig,inputs, ... }:
+{ config, pkgs, osConfig, inputs, ... }:
 
 {
   imports = [
     ./config/hyprland.nix
     ./config/kitty.nix
-    ./config/hyprpanel.nix
-	  ./config/spicetify.nix
+#    ./config/spicetify.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "rysieko";
   home.homeDirectory = "/home/rysieko";
-  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
   programs.hyprpanel.enable = true;
   home.pointerCursor = {
    gtk.enable = true;
@@ -50,7 +53,7 @@
   };
   qt = {
     enable = true;
-    qt.style.name = "nordic"
+    style.name = "nordic";
   };
 	
   # This value determines the Home Manager release that your configuration is
@@ -64,22 +67,22 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [ 
-    github-release
+    
   ];
 
   home.file = {
      
   };
   xdg.configFile."~/.config/hypr/hyprtoolkit.conf".source = ./config/hyprtoolkit.conf;
-  xdg.configFile."~/.config/swaync/".source = ./config/swaync/;
-  xdg.configFile."~/.config/waybar/".source = ./config/waybar/;
+  xdg.configFile."~/.config/swaync/".source = ./config/swaync;
+  xdg.configFile."~/.config/waybar/".source = ./config/waybar;
   home.sessionVariables = {
      mainMod ="SUPER";	
      EDITOR = "nvim";
      XCURSOR_SIZE = 24;
      HYPRCURSOR_SIZE = 24;
      XDG_TERMINAL_COMMAND = "kitty";
-     font = "noto"
+     font = "noto";
   };
 
   # Let Home Manager install and manage itself.

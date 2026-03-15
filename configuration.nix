@@ -18,7 +18,7 @@
     style.wallpapers = [ ./config/nordic.jpg ];
     style.interface.resolution = "2560x1440" ;
   };
-# boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+ boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
  boot.loader.efi.canTouchEfiVariables = true;
   networking = {
     hostName = "nixsolvesthis";
@@ -68,8 +68,6 @@
   #hardware.opengl.driSupport32Bit = true;
   
   # Enable the Desktop Environment.
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   services.displayManager.sddm.wayland.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -89,7 +87,7 @@
    users.users.rysieko = {
      isNormalUser = true;
      extraGroups = [ "wheel" "networkmanager" ]; 
-     home = /home/rysieko;
+  #   home = /home/rysieko;
      shell = pkgs.fish; 
    };
   home-manager = {
@@ -101,6 +99,13 @@
   programs.firefox = {
       enable = true;
      };
+   programs.hyprland = {
+    enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
   programs.waybar.enable = true;   
   programs.thunar.enable = true;
   # List packages installed in system profile.
@@ -120,7 +125,7 @@
      candy-icons
      catppuccin-grub    
      hyprlauncher
-     nordzy-theme
+#     nordzy-theme
      fastfetch
      spotify-cli-linux
      btop
@@ -133,9 +138,9 @@
      hyprshutdown
      grim
      slurp
-     swaync
+     swaynotificationcenter
      wlogout
-     nixos.gh
+     gh
 
    ];
    fonts.packages = with pkgs.nerd-fonts; [
@@ -152,7 +157,7 @@
     enable = true;
     };
   programs.gamescope.enable = true;
-  system.copySystemConfiguration = true;
+  #system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

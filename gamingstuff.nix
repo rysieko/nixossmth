@@ -1,11 +1,10 @@
-{ pkgs, nix-gaming-edge, ... }: 
+{ pkgs, inputs ,... }: 
 { # destructure module args by 'importing' pkgs - only needed when defining a protonPackage
           
   nixpkgs.overlays = [
-    nix-gaming-edge.overlays.default
-    nix-gaming-edge.overlays.proton-cachyos
-    nix-cachyos-kernel.overlays.default 
-    
+    inputs.nix-gaming-edge.overlays.default
+    inputs.nix-gaming-edge.overlays.proton-cachyos
+    inputs.nix-cachyos-kernel.overlays.default    
     ];
           
           drivers.mesa-git = {
@@ -47,7 +46,7 @@
     enable = true;
     package = pkgs.millennium-steam;
     extraCompatPackages = with pkgs; [
-      proton-cachyos-v3
+      proton-cachyos
     ];
   };
 }

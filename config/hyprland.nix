@@ -1,4 +1,4 @@
-{config, ...}:
+{config, inputs ,pkgs ,...}:
 
 {
 home.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -26,20 +26,20 @@ wayland.windowManager.hyprland.settings = {
   "kdeconnectd"
   ];
 
-  monitorv2 {
-  output = "DP-1";
-  mode = "2560x1440@144";
-  position = "0x0";
-  scale = 1;
-  bitdepth = 10;
-  cm = auto;
-  vrr = 1;
-  supports_hdr = 1;
-  supports_wide_color = 1;
-  sdr_max_luminance = 200;
-  sdr_eotf = 1;
-  #auto_hdr = 1
-  } 
+  monitorv2 = {
+   output = "DP-1";
+   mode = "2560x1440@144";
+   position = "0x0";
+   scale = 1;
+   bitdepth = 10;
+   cm = "auto";
+   vrr = 1;
+   supports_hdr = 1;
+   supports_wide_color = 1;
+   sdr_max_luminance = 200;
+   sdr_eotf = 1;
+   #auto_hdr = 1
+  }; 
   kb_layout = "pl";
   dwindle = {
     pseudotile = true;
@@ -84,7 +84,7 @@ wayland.windowManager.hyprland.settings = {
 
     animation = [
      "global, 1, 10, default"
-     "border, 1, 5.39, easeOutQuint"e
+     "border, 1, 5.39, easeOutQuint"
      "windows, 1, 4.79, easeOutQuint"
      "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
      "windowsOut, 1, 1.49, linear, popin 87%" #nice
@@ -185,5 +185,5 @@ wayland.windowManager.hyprland.settings = {
     "suppressevent maximize, match:class .*"
     "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
    ];
-  }
+  };
 }  

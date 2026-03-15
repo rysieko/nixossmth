@@ -17,7 +17,7 @@
   };
   
     
-  outputs = { self, nixpkgs, nix-cachyos-kernel, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-cachyos-kernel, hyprland, ... }@inputs: {
     # use "nixos", or your hostname as the name of the configuration
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       system =  "x86_64-linux";
