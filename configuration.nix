@@ -72,9 +72,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   #hyprland stuff
-  services.hypridle.enable= true;
-  programs.hyprlock.enable = true; #nice
-  # Enable Bluetooth support.
+    # Enable Bluetooth support.
  # services.bluetooth.enable = true;  
   # Enable sound.
     services.pipewire = {
@@ -99,13 +97,6 @@
   programs.firefox = {
       enable = true;
      };
-   programs.hyprland = {
-    enable = true;
-    # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
   programs.waybar.enable = true;   
   programs.thunar.enable = true;
   # List packages installed in system profile.

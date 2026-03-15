@@ -5,6 +5,7 @@
   services.hyprpaper.settings = {
     wallpaper = {
       monitor = "DP-1";
+      path = ./config/nordic.jpg
       ipc = "on";
       fit_mode = "cover";
       };

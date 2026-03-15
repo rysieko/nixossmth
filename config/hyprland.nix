@@ -2,9 +2,11 @@
 
 {
 home.sessionVariables.NIXOS_OZONE_WL = "1";
-wayland.windowManager.hyprland.settings = {
+
+wayland.windowManager.hyprland = {
   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  settings = {
   "$mainMod" = "SUPER";
   "$fileManager" = "Thunar";
   "$terminal" = "kitty";
@@ -185,5 +187,6 @@ wayland.windowManager.hyprland.settings = {
     "suppressevent maximize, match:class .*"
     "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
    ];
+   };
   };
 }  
