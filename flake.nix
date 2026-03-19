@@ -25,9 +25,9 @@
       modules = [
         ./gamingstuff.nix
         ./configuration.nix
-	./nixsettings.nix
+	      ./nixsettings.nix
         inputs.home-manager.nixosModules.default
-	inputs.nix-gaming-edge.nixosModules.default
+	      inputs.nix-gaming-edge.nixosModules.default
 	
       ];
     };

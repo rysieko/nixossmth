@@ -5,9 +5,12 @@ in {
   programs.spicetify = {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
-      
+      catJamSynced
+      full-screen
+      volumePercentage
     ];
-   # theme = spicePkgs.themes.text;
-    #colorScheme = "nord";
+    wayland = true;
+    theme = spicePkgs.themes.text;
+    colorScheme = "nord";
   };
 }
