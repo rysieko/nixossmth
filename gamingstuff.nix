@@ -1,10 +1,10 @@
 { pkgs, inputs ,... }: 
 { # destructure module args by 'importing' pkgs - only needed when defining a protonPackage
           
-  nixpkgs.overlays = [
-    inputs.nix-gaming-edge.overlays.default
-    inputs.nix-gaming-edge.overlays.proton-cachyos
-    inputs.nix-cachyos-kernel.overlays.default    
+  nixpkgs.overlays = with inputs [
+    nix-gaming-edge.overlays.default
+    nix-gaming-edge.overlays.proton-cachyos
+    nix-cachyos-kernel.overlays.default    
     ];
           
           drivers.mesa-git = {
