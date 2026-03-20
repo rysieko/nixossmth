@@ -13,11 +13,15 @@
     nix-gaming-edge = {
       url = "github:powerofthe69/nix-gaming-edge";
       inputs.nixpkgs.follows = "nixpkgs";
-    };      
+      };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }        
   };
   
     
-  outputs = { self, nixpkgs, nix-cachyos-kernel, hyprland, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-cachyos-kernel, hyprland,nix-index-database, ... }@inputs: {
     # use "nixos", or your hostname as the name of the configuration
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       system =  "x86_64-linux";
@@ -28,6 +32,7 @@
 	      ./nixsettings.nix
         inputs.home-manager.nixosModules.default
 	      inputs.nix-gaming-edge.nixosModules.default
+        nix-index-database.nixosModules.default
 	
       ];
     };
