@@ -1,7 +1,7 @@
 { pkgs, inputs ,... }: 
 { # destructure module args by 'importing' pkgs - only needed when defining a protonPackage
           
-  nixpkgs.overlays = with inputs [
+  nixpkgs.overlays = with inputs; [
     nix-gaming-edge.overlays.default
     nix-gaming-edge.overlays.proton-cachyos
     nix-cachyos-kernel.overlays.default    
