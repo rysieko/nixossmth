@@ -13,12 +13,12 @@
     ];
   services.displayManager.ly.enable = true; # TRUE
   # use limine as a bootloader
-  boot.loader.limine= { 
+ boot.loader.limine= { 
     enable = true;
     efiSupport = true;
     style.wallpapers = [ ./config/nordic.jpg ];
     style.interface.resolution = "2560x1440" ;
-  };
+  }; 
  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
  boot.loader.efi.canTouchEfiVariables = true;
   networking = {
@@ -72,39 +72,18 @@
   };
   # i wish i was a fish 
   programs.fish.enable = true;
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.rysieko = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" ]; 
-  #   home = /home/rysieko;
-     shell = pkgs.fish; 
-   };
+  users.users.rysieko = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ]; 
+    shell = pkgs.fish; 
+  };
   home-manager = {
    extraSpecialArgs = { inherit inputs; };
      users = {
            rysieko = import ./home.nix;
     };
   };
-
-  #system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+# do not fucking touch it does not change nixpkgs version it doesnt update the fucking system
   system.stateVersion = "26.05"; # Please read the comment before changing.
 
 }
