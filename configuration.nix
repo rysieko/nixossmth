@@ -47,12 +47,6 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   #auto cleanup
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 15d";
-  nix.settings.auto-optimise-store = true;
-  #flakes and nix command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
   services.xserver.layout = "pl";
@@ -67,21 +61,15 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
-  #hardware.opengl.driSupport = true;
-  #hardware.opengl.driSupport32Bit = true;
   programs.hyprland.enable = true ;  
-  # Enable the Desktop Environment.
-  services.displayManager.sddm.wayland.enable = true;
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  #hyprland stuff
+  
     # Enable Bluetooth support.
- # services.bluetooth.enable = true;  
+  services.bluetooth.enable = true;  
   # Enable sound.
-    services.pipewire = {
-     enable = true;
-     pulse.enable = true;
-   };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
   # i wish i was a fish 
   programs.fish.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
