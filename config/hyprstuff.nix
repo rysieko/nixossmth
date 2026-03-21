@@ -6,7 +6,7 @@
     wallpaper = {
       monitor = "DP-1";
       path = "~/nixossmth/config/nordic.jpg";
-      fit_mode = "cover";
+      fit_mode = "fill";
       };
     splash = false;
     ipc = "on";    

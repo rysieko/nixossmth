@@ -43,11 +43,12 @@ wayland.windowManager.hyprland = {
    position = "0x0";
    scale = 1;
    bitdepth = 10;
-   cm = "auto";
+   cm = "hdr";
    vrr = 1;
    supports_hdr = 1;
    supports_wide_color = 1;
-   sdr_max_luminance = 200;
+   sdr_max_luminance = 120;
+   sdr_min_luminance = 0.020;
    sdr_eotf = 1;
    #auto_hdr = 1
   }; 
@@ -66,7 +67,7 @@ wayland.windowManager.hyprland = {
   decoration = {
     rounding = 0;
     active_opacity = 1;
-    inactive_opacity = 0.8;
+    inactive_opacity = 1;
     shadow = {
       enabled = true;
       range = 4;
@@ -75,10 +76,11 @@ wayland.windowManager.hyprland = {
     };
 
     blur = {
-      enabled = true;
-      size = 3;
+      enabled = false;
+      size = 311;
       passes = 2;
-      vibrancy = 0.1696;
+      vibrancy = 0;
+      ignore_opacity = false;
     };
   };
 
