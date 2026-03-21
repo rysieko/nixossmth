@@ -13,6 +13,7 @@
     nix-gaming-edge = {
       url = "github:powerofthe69/nix-gaming-edge";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.millennium.follows = "millennium";
       };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
