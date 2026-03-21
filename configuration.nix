@@ -50,7 +50,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
   services.xserver.layout = "pl";
-  nixpkgs.config.allowUnfree = true;
   # Select internationalisation properties.
    i18n.defaultLocale = "pl_PL.UTF-8";
    console = {
