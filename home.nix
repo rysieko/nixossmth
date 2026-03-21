@@ -71,23 +71,23 @@
   home.file = {
      
   };
-  xdg.configFile."~/.config/hypr/hyprtoolkit.conf" = {
+  xdg.configFile."hypr/hyprtoolkit.conf" = {
       source = ./config/hyprtoolkit.conf;
       force = true;
   };
-  xdg.configFile."~/.config/swaync/config.json" = {
+  xdg.configFile."swaync/config.json" = {
     source = ./config/swaync/config.json;
     force = true;
   };
-  xdg.configFile."~/.config/swaync/configSchema.json" = { 
+  xdg.configFile."swaync/configSchema.json" = { 
     source = ./config/swaync/configSchema.json;
     force = true;
   };
-  xdg.configFile."~/.config/swaync/style.css" = {
+  xdg.configFile."swaync/style.css" = {
     source = ./config/swaync/style.css ;
     force = true;
   };
-  xdg.configFile."~/.config/waybar/config.jsonc" = { 
+  xdg.configFile."waybar/config.jsonc" = { 
     source = ./config/waybar/config.jsonc;
     force = true;
   };
