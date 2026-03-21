@@ -11,6 +11,6 @@ in {
     ];
     wayland = true;
     theme = spicePkgs.themes.text;
-    colorScheme = "nord";
+    colorScheme = "Nord";
   };
 }
