@@ -64,7 +64,7 @@
   programs.hyprland.enable = true ;  
   
     # Enable Bluetooth support.
-  services.bluetooth.enable = true;  
+#  services.bluetooth.enable = true;  
   # Enable sound.
   services.pipewire = {
     enable = true;

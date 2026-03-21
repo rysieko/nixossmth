@@ -6,6 +6,7 @@
     ./config/hyprstuff.nix
     ./config/kitty.nix
     ./config/spicetify.nix
+    inputs.spicetify-nix.homeManagerModules.default
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
