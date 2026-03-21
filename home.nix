@@ -53,6 +53,15 @@
     enable = true;
     style.name = "nordic";
   };
+  dconf = {
+    settings = {
+        "org/cinnamon/desktop/applications/terminal" = {
+            exec = "kitty";
+            # exec-arg = ""; # argument
+        };
+    };
+};
+
 	
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -91,7 +100,7 @@
     source = ./config/waybar/config.jsonc;
     force = true;
   };
-  xdg.configFile."~/.config/waybar/style.css" = { 
+  xdg.configFile."waybar/style.css" = { 
     source = ./config/waybar/style.css;
     force = true; 
   };

@@ -4,13 +4,14 @@
 home.sessionVariables.NIXOS_OZONE_WL = "1";
 
 wayland.windowManager.hyprland = {
+  enable = true;
   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   settings = {
   "$mainMod" = "SUPER";
   "$fileManager" = "Thunar";
   "$terminal" = "kitty";
-  "$menu" = "rofi -show drun";
+  "$menu" = "hyprlauncher";
   exec-once  = [
   "waybar"
   "swaync"
@@ -27,7 +28,15 @@ wayland.windowManager.hyprland = {
   "spotify"
   "kdeconnectd"
   ];
-
+  input = {
+    kb_layout = "pl" ;
+    follow_mouse = 1 ;
+    sensitivity = 0.9;
+    touchpad = {
+        natural_scroll = false;
+    };
+  };
+  
   monitorv2 = {
    output = "DP-1";
    mode = "2560x1440@144";
@@ -114,11 +123,12 @@ wayland.windowManager.hyprland = {
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u"
       "$mainMod, down, movefocus, d"
-      "$mainMod, Delete, exec, wpctultil"
+      "$mainMod, Delete, exec, wlogout"
       "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
       "$mainMod, n, exec, spotifycli --next"
       "$mainMod, b, exec, spotifycli --prev"
-      "$mainMod, p, exec, spotifycli --playpause"			
+      "$mainMod, p, exec, spotifycli --playpause"
+      "$mainMod, Tab, togglefloating"
       "$mainMod, 1, workspace, 1" # NOTE: code:10 = key 1
       "$mainMod, 2, workspace, 2" # NOTE: code:11 = key 2
       "$mainMod, 3, workspace, 3" # NOTE: code:12 = key 3
@@ -132,8 +142,10 @@ wayland.windowManager.hyprland = {
       "$mainMod, F, fullscreen, 0"
       "$mainMod, Escape, exec, pkill -9 gamescope"
       "$mainMod, F1, exec, pkill -9 steam"
+      "$mainMod, F2, exec, pkill -9 waybar && waybar"
+      "$mainMod, F3, exec, pkill -9 hyprpaper; hyprpaper"
       "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
-      "$mainMod, Print, exec, grim -g \"$(slurp)\" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | notify-send \"Screenshot\" \"Screenshot of the region taken\" -t 1000"
+      "$mainMod, Print, exec, hyprshot -o ~/Obrazy/Screenshots/ -z -t 0 --mode region "      
       "$mainMod, C, exec, protonvpn connect | notify-send \"VPN\" \"VPN connected\"" 
       "$mainMod, V, exec, protonvpn disconnect | notify-send \"VPN\" \"VPN disconnected\""
       "Ctrl Shift, 1, movetoworkspace, 1" # NOTE: code:10 = key 1"
@@ -166,25 +178,25 @@ wayland.windowManager.hyprland = {
   windowrule = [
     "tag +browser, match:class firefox"
     "tag +games, match:class gamescope"
+    "tag +games, match:class steam_app"
     "tag +gamelaunch, match:class steam"
     "tag +gamelaunch, match:title lutris"
-    "tag +im, match:class discord"
+    "tag +im, match:class vesktop"
     "tag +file-manager, match:class nemo"
     "tag +codeeditor, match:class code-oss"
-    
     "tag +screanshare, match:class com.obsproject.Studio"
     "tag +music, match:class spotify"
     "workspace 1, match:tag browser*"
     "workspace 5, match:tag codeeditor*"
-    "windowrule = workspace 2, float on, match:tag gamelaunch"
-    "workspace 3, match:tag im*"
-    "workspace 5, match:tag games*"
-    "windowrule = workspace 2, float on,match:tag music"
-    "workspace 6, match:tag *screanshare*"
-    "windowrule = workspace 2,float on, match:class org.kde.kdeconnect.app"
+    "workspace 2, float on, match:tag gamelaunch"
+    "workspace 3, match:tag im"
+    "workspace 5, match:tag games"
+    "workspace 2, float on,match:tag music"
+    "workspace 6, match:tag screanshare"
+    "workspace 2,float on, match:class org.kde.kdeconnect.app"
     "float on, match:class kitty"
     "float on, match:class hyprland-share-picker"
-    "suppressevent maximize, match:class .*"
+    "suppress_event maximize, match:class . "
     "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
    ];
    };

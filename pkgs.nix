@@ -38,8 +38,12 @@
      slurp
      swaynotificationcenter
      wlogout
+     hyprpaper
      gh
-
+     hyprshot
+     pavucontrol
+     cmatrix
+     feh
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code

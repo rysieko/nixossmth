@@ -5,11 +5,11 @@
   services.hyprpaper.settings = {
     wallpaper = {
       monitor = "DP-1";
-      path = "./config/nordic.jpg";
-      ipc = "on";
+      path = "~/nixossmth/config/nordic.jpg";
       fit_mode = "cover";
       };
     splash = false;
+    ipc = "on";    
   };
   services.hypridle.enable = true;
   services.hypridle.settings = {

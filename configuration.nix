@@ -61,8 +61,7 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
   programs.hyprland.enable = true ;  
-  
-    # Enable Bluetooth support.
+      # Enable Bluetooth support.
 #  services.bluetooth.enable = true;  
   # Enable sound.
   services.pipewire = {
