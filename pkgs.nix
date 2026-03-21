@@ -59,5 +59,5 @@
     enable = true;
     };
   programs.gamescope.enable = true;
-  programs.kdeconnect.enable;
+  programs.kdeconnect.enable = true;
 }
