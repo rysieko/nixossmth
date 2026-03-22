@@ -7,6 +7,7 @@
     ./config/kitty.nix
     ./config/spicetify.nix
     ./config/lazyvim.nix
+    ./config/fish.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.lazyvim.homeManagerModules.default
     inputs.stylix.homeModules.stylix
