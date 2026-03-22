@@ -44,6 +44,7 @@
      pavucontrol
      cmatrix
      feh
+     hyprpwcenter
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code
