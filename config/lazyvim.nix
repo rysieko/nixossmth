@@ -14,10 +14,10 @@
     };
 
     # Additional packages (optional)
-    extraPackages = with pkgs; [
-        nixd       # Nix LSP
-        alejandra  # Nix formatter
-    ];
+   # extraPackages = [
+    #    nixd       # Nix LSP
+     #   alejandra  # Nix formatter
+   # ];
     plugins = {
       colorscheme = ''
         return {

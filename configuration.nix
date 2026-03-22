@@ -68,9 +68,7 @@
     enable = true;
     pulse.enable = true;
   };
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-  # i wish i was a fish 
+    # i wish i was a fish 
   programs.fish.enable = true;
   users.users.rysieko = {
     isNormalUser = true;

@@ -8,7 +8,8 @@
     ./config/spicetify.nix
     ./config/lazyvim.nix
     inputs.spicetify-nix.homeManagerModules.default
-    lazyvim.homeManagerModules.default 
+    inputs.lazyvim.homeManagerModules.default
+    inputs.stylix.homeModules.stylix
   ];
   nixpkgs.config.allowUnfree = true ;
    # Home Manager needs a bit of information about you and the paths it should
@@ -25,9 +26,9 @@
   }; 
   gtk = {
     enable = true;
-    theme = {
+   theme = pkgs.lib.mkForce {
       name = "Nordic"; # The name of the theme to be used
-      package = pkgs.nordic; # The package containing the theme
+     package = pkgs.nordic; # The package containing the theme
     };
     iconTheme = {
       name = "candy-icons";
@@ -51,9 +52,9 @@
       };
     };
   };
-  qt = {
+  qt = pkgs.lib.mkForce {
     enable = true;
-    style.name = "nordic";
+   style.name = "nordic";
   };
   dconf = {
     settings = {
@@ -63,6 +64,9 @@
         };
     };
 };
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+
 
 	
   # This value determines the Home Manager release that your configuration is
