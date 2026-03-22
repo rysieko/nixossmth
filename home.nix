@@ -6,7 +6,9 @@
     ./config/hyprstuff.nix
     ./config/kitty.nix
     ./config/spicetify.nix
+    ./config/lazyvim.nix
     inputs.spicetify-nix.homeManagerModules.default
+    lazyvim.homeManagerModules.default 
   ];
   nixpkgs.config.allowUnfree = true ;
    # Home Manager needs a bit of information about you and the paths it should
