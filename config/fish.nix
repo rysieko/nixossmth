@@ -1,9 +1,9 @@
-{config , ...}
+{config , ...} :
 {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set fish_greeting fastfetch
+      set fish_greeting ULTRAKILLLLLLLLLLLLLLLLLLL
     '';
   };
 }

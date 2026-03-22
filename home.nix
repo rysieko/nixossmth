@@ -53,10 +53,6 @@
       };
     };
   };
-  qt = pkgs.lib.mkForce {
-    enable = true;
-   style.name = "nordic";
-  };
   dconf = {
     settings = {
         "org/cinnamon/desktop/applications/terminal" = {
@@ -67,7 +63,10 @@
 };
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-
+  stylix.fonts.sizes = {
+    applications = 11;
+    desktop = 9;
+  };
 
 	
   # This value determines the Home Manager release that your configuration is
