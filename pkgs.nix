@@ -1,16 +1,8 @@
 { pkgs ,...}:
 
 {
-  programs.firefox = {
-      enable = true;
-     };
-  programs.waybar.enable = true;   
-  programs.thunar.enable = true;
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
+  # https://search.nixos.org/
    environment.systemPackages = with pkgs; [
-     vscode
-     nano # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      protonup-ng
      hyprland-qt-support
@@ -23,7 +15,6 @@
      candy-icons
      catppuccin-grub    
      hyprlauncher
-#     nordzy-theme
      fastfetch
      spotify-cli-linux
      btop
@@ -34,8 +25,6 @@
      wine
      kitty
      hyprshutdown
-     grim
-     slurp
      swaynotificationcenter
      wlogout
      hyprpaper
@@ -53,12 +42,9 @@
 	  hack
 	  ubuntu
    ];
-  programs.git = {
-    enable = true;
-  };
-  programs.neovim = {
-    enable = true;
-    };
-  programs.gamescope.enable = true;
+  programs.git.enable = true;
+  programs.firefox.enable = true;
+  programs.waybar.enable = true;   
+  programs.neovim.enable = true;
   programs.kdeconnect.enable = true;
 }
