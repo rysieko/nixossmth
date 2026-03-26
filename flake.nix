@@ -1,5 +1,5 @@
 {
-  description = "Nixos desktop flake";
+  description = "nix solves this smth";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/hyprland";
@@ -29,7 +29,6 @@
   
     
   outputs = { self, nixpkgs, stylix,nix-cachyos-kernel, hyprland,nix-index-database,spicetify-nix ,lazyvim , ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       system =  "x86_64-linux";
       specialArgs = {inherit inputs;};
