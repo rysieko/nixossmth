@@ -3,7 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, inputs, ... }:
-
+ 
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -11,7 +11,7 @@
       ./pkgs.nix
       inputs.home-manager.nixosModules.default
     ];
-  services.displayManager.ly.enable = true; # TRUE
+ services.displayManager.ly.enable = true; # TRUE
   # use limine as a bootloader
  boot.loader.limine= { 
     enable = true;
@@ -19,7 +19,12 @@
     style.wallpapers = [ ./config/nordic.jpg ];
     style.interface.resolution = "2560x1440" ;
   }; 
- boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+ boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+  specializations = {
+  cachyos-kernel-lts.configuration = {
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts-x86_64-v3;
+  };
+ };
  boot.loader.efi.canTouchEfiVariables = true;
   networking = {
     hostName = "nixsolvesthis";
