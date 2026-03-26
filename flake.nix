@@ -47,7 +47,7 @@
       specialArgs = {inherit inputs;};
       modules = [ 
         ./hosts/nixserver/configuration.nix
-      ]
-    }
+      ];
+    };
   };
 }
