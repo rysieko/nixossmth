@@ -6,7 +6,8 @@
     # paths in nix expressions are always relative the file which defines them
     imports = [
         ./hardware-configuration.nix
-        ./pihole.nix    
+        ./pihole.nix
+        ./mc.nix 
         ];
 
     # Name your host machine

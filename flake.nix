@@ -1,7 +1,7 @@
 {
   description = "nix solves this smth";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url  = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/hyprland";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";    
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
