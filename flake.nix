@@ -34,14 +34,20 @@
       system =  "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
-        ./gamingstuff.nix
-        ./configuration.nix
-	./nixsettings.nix
+        ./hosts/nixsolvesthis/gamingstuff.nix
+        ./hosts/nixsolvesthis/configuration.nix
+	      ./hosts/nixsolvesthis/nixsettings.nix
         inputs.home-manager.nixosModules.default
-	inputs.nix-gaming-edge.nixosModules.default
+	      inputs.nix-gaming-edge.nixosModules.default
         nix-index-database.nixosModules.default
-	stylix.nixosModules.stylix	
+	      stylix.nixosModules.stylix	
       ];
     };
+    nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [ 
+        ./hosts/nixserver/configuration.nix
+      ]
+    }
   };
 }
