@@ -46,7 +46,7 @@
             "9.9.9.11" 
         ];   
     };
-    boot.loader.grub.enable = true;
+    boot.loader.limine.enable = true;
 
     # Define user accounts
     users.users.rysieko = {
