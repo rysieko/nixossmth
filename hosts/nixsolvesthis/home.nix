@@ -26,23 +26,13 @@
    size = 24;
   }; 
   gtk = {
-    enable = true;
-   theme = pkgs.lib.mkForce {
-      name = "Nordic"; # The name of the theme to be used
-     package = pkgs.nordic; # The package containing the theme
-    };
+    enable = true; 
     iconTheme = {
       name = "candy-icons";
       package = pkgs.candy-icons;
     };
-    #gtk3 = {
-     # extraConfig = "gtk-application-prefer-dark-theme=1";
-      
-    #};
-    #gtk4 = {
-     # extraConfig = " gtk-application-prefer-dark-theme=1";
-    #};
   };
+  qt.enable = true;
   programs.git = {
       enable = true;
       settings = {
@@ -53,20 +43,12 @@
       };
     };
   };
-  dconf = {
-    settings = {
-        "org/cinnamon/desktop/applications/terminal" = {
-            exec = "kitty";
-            # exec-arg = ""; # argument
-        };
-    };
-};
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-  stylix.fonts.sizes = {
-    applications = 11;
-    desktop = 9;
-  };
+ stylix.enable = true;
+ stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+ stylix.fonts.sizes = {
+   applications = 11;
+   desktop = 9;
+ };
 
 	
   # This value determines the Home Manager release that your configuration is
