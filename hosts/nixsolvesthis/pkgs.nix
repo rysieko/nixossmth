@@ -47,4 +47,9 @@
   programs.waybar.enable = true;   
   programs.neovim.enable = true;
   programs.kdeconnect.enable = true;
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true; 
 }
