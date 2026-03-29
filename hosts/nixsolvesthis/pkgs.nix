@@ -34,6 +34,7 @@
      cmatrix
      feh
      hyprpwcenter
+     kdePackages.dolphin
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code
