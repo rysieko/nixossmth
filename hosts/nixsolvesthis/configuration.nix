@@ -54,7 +54,7 @@
   #auto cleanup
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
-  services.xserver.layout = "pl";
+  services.xserver.xkb.layout = "pl";
   # Select internationalisation properties.
    i18n.defaultLocale = "pl_PL.UTF-8";
    console = {

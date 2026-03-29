@@ -8,6 +8,7 @@ in {
       catJamSynced
       fullScreen
       volumePercentage
+      oneko
     ];
     enabledCustomApps  = with spicePkgs.apps; [
       lyricsPlus 
