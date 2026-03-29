@@ -7,6 +7,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     lazyvim.url = "github:pfassina/lazyvim-nix";
+    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,10 +26,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };        
+
   };
   
     
-  outputs = { self, nixpkgs, stylix,nix-cachyos-kernel, hyprland,nix-index-database,spicetify-nix ,lazyvim , ... }@inputs: {
+  outputs = { self, nixpkgs, stylix,nix-cachyos-kernel, hyprland,nix-index-database,spicetify-nix ,lazyvim ,dolphin-overlay, ... }@inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       system =  "x86_64-linux";
       specialArgs = {inherit inputs;};
