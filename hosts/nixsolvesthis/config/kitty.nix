@@ -11,6 +11,7 @@
     window_padding_width = 10;
     #background_opacity = "0.5";
     background_blur = 5;
+    enableFishIntegration =true;
     
  };
  

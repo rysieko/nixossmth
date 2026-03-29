@@ -1,9 +1,10 @@
 
-{config , ...}:
+{config ,pkgs, ...}:
 {
   programs.lazyvim = {
     enable = true;
     installCoreDependencies = true;
+    
     extras = {
         lang.nix.enable = true;
         lang.python = {
@@ -14,14 +15,14 @@
     };
 
     # Additional packages (optional)
-   # extraPackages = [
-    #    nixd       # Nix LSP
-     #   alejandra  # Nix formatter
-   # ];
+    extraPackages = [
+        pkgs.nixd       # Nix LSP
+        pkgs.alejandra  # Nix formatter
+    ];
     plugins = {
       colorscheme = ''
         return {
-          "shaunsingh/nord.nvim",
+          "shaunsingh/nord.nvim"
           opts = {
           nord_contrast = true
           },
@@ -29,4 +30,5 @@
       '';
     };
   };
+  programs.lazygit.enable = true;
 }

@@ -3,12 +3,9 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set fish_greeting ULTRAKILLLLLLLLLLLLLLLLLLL
+      set fish_greeting
+      fastfetch
     '';
-    #plugins = [
-    #    {name = git; src = pkgs.fishPlugins.plugin-git;}
-    #];
-                
-    
+               
   };
 }
