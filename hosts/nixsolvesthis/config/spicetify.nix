@@ -6,10 +6,15 @@ in {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
       catJamSynced
-#      full-screen
+      fullScreen
       volumePercentage
     ];
+    enabledCustomApps  = with spicePkgs.apps; [
+      lyricsPlus 
+      marketplace
+    ];
     wayland = true;
+    windowManagerPatch = true;
     theme = pkgs.lib.mkForce spicePkgs.themes.text;
     colorScheme = pkgs.lib.mkForce "Nord";
   };

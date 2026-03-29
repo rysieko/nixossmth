@@ -36,7 +36,9 @@
      hyprpwcenter
      kdePackages.dolphin
      dolphin-emu
-     melonDS
+     melonds
+     obs-studio
+     hyprpicker
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code

@@ -5,7 +5,7 @@
   services.hyprpaper.settings = {
     wallpaper = {
       monitor = "DP-1";
-      path = "~/nixossmth/config/nordic.jpg";
+      path = "~/nixossmth/hosts/nixsolvesthis/config/nordic.jpg";
       fit_mode = "fill";
       };
     splash = false;

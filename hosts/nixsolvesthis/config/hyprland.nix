@@ -13,7 +13,6 @@ wayland.windowManager.hyprland = {
   "$terminal" = "kitty";
   "$menu" = "hyprlauncher";
   exec-once  = [
-  "waybar"
   "swaync"
   "hyprpaper"
   "steam --console"
