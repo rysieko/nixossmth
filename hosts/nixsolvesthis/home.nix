@@ -103,6 +103,7 @@
      HYPRCURSOR_SIZE = 24;
      XDG_TERMINAL_COMMAND = "kitty";
      font = "noto";
+     terminalApplication = "kitty";
   };
 
   # Let Home Manager install and manage itself.

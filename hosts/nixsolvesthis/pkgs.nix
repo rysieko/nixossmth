@@ -52,5 +52,6 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.hypridle.enable = true;
-  programs.hyprlock.enable = true; 
+  programs.hyprlock.enable = true;
+  programs.gamescope.enable = true;
 }

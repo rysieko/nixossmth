@@ -10,7 +10,7 @@ in {
       volumePercentage
     ];
     wayland = true;
-    theme = pkgs.lib.mkDefault spicePkgs.themes.text;
-    colorScheme = pkgs.lib.mkDefault "Nord";
+    theme = pkgs.lib.mkForce spicePkgs.themes.text;
+    colorScheme = pkgs.lib.mkForce "Nord";
   };
 }
