@@ -58,4 +58,9 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.gamescope.enable = true;
-}
+  xdg.portal = {
+    enable = true;
+	extraPortals = with pkgs; [
+    xdg-portal-desktop-hyprland
+  	];
+  }
