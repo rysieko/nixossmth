@@ -54,7 +54,7 @@
     image = ./config/corpseminos-v1.jpg;
   };
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-  
+  stylix.targets.firefox.profileNames = [ "my-profile" "my-friends-profile" ];
   
 	
   # This value determines the Home Manager release that your configuration is
