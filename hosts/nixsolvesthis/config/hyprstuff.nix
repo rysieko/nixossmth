@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ...}:
+{config, pkgs, inputs, lib, ...}:
 
 {
   services.hyprpaper.enable = true;
@@ -46,7 +46,7 @@
     ];
   };
   programs.hyprlock.enable = true;
-  programs.hyprlock.settings = pkgs.lib.mkForce  {
+  programs.hyprlock.settings =  {
     general = {
       hide_cursor = true;
       ignore_empty_input = true;
@@ -77,12 +77,12 @@
         monitor = "DP-1";
         size = "20%, 5%";
         outline_thickness = 3;
-        inner_color = pkgs.lib.mkForce  "rgb(79, 133, 163)";
-        outer_color = pkgs.lib.mkForce  "rgb(26, 57, 78)";
-        check_color = pkgs.lib.mkForce  "rgb(163, 190, 140)";
-        fail_color = pkgs.lib.mkForce  "rgb(191, 97, 106)";
+        #inner_color =  "rgb(79, 133, 163)";
+        #outer_color = pkgs.lib.mkForce  "rgb(26, 57, 78)";
+        #check_color = pkgs.lib.mkForce  "rgb(163, 190, 140)";
+        #fail_color = pkgs.lib.mkForce  "rgb(191, 97, 106)";
 
-        font_color = pkgs.lib.mkForce  "rgb(190, 206, 219)";
+        #font_color = pkgs.lib.mkForce  "rgb(190, 206, 219)";
         fade_on_empty = true; 
         rounding = 0;
 

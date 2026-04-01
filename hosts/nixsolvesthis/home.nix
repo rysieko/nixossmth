@@ -8,6 +8,7 @@
     ./config/spicetify.nix
     ./config/lazyvim.nix
     ./config/fish.nix
+    ./config/waybar.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.lazyvim.homeManagerModules.default
     inputs.stylix.homeModules.stylix
@@ -43,13 +44,19 @@
       };
     };
   };
- stylix.enable = true;
- stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
- stylix.fonts.sizes = {
-   applications = 11;
-   desktop = 9;
- };
+  stylix = {
+    enable = true;
+      fonts.sizes = {
+        applications = 11;
+        desktop = 9;
+      };
+      stylix.image = ./corpseminos-v1.jpg;
+    }
 
+  };
+  #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+  
+  
 	
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -72,9 +79,9 @@
       source = ./config/hyprtoolkit.conf;
       force = true;
   };
-  xdg.configFile."swaync/config.json" = {
-    source = ./config/swaync/config.json;
-    force = true;
+   xdg.configFile."swaync/config.json" = {
+   source = ./config/swaync/config.json;
+   force = true;
   };
   xdg.configFile."swaync/configSchema.json" = { 
     source = ./config/swaync/configSchema.json;
@@ -84,14 +91,14 @@
     source = ./config/swaync/style.css ;
     force = true;
   };
-  xdg.configFile."waybar/config.jsonc" = { 
-    source = ./config/waybar/config.jsonc;
-    force = true;
-  };
-  xdg.configFile."waybar/style.css" = { 
-    source = ./config/waybar/style.css;
-    force = true; 
-  };
+  #xdg.configFile."waybar/config.jsonc" = { 
+  # source = ./config/waybar/config.jsonc;
+  # force = true;
+  #};
+  #xdg.configFile."waybar/style.css" = { 
+  # source = ./config/waybar/style.css;
+  # force = true; 
+  #};
   xdg.configFile."fastfetch/config.jsonc" = {
     source = ./config/config.jsonc ;  
     force = true ;

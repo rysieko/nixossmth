@@ -1,5 +1,5 @@
 {
-  "$schema": "./configSchema.json",
+ // "$schema": "./configSchema.json",
   "ignore-gtk-theme": false,
   "positionX": "right",
   "positionY": "top",
@@ -30,7 +30,7 @@
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": true,
-  "text-empty": "No Notifications",
+  "text-empty": "No Notifications :] ",
   "script-fail-notify": true,
   "scripts": {
     "example-script": {

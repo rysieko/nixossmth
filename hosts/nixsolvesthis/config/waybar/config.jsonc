@@ -77,16 +77,7 @@
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "hyprpwcenter"
+                "on-click": "hyprpwcenter"
     },
 
     "custom/media": {
@@ -100,20 +91,7 @@
         "escape": true,
         "on-click": "hyprwave"
     },
-    "custom/notification": {
-    "tooltip": true,
-    "format": "<span size='16pt'>{icon}</span>",
-    "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂜",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰪑",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
-    },
-    "return-type": "json",
+        "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",

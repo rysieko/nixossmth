@@ -48,8 +48,7 @@
 	  ubuntu
    ];
   programs.git.enable = true;
-  programs.firefox.enable = true;
-  programs.waybar.enable = true;   
+  programs.firefox.enable = true; 
   programs.neovim.enable = true;
   programs.kdeconnect.enable = true;
   services.devmon.enable = true;
