@@ -6,9 +6,9 @@
       width = 2550;
       spacing = 6;
       height = 34;
-      modules-left = ["cpu", "memory", "temperature" ];
+      modules-left = ["cpu" "memory" "temperature" ];
       modules-center = ["hyprland/workspaces"];
-      modules-right = [ "pulseaudio", "tray", ];
+      modules-right = [ "pulseaudio" "tray" ];
       "hyprland/workspaces" = {
         persistent-workspaces = {
          "*" = 5;
@@ -20,13 +20,13 @@
       pulseaudio = {
         format = "{volume}% {icon} {format_source}";
         format-icons = {
-            default = ["", "", ""]
+            default = ["" "" ""];
         };
         on-click = "hyprpwcenter";
       };
-      "custom/notification": {
+      "custom/notification" = {
         tooltip = true;
-        format  = "<span size='16pt'>{icon}</span>",
+        format  = "<span size='16pt'>{icon}</span>";
         format-icons = {
           notification = "󱅫";
           none ="󰂜";
@@ -44,5 +44,6 @@
       "on-click" = "swaync-client -t -sw";
       "on-click-right" = "swaync-client -d -sw";
       "escape" = true;
+    };
   };
 }

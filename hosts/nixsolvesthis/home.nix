@@ -46,13 +46,11 @@
   };
   stylix = {
     enable = true;
-      fonts.sizes = {
-        applications = 11;
-        desktop = 9;
-      };
-      stylix.image = ./corpseminos-v1.jpg;
-    }
-
+    fonts.sizes = {
+      applications = 11;
+      desktop = 9;
+    };
+    stylix.image = ./corpseminos-v1.jpg;
   };
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
   
