@@ -3,7 +3,7 @@
 {
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
-    wallpaper = {
+    wallpaper = lib.mkForce {
       monitor = "DP-1";
       path = "./corpseminos-v1.jpg";
       fit_mode = "fill";
@@ -64,45 +64,43 @@
       };
     };
 
-    background = [
-      {
-        path = "screenshot";
-        blur_passes = 3;
-        blur_size = 8;
-      }
-    ];
+    # background = [
+    # {
+    #  path = lib.mkDefault;
+    # }
+    #];
 
-    input-field = [
-      {
-        monitor = "DP-1";
-        size = "20%, 5%";
-        outline_thickness = 3;
+    #  input-field = [
+    # {
+    # monitor = "DP-1";
+    #   size = "20%, 5%";
+    #   outline_thickness = 3;
         #inner_color =  "rgb(79, 133, 163)";
         #outer_color = pkgs.lib.mkForce  "rgb(26, 57, 78)";
         #check_color = pkgs.lib.mkForce  "rgb(163, 190, 140)";
         #fail_color = pkgs.lib.mkForce  "rgb(191, 97, 106)";
 
         #font_color = pkgs.lib.mkForce  "rgb(190, 206, 219)";
-        fade_on_empty = true; 
-        rounding = 0;
+    #   fade_on_empty = true; 
+    #    rounding = 0;
 
-        font_family = "noto";
-        placeholder_text = "Input password";
-        fail_text = "$PAMFAIL";
+    #   font_family = "noto";
+    #   placeholder_text = "Input password";
+    #   fail_text = "$PAMFAIL";
 
   
-     dots_text_format = "#";
-     dots_size = 0.4;
-      dots_spacing = 0.3;
+    # dots_text_format = lib.mkForce "#";
+    # dots_size = lib.mkForce 0.4;
+    # dots_spacing = lib.mkForce 0.3;
 
     # uncomment to use an input indicator that does not show the password length (similar to swaylock's input indicator)
     # hide_input = true;
 
-        position = "0, -20";
-        halign = "center";
-        valign = "center";
-      }
-    ];
+    #   position = "0, -20";
+    #   halign = "center";
+    #        valign = "center";
+    #  }
+    #];
   };
 }
 

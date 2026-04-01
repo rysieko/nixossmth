@@ -8,7 +8,7 @@ in {
       catJamSynced
       fullScreen
       volumePercentage
-      oneko
+      # oneko
     ];
     enabledCustomApps  = with spicePkgs.apps; [
       lyricsPlus 
@@ -16,7 +16,7 @@ in {
     ];
     wayland = true;
     windowManagerPatch = true;
-    theme = pkgs.lib.mkForce spicePkgs.themes.text;
-    colorScheme = pkgs.lib.mkForce "Nord";
+    #theme = pkgs.lib.mkForce spicePkgs.themes.text;
+    #colorScheme = pkgs.lib.mkForce "Nord";
   };
 }
