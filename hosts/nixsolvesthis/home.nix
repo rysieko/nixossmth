@@ -92,6 +92,10 @@
     source = ./config/waybar/style.css;
     force = true; 
   };
+  xdg.configFile."fastfetch/config.jsonc" = {
+    source = ./config/config.jsonc ;  
+    force = true ;
+  };
   
   
   
