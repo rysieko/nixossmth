@@ -1,6 +1,6 @@
 {
  // "$schema": "./configSchema.json",
-  "ignore-gtk-theme": false,
+  "ignore-gtk-theme": true,
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
