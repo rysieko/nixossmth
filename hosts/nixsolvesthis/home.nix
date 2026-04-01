@@ -51,10 +51,20 @@
       desktop = 9;
     };
     polarity = "dark";
+    targets = { 
+      firefox = { 
+        profileNames = [ "deafult" ];
+        colors.enable = true ;
+        enable = true;
+      };
+      swaync = {
+        enable = true;
+      };
+    };
     image = ./config/corpseminos-v1.jpg;
   };
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-  stylix.targets.firefox.profileNames = [ "my-profile" "my-friends-profile" ];
+  
   
 	
   # This value determines the Home Manager release that your configuration is
@@ -82,10 +92,10 @@
    source = ./config/swaync/config.json;
    force = true;
   };
-  xdg.configFile."swaync/configSchema.json" = { 
-    source = ./config/swaync/configSchema.json;
-    force = true;
-  };
+  # xdg.configFile."swaync/configSchema.json" = { 
+  # source = ./config/swaync/configSchema.json;
+  # force = true;
+  # };
   xdg.configFile."swaync/style.css" = {
     source = ./config/swaync/style.css ;
     force = true;
