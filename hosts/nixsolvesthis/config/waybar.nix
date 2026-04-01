@@ -38,12 +38,12 @@
           dnd-inhibited-none = "󰪑";
         };
       };
-      "exec-if" = "which swaync-client";
-      "return-type" = "json";
-      "exec" = "swaync-client -swb";
-      "on-click" = "swaync-client -t -sw";
-      "on-click-right" = "swaync-client -d -sw";
-      "escape" = true;
+      #exec-if = "which swaync-client";
+      return-type = "json";
+      # exec = "swaync-client -swb";
+      #on-click = "swaync-client -t -sw";
+      # on-click-right = "swaync-client -d -sw";
+      #      escape = true;
     };
   };
 }
