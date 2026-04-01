@@ -9,12 +9,11 @@
         ./pihole.nix
         ./mc.nix 
         ];
-
+    time.timeZone = "Europe/Warsaw";
     # Name your host machine
     networking = {
         hostName = "nixserver";
-        notworkmanager.enable = true;
-        time.timeZone = "Europe/Warsaw";
+        networkmanager.enable = true;
         interfaces.eth0.ipv4.addresses = [
             {
             address = "192.168.0.183";

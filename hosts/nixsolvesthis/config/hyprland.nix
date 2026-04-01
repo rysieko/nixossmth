@@ -46,8 +46,8 @@ wayland.windowManager.hyprland = {
    vrr = 1;
    supports_hdr = 1;
    supports_wide_color = 1;
-   sdr_max_luminance = 120;
-   sdr_min_luminance = 0.020;
+   sdr_max_luminance = 140;
+   sdr_min_luminance = 0.030;
    sdr_eotf = 1;
    #auto_hdr = 1
   }; 
@@ -143,7 +143,7 @@ wayland.windowManager.hyprland = {
       "$mainMod, F, fullscreen, 0"
       "$mainMod, Escape, exec, pkill -9 gamescope"
       "$mainMod, F1, exec, pkill -9 steam"
-      "$mainMod, F2, exec, pkill -9 waybar && waybar"
+      "$mainMod, F2, exec, pkill -9 waybar "
       "$mainMod, F3, exec, pkill -9 hyprpaper; hyprpaper"
       "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
       "$mainMod, Print, exec, hyprshot -o ~/Obrazy/Screenshots/ -z -t 0 --mode region "      

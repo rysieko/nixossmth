@@ -7,7 +7,7 @@
     openFirewall = true; 
     declarative = true;
     whitelist = {
-        rysieko = "3417b490-fe2c-4f78-98e1-a697a99be16d"
+        rysieko = "3417b490-fe2c-4f78-98e1-a697a99be16d";
     };
     serverProperties = {
         server-port = 25526;
