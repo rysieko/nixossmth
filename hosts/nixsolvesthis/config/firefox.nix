@@ -4,10 +4,10 @@
 programs.firefox = {
   enable = true;
   profile."default" = {
-  search = {
-    force           = true;
-    default         = "DuckDuckGo";
-    privateDefault  = "DuckDuckGo";
+    search = {
+      force = true;
+      default = "DuckDuckGo";
+      privateDefault = "DuckDuckGo";
       engines = {
         "Nix Packages" = {
           urls = [
@@ -22,7 +22,6 @@ programs.firefox = {
           icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = [ "@np" ];
         };
-
         "Nix Options" = {
           urls = [
             {
@@ -36,7 +35,6 @@ programs.firefox = {
           icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = [ "@no" ];
         };
-
         "NixOS Wiki" = {
           urls = [
             {
@@ -48,6 +46,7 @@ programs.firefox = {
           ];
           icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = [ "@nw" ];
+        };
       };
     };
   };
