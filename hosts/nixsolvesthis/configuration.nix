@@ -80,6 +80,7 @@
     extraGroups = [ "wheel" "networkmanager" ]; 
     shell = pkgs.fish; 
   };
+  home-manager.backupFileExtension = ".bak";
   home-manager = {
    extraSpecialArgs = { inherit inputs; };
      users = {

@@ -8,7 +8,6 @@
      hyprland-qt-support
      git
      cliphist
-     vesktop
      prismlauncher
      lutris
      nordic
@@ -48,7 +47,6 @@
 	  ubuntu
    ];
   programs.git.enable = true;
-  programs.firefox.enable = true; 
   programs.neovim.enable = true;
   programs.kdeconnect.enable = true;
   services.devmon.enable = true;

@@ -13,12 +13,61 @@
     inputs.lazyvim.homeManagerModules.default
     inputs.stylix.homeModules.stylix
   ];
-  nixpkgs.config.allowUnfree = true ;
-   # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  nixpkgs.config.allowUnfree = true ;   # Home Manager needs a bit of information about you and the paths it should # manage.
   home.username = "rysieko";
   home.homeDirectory = "/home/rysieko";
-  
+  programs.vesktop.enable = true;
+  programs.firefox = {
+    enable = true;
+    profile."default" = {
+      search = {
+        force           = true;
+        default         = "DuckDuckGo";
+        privateDefault  = "DuckDuckGo";
+        engines = {
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  { name = "channel"; value = "unstable"; }
+                  { name = "query";   value = "{searchTerms}"; }
+                ];
+              }
+            ];
+            icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+
+          "Nix Options" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/options";
+                params = [
+                  { name = "channel"; value = "unstable"; }
+                  { name = "query";   value = "{searchTerms}"; }
+                ];
+              }
+            ];
+            icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@no" ];
+          };
+
+          "NixOS Wiki" = {
+            urls = [
+              {
+                template = "https://wiki.nixos.org/w/index.php";
+                params = [
+                  { name = "search"; value = "{searchTerms}"; }
+                ];
+              }
+            ];
+            icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@nw" ];
+        };
+      };
+    };
+  };
   home.pointerCursor = {
    gtk.enable = true;
    x11.enable = true; # Optional: enable if using X11 apps
@@ -55,6 +104,7 @@
       firefox = { 
         profileNames = [ "default" ];
         colors.enable = true ;
+        colorTheme.enable = true;
         enable = true;
       };
       swaync = {
@@ -62,6 +112,8 @@
       };
       vencord = {
         enable = true;
+        colors.enable = true;
+        fonts.enable = true;
       };
     };
     image = ./config/corpseminos-v1.jpg;
@@ -86,8 +138,8 @@
  home.file =
   let
     color = config.lib.stylix.colors;
-  in
-  {
+    in
+    {
     ".config/hypr/hyprtoolkit.conf".text = ''
       font-family = noto
       font-size = 11
@@ -96,14 +148,7 @@
       accent = rgb(${color.base02-rgb-r},${color.base02-rgb-g},${color.base02-rgb-b})
       text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
     '';
-  };  #xdg.configFile."hypr/hyprtoolkit.conf" = {
-  #   source = ./config/hyprtoolkit.conf;
-  #   force = true;
-  #};
-   xdg.configFile."swaync/config.json" = {
-   source = ./config/swaync/config.json;
-   force = true;
-  };
+    };
   xdg.configFile."fastfetch/config.jsonc" = {
     source = ./config/config.jsonc ;  
     force = true ;

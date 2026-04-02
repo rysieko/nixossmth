@@ -25,12 +25,15 @@
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
-    };        
-
-  };
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+   };
   
     
-  outputs = { self, nixpkgs, stylix,nix-cachyos-kernel, hyprland,nix-index-database,spicetify-nix ,lazyvim ,dolphin-overlay, ... }@inputs: {
+  outputs = { self, nixpkgs, stylix,nix-cachyos-kernel, hyprland,nix-index-database,spicetify-nix ,lazyvim ,dolphin-overlay,nur,... }@inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       system =  "x86_64-linux";
       specialArgs = {inherit inputs;};

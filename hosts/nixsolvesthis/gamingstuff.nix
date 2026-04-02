@@ -1,12 +1,7 @@
 { pkgs, inputs ,... }: 
 
 {         
-  nixpkgs.overlays = with inputs; [
-    nix-gaming-edge.overlays.default
-    nix-gaming-edge.overlays.proton-cachyos
-    nix-cachyos-kernel.overlays.default    
-    ];
-          
+            
           drivers.mesa-git = {
             enable = true;
             cacheCleanup = { # protonPackage is null by default - thus Proton caches are not cleaned by default. Must define a protonPackage to clear Proton / engine caches

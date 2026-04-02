@@ -1,5 +1,12 @@
 {config , inputs, ... }:
 {
+ nixpkgs.overlays = with inputs; [
+    nix-gaming-edge.overlays.default
+    nix-gaming-edge.overlays.proton-cachyos
+    nix-cachyos-kernel.overlays.default   
+    nur.overlays.default
+    ];
+  
  nix = { 
    gc = { 
        automatic = true;
