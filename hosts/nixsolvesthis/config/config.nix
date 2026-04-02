@@ -5,7 +5,7 @@
     ./hyprstuff.nix
     ./kitty.nix
     ./spicetify.nix
-    ./lazyvim.nix
+    ./vscode.nix
     ./fish.nix
     ./waybar.nix
     ./swaync.nix

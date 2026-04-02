@@ -1,4 +1,4 @@
-{ pkgs ,...}:
+{ pkgs ,inputs, ...}:
 
 {
   # https://search.nixos.org/
@@ -40,6 +40,8 @@
      hyprpicker
      kdePackages.kdenlive
      ffmpeg_7-full
+     nixd
+     alejandra
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code
@@ -57,4 +59,5 @@
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
   programs.gamescope.enable = true;
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }
