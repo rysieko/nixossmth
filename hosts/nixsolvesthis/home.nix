@@ -53,11 +53,14 @@
     polarity = "dark";
     targets = { 
       firefox = { 
-        profileNames = [ "deafult" ];
+        profileNames = [ "default" ];
         colors.enable = true ;
         enable = true;
       };
       swaync = {
+        enable = true;
+      };
+      vencord = {
         enable = true;
       };
     };
@@ -79,35 +82,28 @@
   # environment.
   home.packages = [ 
     
-  ];
-
-  home.file = {
-     
-  };
-  xdg.configFile."hypr/hyprtoolkit.conf" = {
-      source = ./config/hyprtoolkit.conf;
-      force = true;
-  };
+  ]; 
+ home.file =
+  let
+    color = config.lib.stylix.colors;
+  in
+  {
+    ".config/hypr/hyprtoolkit.conf".text = ''
+      font-family = noto
+      font-size = 11
+      background = rgb(${color.base00-rgb-r},${color.base00-rgb-g},${color.base00-rgb-b})
+      base = rgb(${color.base01-rgb-r},${color.base01-rgb-g},${color.base01-rgb-b})
+      accent = rgb(${color.base02-rgb-r},${color.base02-rgb-g},${color.base02-rgb-b})
+      text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
+    '';
+  };  #xdg.configFile."hypr/hyprtoolkit.conf" = {
+  #   source = ./config/hyprtoolkit.conf;
+  #   force = true;
+  #};
    xdg.configFile."swaync/config.json" = {
    source = ./config/swaync/config.json;
    force = true;
   };
-  # xdg.configFile."swaync/configSchema.json" = { 
-  # source = ./config/swaync/configSchema.json;
-  # force = true;
-  # };
-  xdg.configFile."swaync/style.css" = {
-    source = ./config/swaync/style.css ;
-    force = true;
-  };
-  #xdg.configFile."waybar/config.jsonc" = { 
-  # source = ./config/waybar/config.jsonc;
-  # force = true;
-  #};
-  #xdg.configFile."waybar/style.css" = { 
-  # source = ./config/waybar/style.css;
-  # force = true; 
-  #};
   xdg.configFile."fastfetch/config.jsonc" = {
     source = ./config/config.jsonc ;  
     force = true ;

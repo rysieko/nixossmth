@@ -23,7 +23,8 @@ wayland.windowManager.hyprland = {
   "udiskie"
   "wl-paste --type text --watch cliphist store"
   "wl-paste --type image --watch cliphist store"
-  "steam"	
+  "steam"
+  "waybar"
   "spotify"
   "kdeconnectd"
   ];

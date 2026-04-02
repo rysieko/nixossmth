@@ -19,16 +19,6 @@
         pkgs.nixd       # Nix LSP
         pkgs.alejandra  # Nix formatter
     ];
-    plugins = {
-      colorscheme = ''
-        return {
-          "shaunsingh/nord.nvim"
-          opts = {
-          nord_contrast = true
-          },
-        }
-      '';
-    };
   };
   programs.lazygit.enable = true;
 }
