@@ -3,8 +3,7 @@
  nixpkgs.overlays = with inputs; [
     nix-gaming-edge.overlays.default
     nix-gaming-edge.overlays.proton-cachyos
-    nix-cachyos-kernel.overlays.default   
-    nur.overlays.default
+    nix-cachyos-kernel.overlays.default    
     ];
   
  nix = { 

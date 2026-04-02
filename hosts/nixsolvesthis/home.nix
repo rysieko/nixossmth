@@ -2,13 +2,7 @@
 
 {
   imports = [
-    ./config/hyprland.nix
-    ./config/hyprstuff.nix
-    ./config/kitty.nix
-    ./config/spicetify.nix
-    ./config/lazyvim.nix
-    ./config/fish.nix
-    ./config/waybar.nix
+    ./config/config.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.lazyvim.homeManagerModules.default
     inputs.stylix.homeModules.stylix

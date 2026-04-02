@@ -1,6 +1,6 @@
 {config, ...}:
 {
-  import = [  
+  imports = [  
     ./hyprland.nix
     ./hyprstuff.nix
     ./kitty.nix

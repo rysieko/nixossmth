@@ -1,13 +1,14 @@
-{config, pkgs , ...};
+{config, pkgs , ...}:
 
 { 
 programs.firefox = {
   enable = true;
-  profile."default" = {
+  profiles."default" = {
+    extensions.force = true;
     search = {
       force = true;
-      default = "DuckDuckGo";
-      privateDefault = "DuckDuckGo";
+      default = "ddg";
+      privateDefault = "ddg";
       engines = {
         "Nix Packages" = {
           urls = [
@@ -42,7 +43,7 @@ programs.firefox = {
               params = [
                 { name = "search"; value = "{searchTerms}"; }
               ];
-            };
+            }
           ];
           icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = [ "@nw" ];
@@ -50,16 +51,5 @@ programs.firefox = {
       };
     };
   };
-};
-
-
-
-
-
-
-
-
-
-
-
+ };
 }

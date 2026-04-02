@@ -21,8 +21,8 @@
       control-center-width =500;
       control-center-height = 600;
       notification-window-width = 500;
-      keyboard-shortcuts = true
-      notification-grouping = true,
+      keyboard-shortcuts = true;
+      notification-grouping = true;
       image-visibility = "when-available";
       transition-time = 200;
       hide-on-clear = false;
@@ -46,7 +46,7 @@
         };
         title = {
           text =  "Notifications";
-          "clear-all-button": true;
+          clear-all-button = true;
           button-text = "Clear All";
         };
         dnd = {
