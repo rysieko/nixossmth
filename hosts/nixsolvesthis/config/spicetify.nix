@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
   programs.spicetify = {
@@ -10,8 +13,8 @@ in {
       volumePercentage
       # oneko
     ];
-    enabledCustomApps  = with spicePkgs.apps; [
-      lyricsPlus 
+    enabledCustomApps = with spicePkgs.apps; [
+      lyricsPlus
       marketplace
     ];
     wayland = true;

@@ -1,7 +1,10 @@
-{config,pkgs, ...}:
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.vscode = {
-  enable = true;
+    enable = true;
     package = pkgs.vscodium;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
@@ -13,17 +16,15 @@
       ];
       userSettings = {
         "nix.serverPath" = "nixd";
-        "nix.enableLanguageServer" =  true;
+        "nix.enableLanguageServer" = true;
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {
-              "command" = [ "alejandra" ]; # 
+              "command" = ["alejandra"]; #
+            };
           };
-         };
+        };
       };
     };
   };
-  };
 }
-
-

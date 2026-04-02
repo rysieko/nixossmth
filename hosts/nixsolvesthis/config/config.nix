@@ -1,6 +1,5 @@
-{config, ...}:
-{
-  imports = [  
+{config, ...}: {
+  imports = [
     ./hyprland.nix
     ./hyprstuff.nix
     ./kitty.nix
@@ -9,6 +8,6 @@
     ./fish.nix
     ./waybar.nix
     ./swaync.nix
-    ./firefox.nix  
+    ./firefox.nix
   ];
 }

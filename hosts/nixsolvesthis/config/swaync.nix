@@ -1,7 +1,6 @@
-{config, ...} : 
-{
+{config, ...}: {
   services.swaync = {
-    enable = true; 
+    enable = true;
     settings = {
       positionX = "right";
       positionY = "top";
@@ -18,7 +17,7 @@
       timeout-critical = 0;
       fit-to-screen = true;
       relative-timestamps = true;
-      control-center-width =500;
+      control-center-width = 500;
       control-center-height = 600;
       notification-window-width = 500;
       keyboard-shortcuts = true;
@@ -35,7 +34,7 @@
         "dnd"
         "notifications"
       ];
-      widget-config = { 
+      widget-config = {
         notifications = {
           vexpand = true;
         };
@@ -45,13 +44,13 @@
           clear-all-button = true;
         };
         title = {
-          text =  "Notifications";
+          text = "Notifications";
           clear-all-button = true;
           button-text = "Clear All";
         };
         dnd = {
           text = "Do Not Disturb";
-        };   
+        };
       };
     };
   };

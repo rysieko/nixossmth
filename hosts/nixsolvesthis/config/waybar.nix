@@ -1,4 +1,4 @@
-{config , ... } : {
+{config, ...}: {
   programs.waybar = {
     enable = true;
     settings = [
@@ -10,7 +10,7 @@
 
         modules-left = ["cpu" "memory" "temperature"];
         modules-center = ["hyprland/workspaces"];
-        modules-right = ["pulseaudio" "tray" "clock" ];
+        modules-right = ["pulseaudio" "tray" "clock"];
 
         "hyprland/workspaces" = {
           persistent-workspaces = {

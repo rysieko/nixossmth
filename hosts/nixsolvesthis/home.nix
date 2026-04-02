@@ -1,25 +1,29 @@
-{ config, pkgs, osConfig, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  osConfig,
+  inputs,
+  ...
+}: {
   imports = [
     ./config/config.nix
     inputs.spicetify-nix.homeManagerModules.default
     inputs.lazyvim.homeManagerModules.default
     inputs.stylix.homeModules.stylix
   ];
-  nixpkgs.config.allowUnfree = true ;   # Home Manager needs a bit of information about you and the paths it should # manage.
+  nixpkgs.config.allowUnfree = true; # Home Manager needs a bit of information about you and the paths it should # manage.
   home.username = "rysieko";
   home.homeDirectory = "/home/rysieko";
   programs.vesktop.enable = true;
   home.pointerCursor = {
-   gtk.enable = true;
-   x11.enable = true; # Optional: enable if using X11 apps
-   package = pkgs.rose-pine-cursor;
-   name = "BreezeX-RosePine-Linux"; # Standard name for the Rose Pine xcursor
-   size = 24;
-  }; 
+    gtk.enable = true;
+    x11.enable = true; # Optional: enable if using X11 apps
+    package = pkgs.rose-pine-cursor;
+    name = "BreezeX-RosePine-Linux"; # Standard name for the Rose Pine xcursor
+    size = 24;
+  };
   gtk = {
-    enable = true; 
+    enable = true;
     iconTheme = {
       name = "candy-icons";
       package = pkgs.candy-icons;
@@ -27,12 +31,12 @@
   };
   qt.enable = true;
   programs.git = {
-      enable = true;
-      settings = {
-        init.defaultBranch = "main";
-        user = {
-          name = "rysieko";
-          email = "rrx9506@proton.me";
+    enable = true;
+    settings = {
+      init.defaultBranch = "main";
+      user = {
+        name = "rysieko";
+        email = "rrx9506@proton.me";
       };
     };
   };
@@ -43,10 +47,10 @@
       desktop = 9;
     };
     polarity = "dark";
-    targets = { 
-      firefox = { 
-        profileNames = [ "default" ];
-        colors.enable = true ;
+    targets = {
+      firefox = {
+        profileNames = ["default"];
+        colors.enable = true;
         colorTheme.enable = true;
         enable = true;
       };
@@ -62,9 +66,7 @@
     image = ./config/corpseminos-v1.jpg;
   };
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-  
-  
-	
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -75,14 +77,11 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [ 
-    
-  ]; 
- home.file =
-  let
+  home.packages = [
+  ];
+  home.file = let
     color = config.lib.stylix.colors;
-    in
-    {
+  in {
     ".config/hypr/hyprtoolkit.conf".text = ''
       font-family = noto
       font-size = 11
@@ -91,23 +90,20 @@
       accent = rgb(${color.base02-rgb-r},${color.base02-rgb-g},${color.base02-rgb-b})
       text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
     '';
-    };
-  xdg.configFile."fastfetch/config.jsonc" = {
-    source = ./config/config.jsonc ;  
-    force = true ;
   };
-  
-  
-  
-  
+  xdg.configFile."fastfetch/config.jsonc" = {
+    source = ./config/config.jsonc;
+    force = true;
+  };
+
   home.sessionVariables = {
-     mainMod ="SUPER";	
-     EDITOR = "nvim";
-     XCURSOR_SIZE = 24;
-     HYPRCURSOR_SIZE = 24;
-     XDG_TERMINAL_COMMAND = "kitty";
-     font = "noto";
-     terminalApplication = "kitty";
+    mainMod = "SUPER";
+    EDITOR = "nvim";
+    XCURSOR_SIZE = 24;
+    HYPRCURSOR_SIZE = 24;
+    XDG_TERMINAL_COMMAND = "kitty";
+    font = "noto";
+    terminalApplication = "kitty";
   };
 
   # Let Home Manager install and manage itself.
