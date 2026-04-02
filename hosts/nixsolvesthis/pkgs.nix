@@ -18,7 +18,7 @@
      spotify-cli-linux
      btop
      spotify
-     godot
+     godot-mono
      mangohud
      udiskie
      wine
@@ -38,6 +38,8 @@
      melonds
      obs-studio
      hyprpicker
+     kdePackages.kdenlive
+     ffmpeg_7-full
    ];
    fonts.packages = with pkgs.nerd-fonts; [
 	  fira-code
