@@ -11,15 +11,19 @@
         kamadorueda.alejandra
         ms-python.python
       ];
-      settings = {
+      userSettings = {
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" =  true;
-        "nix.serverSettings": {
-        "nixd" = {
-          "formatting" = {
-            "command" = [ "alejandra" ]; // or nixfmt or nixpkgs-fmt
+        "nix.serverSettings" = {
+          "nixd" = {
+            "formatting" = {
+              "command" = [ "alejandra" ]; # 
+          };
+         };
       };
-   };
- };
+    };
+  };
+  };
 }
+
 
