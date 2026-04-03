@@ -45,7 +45,7 @@
     ];
   };
   services.pihole-web = { 
-    enable = false;
-  #  ports = [80 443];
+    enable = true;
+    ports = [80 443];
   };
 }
