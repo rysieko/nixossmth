@@ -48,9 +48,9 @@
       "9.9.9.11"
     ];
   };
-  boot.loader.limine.enable = true;
-  boot.loader.limine.biosSupport = true;
-  boot.loader.limine.biosDevice = "/dev/sda";
+  boot.loader.grub.enable = true;
+  
+  boot.loader.grub.biosDevice = "/dev/sda"; 
   # Define user accounts
   users.users.rysieko = {
     extraGroups = ["wheel" "networkmanager"];
