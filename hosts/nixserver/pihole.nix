@@ -32,7 +32,8 @@
     lists = [
       {
         url = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt";
-        enabled = true;
+        enabled = true;]
+        type = "block";
         description = "Sample blocklist by hagezi";
       }
       {
