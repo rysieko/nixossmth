@@ -59,7 +59,7 @@
 
   # Install some packages
   environment.systemPackages = with pkgs; [
-    nvim
+    neovim
     git
     wget
     curl
