@@ -49,7 +49,12 @@
     ];
   };
   boot.loader.grub.enable = true;
-  
+  services.logind.settings.Login = {
+  HandleLidSwitch = "ignore";
+  HandleLidSwitchExternalPower = "ignore";
+  HandleLidSwitchDocked = "ignore";
+};
+
   boot.loader.grub.devices = ["/dev/sda"]; 
   # Define user accounts
   users.users.rysieko = {
