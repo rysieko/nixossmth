@@ -48,7 +48,8 @@
     ];
   };
   boot.loader.limine.enable = true;
-
+  boot.loader.limine.biosSupport = true;
+  boot.loader.limine.biosDevice = "/dev/sda";
   # Define user accounts
   users.users.rysieko = {
     extraGroups = ["wheel" "networkmanager"];
