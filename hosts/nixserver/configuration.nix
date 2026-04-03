@@ -70,7 +70,7 @@
     curl
     btop
   ];
-
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
   system.stateVersion = "26.05"; # DO NOT TOUCH YOU FUCKING IDIOT
