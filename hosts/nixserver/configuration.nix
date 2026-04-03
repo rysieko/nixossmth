@@ -50,7 +50,7 @@
   };
   boot.loader.grub.enable = true;
   
-  boot.loader.grub.devices = "/dev/sda"; 
+  boot.loader.grub.devices = ["/dev/sda"]; 
   # Define user accounts
   users.users.rysieko = {
     extraGroups = ["wheel" "networkmanager"];
