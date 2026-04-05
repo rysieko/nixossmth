@@ -22,10 +22,10 @@
     style.wallpapers = [./config/nordic.jpg];
     style.interface.resolution = "2560x1440";
   };
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v4;
   # specializations = {
   #cachyos-kernel-lts.configuration = {
-  # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts-x86_64-v3;
+  # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts-x86_64-v4;
   #};
   #};
   boot.loader.efi.canTouchEfiVariables = true;
