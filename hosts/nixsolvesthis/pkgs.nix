@@ -44,6 +44,7 @@
     ffmpeg_7-full
     nixd
     alejandra
+    nh
   ];
   fonts.packages = with pkgs.nerd-fonts; [
     fira-code

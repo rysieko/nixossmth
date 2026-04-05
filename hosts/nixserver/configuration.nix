@@ -69,6 +69,7 @@
     wget
     curl
     btop
+    nh
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Enable the OpenSSH daemon
