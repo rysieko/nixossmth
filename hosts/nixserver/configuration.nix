@@ -50,12 +50,12 @@
   };
   boot.loader.grub.enable = true;
   services.logind.settings.Login = {
-  HandleLidSwitch = "ignore";
-  HandleLidSwitchExternalPower = "ignore";
-  HandleLidSwitchDocked = "ignore";
-};
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
 
-  boot.loader.grub.devices = ["/dev/sda"]; 
+  boot.loader.grub.devices = ["/dev/sda"];
   # Define user accounts
   users.users.rysieko = {
     extraGroups = ["wheel" "networkmanager"];
@@ -74,5 +74,8 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
+  services.openssh.settings = {
+    PermitRootLogin = "yes";
+  };
   system.stateVersion = "26.05"; # DO NOT TOUCH YOU FUCKING IDIOT
 }
