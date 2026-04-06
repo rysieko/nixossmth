@@ -78,5 +78,6 @@
   services.openssh.settings = {
     PermitRootLogin = "yes";
   };
+  nix.settings.trusted-users = ["192.168.0.141" "rysieko@nixsolvesthis"];
   system.stateVersion = "26.05"; # DO NOT TOUCH YOU FUCKING IDIOT
 }
