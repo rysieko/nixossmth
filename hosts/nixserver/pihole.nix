@@ -32,12 +32,13 @@
     lists = [
       {
         url = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt";
-        enabled = true;]
+        enabled = true;
         type = "block";
         description = "Sample blocklist by hagezi";
       }
       {
         url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+        type = "block";
         enabled = true;
         description = "Sample blocklist by StevenBlack";
       }
