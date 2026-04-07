@@ -1,8 +1,4 @@
-{
-  config,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   nixpkgs.overlays = with inputs; [
     nix-gaming-edge.overlays.default
     nix-gaming-edge.overlays.proton-cachyos

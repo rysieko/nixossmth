@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
     wallpaper = lib.mkForce {

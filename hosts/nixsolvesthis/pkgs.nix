@@ -45,6 +45,7 @@
     nixd
     alejandra
     nh
+    quickshell
   ];
   fonts.packages = with pkgs.nerd-fonts; [
     fira-code
@@ -53,6 +54,10 @@
     hack
     ubuntu
   ];
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+  };
   programs.git.enable = true;
   programs.neovim.enable = true;
   programs.kdeconnect.enable = true;

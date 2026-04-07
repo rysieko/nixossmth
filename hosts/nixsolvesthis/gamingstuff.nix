@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   drivers.mesa-git = {
     enable = true;
     cacheCleanup = {
