@@ -45,7 +45,6 @@
     nixd
     alejandra
     nh
-    quickshell
   ];
   fonts.packages = with pkgs.nerd-fonts; [
     fira-code

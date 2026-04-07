@@ -1,16 +1,17 @@
-{config, ...}: {
+{...}: {
   programs.waybar = {
     enable = true;
     settings = [
       {
         layer = "top";
         position = "top";
+        width = 2560;
         height = 34;
-        spacing = 6;
+        spacing = 8;
 
         modules-left = ["cpu" "memory" "temperature"];
         modules-center = ["hyprland/workspaces"];
-        modules-right = ["pulseaudio" "tray" "clock"];
+        modules-right = ["pulseaudio" "tray" "clock" "custom/notification"];
 
         "hyprland/workspaces" = {
           persistent-workspaces = {
@@ -68,5 +69,10 @@
         };
       }
     ];
+    style = ''
+      * {
+      background-color: transparent;
+       }
+    '';
   };
 }

@@ -25,7 +25,6 @@
         "udiskie"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "steam"
         "waybar"
         "spotify"
         "kdeconnectd"
@@ -87,6 +86,7 @@
 
       animations = {
         enabled = true;
+        workspace_wraparound = true;
 
         bezier = [
           "easeOutQuint, 0.23,1,0.32,1"
@@ -94,6 +94,7 @@
           "linear, 0,0,1,1"
           "almostLinear, 0.5,0.5,0.75,1.0"
           "quick, 0.15,0,0.1,1"
+          "slidefade,0.42, 0.71, 0.6, 0.97 "
         ];
 
         animation = [
@@ -111,8 +112,8 @@
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
           "workspaces, 1, 1.94, almostLinear, fade"
-          "workspacesIn, 1, 1.21, almostLinear, fade"
-          "workspacesOut, 1, 1.94, almostLinear, fade"
+          "workspacesIn, 1, 1.21, slidefade, slidefade 30%"
+          "workspacesOut, 1, 1.94, slidefade, slidefade 30%"
         ];
       };
 
@@ -144,7 +145,8 @@
         "$mainMod, F, fullscreen, 0"
         "$mainMod, Escape, exec, pkill -9 gamescope"
         "$mainMod, F1, exec, pkill -9 steam"
-        "$mainMod, F2, exec, pkill -9 waybar "
+        "$mainMod, F2, exec, pkill -9 waybar && waybar "
+
         "$mainMod, F3, exec, pkill -9 hyprpaper; hyprpaper"
         "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
         "$mainMod, Print, exec, hyprshot -o ~/Obrazy/Screenshots/ -z -t 0 --mode region "

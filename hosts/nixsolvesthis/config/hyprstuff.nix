@@ -61,6 +61,15 @@
         bezier = "easeOutQuint";
       };
     };
+    time = [
+      {
+        monitor = "DP-1";
+        text = "cmd[update:1000] echo $DATE";
+        position = "0,40";
+        halign = "center";
+        valign = "center";
+      }
+    ];
 
     # background = [
     # {
