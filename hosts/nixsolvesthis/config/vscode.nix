@@ -11,6 +11,7 @@
         ms-python.python
       ];
       userSettings = {
+        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;
         "nix.serverSettings" = {
