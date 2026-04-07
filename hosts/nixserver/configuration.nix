@@ -28,7 +28,7 @@
       allowedTCPPorts = [443 80 22];
     };
     defaultGateway = "192.168.1.1";
-    useDHCP = false;
+    useDHCP = true;
     nameservers = [
       "8.8.8.8"
       "8.8.4.4"

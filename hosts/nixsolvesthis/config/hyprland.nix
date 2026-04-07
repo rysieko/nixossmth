@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   ...
@@ -8,8 +7,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    #  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     settings = {
       "$mainMod" = "SUPER";
       "$fileManager" = "dolphin";
@@ -68,7 +67,7 @@
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 10;
         active_opacity = 1;
         inactive_opacity = 1;
         shadow = {
