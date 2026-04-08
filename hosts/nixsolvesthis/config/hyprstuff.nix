@@ -1,14 +1,7 @@
 {lib, ...}: {
-  services.hyprpaper.enable = true;
-  services.hyprpaper.settings = {
-    wallpaper = lib.mkForce {
-      monitor = "DP-1";
-      path = "./corpseminos-v1.jpg";
-      fit_mode = "fill";
-    };
-    splash = false;
-    ipc = "on";
-  };
+   services.aww = {
+    enable = true;
+       };
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {
