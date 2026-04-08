@@ -89,12 +89,35 @@
       accent = rgb(${color.base02-rgb-r},${color.base02-rgb-g},${color.base02-rgb-b})
       text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
     '';
+    ".config/fastfetch/config.jsonc".text = ''
+    {
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json", 
+    "modules": [
+      "title",
+      "separator",
+      "os",
+      "host",
+      "kernel",
+      "shell",
+      "display",
+      "wm",
+      "wmtheme",
+      "theme",
+      "font",
+      "cursor",
+      "terminal",
+      "cpu",
+      "gpu",
+      "memory",
+      "localip",
+      ],
+    "logo": {
+    "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
+    "source": ${"fastfetchlogo"},      // Built-in logo name or file path
+    }  
+  }'';
   };
-  xdg.configFile."fastfetch/config.jsonc" = {
-    source = ./config/config.jsonc;
-    force = true;
-  };
-
+  "fastfetchlogo" = ./config/fastfetch/kris.jpeg;
   home.sessionVariables = {
     mainMod = "SUPER";
     EDITOR = "nvim";
@@ -104,7 +127,7 @@
     font = "noto";
     terminalApplication = "kitty";
   };
-
+  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

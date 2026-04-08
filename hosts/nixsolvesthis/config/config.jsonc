@@ -21,7 +21,7 @@
   ],
     "logo": {
     "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
-    "source": "gabriel-ultrakill.png",      // Built-in logo name or file path
+    "source": "./fastfetch/kris.jpeg",      // Built-in logo name or file path
   }  
 }
 
