@@ -117,10 +117,10 @@
     }  
   }'';
   };
-  "fastfetchlogo" = ./config/fastfetch/kris.jpeg;
   home.sessionVariables = {
     mainMod = "SUPER";
     EDITOR = "nvim";
+    fastfetchlogo = ./config/fastfetch/kris.jpeg;
     XCURSOR_SIZE = 24;
     HYPRCURSOR_SIZE = 24;
     XDG_TERMINAL_COMMAND = "kitty";
