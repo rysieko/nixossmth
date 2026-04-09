@@ -14,5 +14,5 @@
   };
   stylix.targets.kitty.enable = true;
 }
-#nice
+
 
