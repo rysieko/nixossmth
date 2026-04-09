@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -28,7 +29,7 @@
       allowedTCPPorts = [443 80 22];
     };
     defaultGateway = "192.168.1.1";
-    useDHCP = true;
+    useDHCP = lib.mkForce false;
     nameservers = [
       "8.8.8.8"
       "8.8.4.4"
