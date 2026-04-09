@@ -113,7 +113,7 @@
       ],
     "logo": {
     "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
-    "source": ${FETCHLOGO},      // Built-in logo name or file path
+    "source": ${FETCHLOGO}",      // Built-in logo name or file path
     }  
   }'';
   };
