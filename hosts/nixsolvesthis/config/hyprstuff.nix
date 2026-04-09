@@ -1,7 +1,7 @@
 {lib, ...}: {
    services.aww = {
     enable = true;
-       };
+   };
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {

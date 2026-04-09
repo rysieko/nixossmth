@@ -1,4 +1,4 @@
-{...}: {
+{lib ,...}: {
   programs.waybar = {
     enable = true;
     settings = [
@@ -69,7 +69,7 @@
         };
       }
     ];
-    style = ''
+    style = lib.mkAfter ''
       * {
       background-color: transparent;
        }

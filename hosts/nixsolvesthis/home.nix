@@ -113,14 +113,14 @@
       ],
     "logo": {
     "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
-    "source": ${"fastfetchlogo"},      // Built-in logo name or file path
+    "source": ${FETCHLOGO},      // Built-in logo name or file path
     }  
   }'';
   };
   home.sessionVariables = {
     mainMod = "SUPER";
     EDITOR = "nvim";
-    fastfetchlogo = ./config/fastfetch/kris.jpeg;
+    FETCHLOGO = ./config/fastfetch/kris.jpeg;
     XCURSOR_SIZE = 24;
     HYPRCURSOR_SIZE = 24;
     XDG_TERMINAL_COMMAND = "kitty";
