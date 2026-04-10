@@ -53,10 +53,6 @@
     hack
     ubuntu
   ];
-  programs.direnv = {
-    enable = true;
-    enableFishIntegration = true;
-  };
   programs.git.enable = true;
   programs.neovim.enable = true;
   programs.kdeconnect.enable = true;
