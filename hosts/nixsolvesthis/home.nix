@@ -62,7 +62,7 @@
         fonts.enable = true;
       };
     };
-    image = ./config/wallpapers/corpseminos-v1.jpg;
+    image = ./config/wallpapers/deltarune.gif;
   };
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 
@@ -80,6 +80,7 @@
   ];
   home.file = let
     color = config.lib.stylix.colors;
+    FETCHLOGO = ./config/fastfetch/kris.jpeg;
   in {
     ".config/hypr/hyprtoolkit.conf".text = ''
       font-family = noto
@@ -120,7 +121,7 @@
   home.sessionVariables = {
     mainMod = "SUPER";
     EDITOR = "nvim";
-    FETCHLOGO = ./config/fastfetch/kris.jpeg;
+    
     XCURSOR_SIZE = 24;
     HYPRCURSOR_SIZE = 24;
     XDG_TERMINAL_COMMAND = "kitty";

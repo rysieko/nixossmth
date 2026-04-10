@@ -5,10 +5,18 @@
 }: {
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = { 
+    plugins = [ 
+      inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprtrails
+
+    ]; 
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    let
+    hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}
+    in {
+    package = hyprflake.hyprland;
+    portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+    };
     settings = {
       "$mainMod" = "SUPER";
       "$fileManager" = "dolphin";
