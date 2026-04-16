@@ -6,7 +6,6 @@
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
-    lazyvim.url = "github:pfassina/lazyvim-nix";
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
     stylix = {
       url = "github:nix-community/stylix";
@@ -40,7 +39,6 @@
     hyprland,
     nix-index-database,
     spicetify-nix,
-    lazyvim,
     dolphin-overlay,
     ...
   } @ inputs: {
