@@ -42,7 +42,7 @@
     enable = true;
     package = pkgs.millennium-steam;
     extraCompatPackages = with pkgs; [
-      proton-cachyos
+      proton-cachyos-x86_64-v4
     ];
   };
 }
