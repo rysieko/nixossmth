@@ -1,3 +1,4 @@
+## asdasd
 Hello. This is my nixos config. Dont use it if you are not a masochist. 
 ## Thanks to
 - [vimjoyer](https://www.youtube.com/@vimjoyer)
