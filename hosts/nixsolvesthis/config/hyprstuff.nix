@@ -1,7 +1,16 @@
-{lib, ...}: {
-   services.aww = {
+{
+  lib,
+  config,
+  ...
+}: {
+  services.awww = {
     enable = true;
-   };
+    extraArgs = [
+      "--no-cache"
+      "--layer"
+      "bottom"
+    ];
+  };
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {
@@ -63,12 +72,6 @@
         valign = "center";
       }
     ];
-
-    # background = [
-    # {
-    #  path = lib.mkDefault;
-    # }
-    #];
 
     #  input-field = [
     # {

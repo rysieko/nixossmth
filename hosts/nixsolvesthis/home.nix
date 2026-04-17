@@ -7,7 +7,6 @@
   imports = [
     ./config/config.nix
     inputs.spicetify-nix.homeManagerModules.default
-    inputs.lazyvim.homeManagerModules.default
     inputs.stylix.homeModules.stylix
   ];
   nixpkgs.config.allowUnfree = true; # Home Manager needs a bit of information about you and the paths it should # manage.
@@ -44,6 +43,9 @@
     fonts.sizes = {
       applications = 11;
       desktop = 9;
+    };
+    opacity = {
+      desktop = 0.0;
     };
     polarity = "dark";
     targets = {
@@ -91,44 +93,44 @@
       text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
     '';
     ".config/fastfetch/config.jsonc".text = ''
-    {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json", 
-    "modules": [
-      "title",
-      "separator",
-      "os",
-      "host",
-      "kernel",
-      "shell",
-      "display",
-      "wm",
-      "wmtheme",
-      "theme",
-      "font",
-      "cursor",
-      "terminal",
-      "cpu",
-      "gpu",
-      "memory",
-      "localip",
-      ],
-    "logo": {
-    "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
-    "source": ${FETCHLOGO}",      // Built-in logo name or file path
-    }  
-  }'';
+        {
+        "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json", 
+        "modules": [
+          "title",
+          "separator",
+          "os",
+          "host",
+          "kernel",
+          "shell",
+          "display",
+          "wm",
+          "wmtheme",
+          "theme",
+          "font",
+          "cursor",
+          "terminal",
+          "cpu",
+          "gpu",
+          "memory",
+          "localip",
+          ],
+        "logo": {
+        "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
+        "source": "${FETCHLOGO}",      // Built-in logo name or file path
+        }  
+      }'';
   };
   home.sessionVariables = {
     mainMod = "SUPER";
     EDITOR = "nvim";
-    
+
     XCURSOR_SIZE = 24;
     HYPRCURSOR_SIZE = 24;
     XDG_TERMINAL_COMMAND = "kitty";
     font = "noto";
     terminalApplication = "kitty";
   };
-  
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

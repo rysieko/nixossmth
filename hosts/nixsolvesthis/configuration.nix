@@ -17,7 +17,7 @@
   boot.loader.limine = {
     enable = true;
     efiSupport = true;
-    style.wallpapers = [./config/nordic.jpg];
+    style.wallpapers = [./config/wallpapers/nordic.jpg];
     style.interface.resolution = "2560x1440";
   };
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v4;
