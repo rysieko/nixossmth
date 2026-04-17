@@ -5,18 +5,17 @@
 }: {
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  wayland.windowManager.hyprland = let 
-  hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-  hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
-  in 
-  { 
-    plugins = [ 
+  wayland.windowManager.hyprland = let
+    #hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+    hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+  in {
+    plugins = [
       hyprplugins.hyprtrails
       hyprplugins.xtra-dispatchers
-    ]; 
+    ];
     enable = true;
-    package = hyprflake.hyprland;
-    portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+    #package = hyprflake.hyprland;
+    #portalPackage = hyprflake.xdg-desktop-portal-hyprland;
     settings = {
       "$mainMod" = "SUPER";
       "$fileManager" = "dolphin";
@@ -170,16 +169,16 @@
         "Ctrl Shift, 8, movetoworkspace, 8" # NOTE: code:17 = key 8
         "Ctrl Shift, 9, movetoworkspace, 9" # NOTE: code:18 = key 9
         "Ctrl Shift, 0, movetoworkspace, 10"
-        "$mainMod Ctrl Shift, 1, plugin:xtd:throwunfocused, 1 " 
-        "$mainMod Ctrl Shift, 2, plugin:xtd:throwunfocused, 2 " 
-        "$mainMod Ctrl Shift, 3, plugin:xtd:throwunfocused, 3 " 
-        "$mainMod Ctrl Shift, 4, plugin:xtd:throwunfocused, 4 " 
-        "$mainMod Ctrl Shift, 5, plugin:xtd:throwunfocused, 5 " 
-        "$mainMod Ctrl Shift, 6, plugin:xtd:throwunfocused, 6 " 
-        "$mainMod Ctrl Shift, 7, plugin:xtd:throwunfocused, 7 " 
-        "$mainMod Ctrl Shift, 8, plugin:xtd:throwunfocused, 8 " 
+        "$mainMod Ctrl Shift, 1, plugin:xtd:throwunfocused, 1 "
+        "$mainMod Ctrl Shift, 2, plugin:xtd:throwunfocused, 2 "
+        "$mainMod Ctrl Shift, 3, plugin:xtd:throwunfocused, 3 "
+        "$mainMod Ctrl Shift, 4, plugin:xtd:throwunfocused, 4 "
+        "$mainMod Ctrl Shift, 5, plugin:xtd:throwunfocused, 5 "
+        "$mainMod Ctrl Shift, 6, plugin:xtd:throwunfocused, 6 "
+        "$mainMod Ctrl Shift, 7, plugin:xtd:throwunfocused, 7 "
+        "$mainMod Ctrl Shift, 8, plugin:xtd:throwunfocused, 8 "
         "$mainMod Ctrl Shift, 9, plugin:xtd:throwunfocused, 9 "
-        "$mainMod Ctrl Shift, 0, plugin:xtd:throwunfocused,10 "  
+        "$mainMod Ctrl Shift, 0, plugin:xtd:throwunfocused,10 "
         "$mainMod, mouse_up, workspace, e-1"
         "$mainMod, mouse_down, workspace, e+1"
       ];
