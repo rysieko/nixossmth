@@ -216,7 +216,7 @@
           "workspace 2, float on,match:tag music"
           "workspace 6, match:tag screanshare"
           "workspace 2,float on, match:class org.kde.kdeconnect.app"
-          "float on, match:class kitty"
+          "float on, match:class hyprpwcenter"
           "float on, match:class hyprland-share-picker"
           "suppress_event maximize, match:class . "
           "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
