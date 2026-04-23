@@ -93,27 +93,27 @@
       text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
     '';
     ".config/fastfetch/config.jsonc".text = ''
-        {
-        "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json", 
-        "modules": [
-          "title",
-          "separator",
-          "os",
-          "host",
-          "kernel",
-          "shell",
-          "wm",
-          "terminal",
-          "cpu",
-          "gpu",
-          "memory",
-          "localip",
-          ],
-        "logo": {
-        "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
-        "source": "${FETCHLOGO}",      // Built-in logo name or file path
-        }  
-      }'';
+              {
+              "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json", 
+              "modules": [
+                "title",
+                "separator",
+                "os",
+                "host",
+                "kernel",
+                "shell",
+                "wm",
+                "terminal",
+      333          "cpu",
+                "gpu",
+                "memory",
+                "localip",
+                ],
+              "logo": {
+              "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
+              "source": "${FETCHLOGO}",      // Built-in logo name or file path
+              }  
+            }'';
   };
   home.sessionVariables = {
     mainMod = "SUPER";

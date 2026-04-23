@@ -158,21 +158,18 @@
           "$mainMod, Escape, exec, pkill -9 gamescope"
           "$mainMod, F1, exec, pkill -9 steam"
           "$mainMod, F2, exec, pkill -9 waybar && waybar "
-
-          "$mainMod, F3, exec, pkill -9 hyprpaper; hyprpaper"
+          "$mainMod, F3, exec, pkill -9 awww; awww img ${config.stylix.image}"
           "$mainMod SHIFT, P, exec, hyprpicker -f rgb -a"
           "$mainMod, Print, exec, hyprshot -o ~/Obrazy/Screenshots/ -z -t 0 --mode region "
-          "$mainMod, C, exec, protonvpn connect | notify-send \"VPN\" \"VPN connected\""
-          "$mainMod, V, exec, protonvpn disconnect | notify-send \"VPN\" \"VPN disconnected\""
-          "Ctrl Shift, 1, movetoworkspace, 1" # NOTE: code:10 = key 1"
-          "Ctrl Shift, 2, movetoworkspace, 2" # NOTE: code:11 = key 2
-          "Ctrl Shift, 3, movetoworkspace, 3" # NOTE: code:12 = key 3
-          "Ctrl Shift, 4, movetoworkspace, 4" # NOTE: code:13 = key 4
-          "Ctrl Shift, 5, movetoworkspace, 5" # NOTE: code:14 = key 5
-          "Ctrl Shift, 6, movetoworkspace, 6" # NOTE: code:15 = key 6
-          "Ctrl Shift, 7, movetoworkspace, 7" # NOTE: code:16 = key 7
-          "Ctrl Shift, 8, movetoworkspace, 8" # NOTE: code:17 = key 8
-          "Ctrl Shift, 9, movetoworkspace, 9" # NOTE: code:18 = key 9
+          "Ctrl Shift, 1, movetoworkspace, 1"
+          "Ctrl Shift, 2, movetoworkspace, 2"
+          "Ctrl Shift, 3, movetoworkspace, 3"
+          "Ctrl Shift, 4, movetoworkspace, 4"
+          "Ctrl Shift, 5, movetoworkspace, 5"
+          "Ctrl Shift, 6, movetoworkspace, 6"
+          "Ctrl Shift, 7, movetoworkspace, 7"
+          "Ctrl Shift, 8, movetoworkspace, 8"
+          "Ctrl Shift, 9, movetoworkspace, 9"
           "Ctrl Shift, 0, movetoworkspace, 10"
           #  "$mainMod Ctrl Shift, 1, plugin:xtd:throwunfocused, 1 "
           #  "$mainMod Ctrl Shift, 2, plugin:xtd:throwunfocused, 2 "
