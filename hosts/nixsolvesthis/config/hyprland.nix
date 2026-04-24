@@ -210,7 +210,7 @@
           "tag +music, match:class spotify"
           "workspace 1, match:tag browser*"
           "workspace 5, match:tag codeeditor*"
-          "workspace 2, match:tag gamelaunch"
+          "workspace 2, match:tag gamelaunch music"
           "workspace 3, match:tag im"
           "workspace 5, match:tag games"
           "workspace 6, match:tag screanshare"

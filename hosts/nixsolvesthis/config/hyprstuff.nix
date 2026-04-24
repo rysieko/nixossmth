@@ -1,8 +1,4 @@
-{
-  lib,
-  config,
-  ...
-}: {
+{...}: {
   services.awww = {
     enable = true;
     extraArgs = [
