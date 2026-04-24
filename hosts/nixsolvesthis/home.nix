@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   inputs,
   ...
 }: {
@@ -32,11 +33,8 @@
     size = 24;
   };
   gtk = {
+    gtk4.theme = lib.mkDefault null;
     enable = true;
-    iconTheme = {
-      name = "candy-icons";
-      package = pkgs.candy-icons;
-    };
   };
   qt.enable = true;
   programs.git = {
@@ -50,7 +48,11 @@
     };
   };
   stylix = {
+    autoEnable = true;
     enable = true;
+    # icons = {
+    #  enable = true;
+    #};
     fonts.sizes = {
       applications = 11;
       desktop = 9;
@@ -61,7 +63,7 @@
     polarity = "dark";
     targets = {
       firefox = {
-        profileNames = ["default"];
+        profileNames = ["rysieko"];
         colors.enable = true;
         colorTheme.enable = true;
         enable = true;

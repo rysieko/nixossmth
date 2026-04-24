@@ -6,9 +6,9 @@
 }: {
   programs.firefox = {
     enable = true;
-    package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
-    configPath = "${config.xdg.configHome}/mozilla/firefox";
-    profiles."default" = {
+    package = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
+    configPath = ".mozilla/firefox";
+    profiles."rysieko" = {
       extensions.force = true;
       search = {
         force = true;

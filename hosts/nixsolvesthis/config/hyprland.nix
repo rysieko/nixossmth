@@ -197,7 +197,7 @@
         ];
 
         windowrule = [
-          "tag +browser, match:class firefox"
+          "tag +browser, match:class firefox-nightly"
           "tag +games, match:class gamescope"
           "tag +games, match:class steam_app"
           "tag +gamelaunch, match:class steam"
@@ -208,9 +208,10 @@
           "tag +codeeditor, match:class codium"
           "tag +screanshare, match:class com.obsproject.Studio"
           "tag +music, match:class spotify"
-          "workspace 1, match:tag browser*"
-          "workspace 5, match:tag codeeditor*"
-          "workspace 2, match:tag gamelaunch music"
+          "workspace 1, match:tag browser"
+          "workspace 5, match:tag codeeditor"
+          "workspace 2, match:tag gamelaunch"
+          "workspace 2, match:tag music"
           "workspace 3, match:tag im"
           "workspace 5, match:tag games"
           "workspace 6, match:tag screanshare"

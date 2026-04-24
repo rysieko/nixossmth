@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   # https://search.nixos.org/
@@ -46,13 +47,22 @@
     alejandra
     nh
   ];
-  fonts.packages = with pkgs.nerd-fonts; [
-    fira-code
-    droid-sans-mono
-    noto
-    hack
-    ubuntu
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs;
+      [
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
+        liberation_ttf
+        fira-code
+        fira-code-symbols
+        mplus-outline-fonts.githubRelease
+        dina-font
+        proggyfonts
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  };
   programs.git.enable = true;
   programs.neovim.enable = true;
   programs.kdeconnect.enable = true;
