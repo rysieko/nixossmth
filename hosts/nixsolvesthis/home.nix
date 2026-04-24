@@ -129,7 +129,6 @@
       }'';
   };
   home.sessionVariables = {
-    mainMod = "SUPER";
     EDITOR = "nvim";
 
     XCURSOR_SIZE = 24;

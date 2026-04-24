@@ -184,6 +184,13 @@
           #"$mainMod, mouse_up, workspace, e-1"
           #"$mainMod, mouse_down, workspace, e+1"
         ];
+        layerrule = [
+          {
+            name = "no_anim_for_selection";
+            no_anim = "on";
+            "match:namespace" = "selection";
+          }
+        ];
 
         bindd = [
           "$mainMod, mouse_down, next workspace, workspace, e+1"
