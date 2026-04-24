@@ -2,6 +2,7 @@
   description = "nix solves this smth";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    firefox-nightly = "github:nix-community/flake-firefox-nightly";
     hyprland.url = "github:hyprwm/hyprland";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

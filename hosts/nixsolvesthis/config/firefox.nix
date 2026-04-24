@@ -1,6 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
+    package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles."default" = {
       extensions.force = true;
       search = {
