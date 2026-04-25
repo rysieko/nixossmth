@@ -7,21 +7,17 @@
   # https://search.nixos.org/
   environment.systemPackages = with pkgs; [
     wget
-    protonup-ng
+
     hyprland-qt-support
     git
     cliphist
     prismlauncher
-    lutris
-    nordic
-    candy-icons
-    catppuccin-grub
+    #  lutris
     hyprlauncher
     fastfetch
     spotify-cli-linux
     btop
     spotify
-    godot-mono
     mangohud
     udiskie
     wine
@@ -32,7 +28,6 @@
     hyprpaper
     gh
     hyprshot
-    pavucontrol
     cmatrix
     feh
     hyprpwcenter
