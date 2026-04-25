@@ -25,12 +25,13 @@
     color = config.lib.stylix.colors;
   in {
     text = ''
-      global base03-r = "${color.base03-rgb-r}"
-      global base03-g = "${color.base03-rgb-g}"
-      global base03-b = "${color.base03-rgb-b}"
-      global base0D-r = "${color.base0D-rgb-r}"
-      global base0D-b = "${color.base0D-rgb-b}"
-      global base03-g = "${color.base0D-rgb-g}"
+      base03_r = "${color.base03-rgb-r}"
+      base03_g = "${color.base03-rgb-g}"
+      base03_b = "${color.base03-rgb-b}"
+      base0D_r = "${color.base0D-rgb-r}"
+      base0D_b = "${color.base0D-rgb-b}"
+      base0D_g = "${color.base0D-rgb-g}"
+      wallpaper = "${config.stylix.image}"
     '';
   };
 }

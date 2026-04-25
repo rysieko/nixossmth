@@ -1,3 +1,9 @@
 {
-    "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix"
+  "Lua.workspace.library": [
+    "./stubs"
+  ],
+  "Lua.diagnostics.globals": [
+    "hl"
+  ]
 }
+
