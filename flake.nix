@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
-    hyprland.url = "github:hyprwm/hyprland";
+    hyprland.url = "github:vaxerski/Hyprland/lua-lua-lua-lua-lua-lua-lua";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
