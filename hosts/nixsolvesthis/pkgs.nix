@@ -46,6 +46,7 @@
     nixd
     alejandra
     nh
+    lua-language-server
   ];
   fonts = {
     enableDefaultPackages = true;
