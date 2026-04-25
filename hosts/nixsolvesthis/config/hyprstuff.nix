@@ -73,7 +73,7 @@
       in [
         {
           monitor = "DP-1";
-          text = "cmd[update:600] $TIME";
+          text = "cmd[update:600]echo $TIME";
           position = "0,400";
           halign = "center";
           valign = "center";
@@ -84,7 +84,7 @@
         {
           monitor = "DP-1";
           text = "cmd[update:8640000] date +%F";
-          position = "0,2nh c50";
+          position = "0,250";
           halign = "center";
           valign = "center";
           color = "rgb(${colors.base01-rgb-r},${colors.base01-rgb-g},${colors.base01-rgb-b})";
