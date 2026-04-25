@@ -26,6 +26,15 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprlock = {
+      url = github:mcgi5sr2/hyprlock/feature/video-background;
+      inputs = {
+        hyprgraphics.follows = "hyprland";
+        hyprutils.follows = "hyprland";
+        hyprlang.follows = "hyprland";
+        hyprwayland-scanner.follows = "hyprland";
+      };
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -41,6 +50,7 @@
     nix-index-database,
     spicetify-nix,
     dolphin-overlay,
+    hyprlock,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
