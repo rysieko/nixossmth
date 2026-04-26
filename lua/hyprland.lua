@@ -3,7 +3,7 @@ local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "hyprlauncher"
 require("var")
-require("addons.script")
+require("addons/scripts")
 hl.on("hyprland.start", function () 
   hl.exec_cmd("steam")
   hl.exec_cmd("swaync")

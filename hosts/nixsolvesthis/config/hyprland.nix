@@ -8,7 +8,7 @@
 
   wayland.windowManager.hyprland = let
     hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-    hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+    #hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
   in {
     plugins = [
       #      hyprplugins.hyprtrails
@@ -20,8 +20,8 @@
     package = hyprflake.hyprland;
     portalPackage = hyprflake.xdg-desktop-portal-hyprland;
   };
-  xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
-  xdg.configFile."hypr/addons/scripts.lua".source = ./hyprland_addons;
+  xdg.configFile."hypr/hyprland.lua".source = ../../../../lua/hyprland.lua;
+  xdg.configFile."hypr/addons/scripts.lua".source = ../../../../lua/hyprland_addons/scripts.lua;
   xdg.configFile."hypr/var.lua" = let
     color = config.lib.stylix.colors;
   in {

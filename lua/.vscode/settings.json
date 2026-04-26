@@ -1,6 +1,6 @@
 {
   "Lua.workspace.library": [
-    "./.vscode"
+    "./stubs/"
   ],
   "Lua.diagnostics.globals": [
     "hl"
