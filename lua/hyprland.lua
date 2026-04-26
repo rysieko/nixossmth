@@ -196,6 +196,13 @@ hl.window_rule({
     workspace = 5
 })
 hl.window_rule({
+    name = "vesktop",
+    match = {
+        class = "vesktop"
+    },
+    workspace = 3
+})
+hl.window_rule({
     name = "vscodium",
     match = {
         class = "codium",

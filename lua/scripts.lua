@@ -5,7 +5,7 @@ hl.on("layer.opened", function(l)
     end
 end)
 hl.on("layer.closed",function(l)
-    if l.namespace ~= "awww-daemon" and  hl.get_layer(3) ~= "hyprlock" then
+    if l.namespace ~= "awww-daemon" and l.namespace ~= "hyprlock" then
         hl.exec_cmd("aww-daemon")
     end 
 end)
