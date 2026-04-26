@@ -21,7 +21,7 @@
     portalPackage = hyprflake.xdg-desktop-portal-hyprland;
   };
   xdg.configFile."hypr/hyprland.lua".source = ../../../lua/hyprland.lua;
-  xdg.configFile."hypr/addons/scripts.lua".source = ../../../lua5/scripts.lua;
+  xdg.configFile."hypr/addons/scripts.lua".source = ../../../lua/scripts.lua;
   xdg.configFile."hypr/var.lua" = let
     color = config.lib.stylix.colors;
   in {
