@@ -3,10 +3,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
-    hyprland.url = "github:vaxerski/Hyprland/lua-lua-lua-lua-lua-lua-lua";
+    hyprland.url = "github:hyprwm/hyprland";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
     stylix = {
       url = "github:nix-community/stylix";
@@ -27,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprlock = {
-      url = github:mcgi5sr2/hyprlock/feature/video-background;
+      url = "github:mcgi5sr2/hyprlock/feature/video-background";
       inputs = {
         hyprgraphics.follows = "hyprland";
         hyprutils.follows = "hyprland";
@@ -45,7 +44,6 @@
     self,
     nixpkgs,
     stylix,
-    nix-cachyos-kernel,
     hyprland,
     nix-index-database,
     spicetify-nix,
