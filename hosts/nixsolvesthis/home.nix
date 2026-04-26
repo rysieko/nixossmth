@@ -62,6 +62,9 @@
     };
     polarity = "dark";
     targets = {
+      vscode = {
+        enable = false;
+      };
       firefox = {
         profileNames = ["rysieko"];
         colors.enable = true;

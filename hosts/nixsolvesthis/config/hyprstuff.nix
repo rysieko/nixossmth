@@ -79,7 +79,7 @@
           valign = "center";
           color = "rgb(${colors.base01-rgb-r},${colors.base01-rgb-g},${colors.base01-rgb-b})";
           font_size = 128;
-          font = "noto";
+          font_family = "noto";
         }
         {
           monitor = "DP-1";
@@ -89,7 +89,7 @@
           valign = "center";
           color = "rgb(${colors.base01-rgb-r},${colors.base01-rgb-g},${colors.base01-rgb-b})";
           font_size = 52;
-          font = "noto";
+          font_family = "noto";
         }
       ];
     };

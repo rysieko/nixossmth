@@ -3,11 +3,12 @@ local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "hyprlauncher"
 require("var")
+require("addons.script")
 hl.on("hyprland.start", function () 
   hl.exec_cmd("steam")
   hl.exec_cmd("swaync")
   hl.exec_cmd("waybar")
-  hl.exec_cmd("awww img  ~/nixossmth/hosts/nixsolvesthis/config/wallpapers/deltarune.gif")
+  hl.exec_cmd("awww-daemon")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("vesktop")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
