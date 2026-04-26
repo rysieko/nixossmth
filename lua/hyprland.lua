@@ -1,7 +1,7 @@
-local mainMod     = "SUPER"
-local terminal    = "kitty"
-local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+mainMod     = "SUPER"
+terminal    = "kitty"
+fileManager = "dolphin"
+menu        = "hyprlauncher"
 require("var")
 require("addons/scripts")
 require("windows")
@@ -124,4 +124,3 @@ hl.layer_rule({
     match = { namespace = "selection", },
 })
 
-l
