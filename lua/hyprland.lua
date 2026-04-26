@@ -4,6 +4,9 @@ local fileManager = "dolphin"
 local menu        = "hyprlauncher"
 require("var")
 require("addons/scripts")
+require("windows")
+require("binds")
+
 hl.on("hyprland.start", function () 
   hl.exec_cmd("steam")
   hl.exec_cmd("swaync")
@@ -115,185 +118,10 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "slidefade", style = "slidefade 30%" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(mainMod .. " + q", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("wlogout"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + Tab", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(1))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. "+ SHIFT + P", hl.dsp.exec_cmd("hyprpicker -f rgb -a"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("spotifycli --next"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("spotifycli --prev"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("spotifycli --playpause"))
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -o ~/Obrazy/Screenshots/ -z -t 0 --mode region "))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("pkill -9 gamescope"))
-hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("pkill -9 steam"))
-hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("pkill -9 waybar | waybar"))
-hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd("pkill -9 awww; awww img ${config.stylix.image} "))
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind("CTRL + SHIFT + " .. key,        hl.dsp.window.move({ workspace = i }))
-end
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
-
--- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.layer_rule({
     name = "no_anim_for_selection",
     no_anim = true,
     match = { namespace = "selection", },
 })
 
-local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
-
-    suppress_event = "maximize",
-})
---suppressMaximizeRule:set_enabled(false)
-
-hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
-
-    no_focus = true,
-})
-hl.window_rule({
-    name = "browser",
-    match = {
-        class = "firefox-nightly",
-    },
-    workspace = 1
-})
-hl.window_rule({
-    name = "games",
-    match = {
-        class = "gamescope"
-    },
-    workspace = 5
-})
-hl.window_rule({
-    name = "vesktop",
-    match = {
-        class = "vesktop"
-    },
-    workspace = 3
-})
-hl.window_rule({
-    name = "vscodium",
-    match = {
-        class = "codium",
-    },
-    workspace = 4
-})
-hl.window_rule({
-    name = "obs",
-    match = {
-        class = "com.obsproject.Studio",
-    },
-    workspace = 6,
-})
-hl.window_rule({
-    name = "spotify",
-    match = {
-        class = "spotify",
-    },
-    workspace = 2,
-})
-hl.window_rule({
-    name = "dolphin",
-    match = {
-        class = "dolphin",
-    },
-    float = true,
-})
-hl.window_rule({
-    name = "kdeconnect",
-    match = {
-        class = "org.kde.kdeconnect.app",
-    },
-    float = true,
-})
-hl.window_rule({
-    name = "hyprpwcenter",
-    match = {
-        class = "hyprpwcenter",
-    },
-    float = true,
-})
-hl.window_rule({
-    name = "hyprland-share-picker",
-    match = {
-        class = "hyprland-share-picker",
-    },
-    float = true,
-})
-hl.window_rule({
-    name = "steam",
-    match = {
-        class = "steam",
-    },
-    tag = "gamelaunch",
-})
-hl.window_rule({
-    name = "lutris",
-    match = {
-        class = "lutris",
-    },
-    tag = "gamelaunch"
-})
-hl.window_rule({
-    name = "prism",
-    match = {
-        class = "org.prismlauncher.PrismLauncher",
-    },
-    tag = "gamelaunch",
-})
-hl.window_rule({
-    name = "gamelaunch move",
-    match = {
-        tag = "gamelaunch",
-    },
-    workspace = 2,
-})
-
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- Hyprland-run windowrule
-hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
-
-    move  = "20 monitor_h-120",
-    float = true,
-})
+l

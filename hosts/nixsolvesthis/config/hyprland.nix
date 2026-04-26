@@ -22,6 +22,8 @@
   };
   xdg.configFile."hypr/hyprland.lua".source = ../../../lua/hyprland.lua;
   xdg.configFile."hypr/addons/scripts.lua".source = ../../../lua/scripts.lua;
+  xdg.configFile."hypr/binds.lua".source = ../../../lua/binds.lua;
+  xdg.configFile."hypr/windows.lua".source = ../../../lua/windows.lua;
   xdg.configFile."hypr/var.lua" = let
     color = config.lib.stylix.colors;
   in {
