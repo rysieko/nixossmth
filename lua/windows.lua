@@ -120,8 +120,7 @@ hl.window_rule({
     },
     workspace = 2,
 })
-
-
+hl.workspace
 
 -- Hyprland-run windowrule
 hl.window_rule({
@@ -131,3 +130,8 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+gaming = hl.workspace_rule(
+    workspace = 5,
+    no_shadow = true,
+    
+)
