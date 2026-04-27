@@ -66,6 +66,7 @@
       vscode = {
         enable = false;
       };
+        nvf.enable = false;
       firefox = {
         profileNames = ["rysieko"];
         colors.enable = true;

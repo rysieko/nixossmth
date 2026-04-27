@@ -21,4 +21,4 @@ hl.on("window.kill",function (w)
         hl.exec_cmd("aww-daemon")
         hl.dsp.toggle_special("game")
     end
-end)    
+end) 

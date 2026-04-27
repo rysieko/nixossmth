@@ -42,6 +42,7 @@
     alejandra
     nh
     lua-language-server
+    stylua
   ];
   fonts = {
     enableDefaultPackages = true;

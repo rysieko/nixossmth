@@ -9,5 +9,6 @@
     ./waybar.nix
     ./swaync.nix
     ./firefox.nix
+    ./nvf.nix
   ];
 }
