@@ -38,6 +38,10 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -49,6 +53,7 @@
     spicetify-nix,
     dolphin-overlay,
     hyprlock,
+    nvf,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
@@ -61,6 +66,7 @@
         inputs.nix-gaming-edge.nixosModules.default
         nix-index-database.nixosModules.default
         stylix.nixosModules.stylix
+        nvf.nixosModules.default 
       ];
     };
     nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {
