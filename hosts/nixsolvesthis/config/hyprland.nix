@@ -37,4 +37,5 @@
       wallpaper = "${config.stylix.image}"
     '';
   };
+  xdg.configFile."hypr/stubs".source = ${src.hyprland}/share/hypr/stubs;
 }
