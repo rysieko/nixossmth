@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "~/.config/hypr/stubs/"
+    ]
+  },
+  "diagnostics": {
+    "globals": ["hl"]
+  }
+}
