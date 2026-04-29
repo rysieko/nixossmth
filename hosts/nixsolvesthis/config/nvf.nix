@@ -1,4 +1,4 @@
-{...}: {
+{lib,...}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -24,15 +24,26 @@
             setupOpts = {
               formatters = {
                 "alejandra".command = "alejandra";
+                "stylua".command = "stylua";
               };
             };
           };
         };
+        autocmds = [{
+                event = [""];
+                pattern = ["*"];
+                desc = "format";
+                callback = lib.generators.mkLuaInline ''
+                function()
+                conform.format({ bufnr = args.buf })
+                end
+                '';
+        }];
         telescope = {
           enable = true;
         };
         lazy = {
-          enable = true;
+                enable = true;
         };
         autocomplete = {
           blink-cmp = {
