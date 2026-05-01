@@ -12,7 +12,7 @@
     git
     cliphist
     prismlauncher
-    #  lutris
+                # lutris
     hyprlauncher
     fastfetch
     spotify-cli-linux

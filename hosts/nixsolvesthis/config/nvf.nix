@@ -1,23 +1,16 @@
-{lib,...}: {
+{lib,config,...}: {
   programs.nvf = {
     enable = true;
     settings = {
       vim = {
-        startPlugins = ["neo-tree-nvim"];
-        keymaps = [
-          {
-            key = "<leader>n";
-            mode = "n";
-            silent = true;
-            action = "<cmd>Telescope find files";
-          }
-          {
-            key = "<leader>l";
-            mode = ["n" "x"];
-            silent = true;
-            action = "<cmd>cnext<CR>";
-          }
-        ];
+        theme = {
+          name = "nord";
+        enable = true;
+        }; 
+        options = { 
+         shiftwidth = 2;
+         };
+          startPlugins = ["neo-tree-nvim"];
         formatter = {
           conform-nvim = {
             enable = true;
@@ -29,18 +22,8 @@
             };
           };
         };
-        autocmds = [{
-                event = [""];
-                pattern = ["*"];
-                desc = "format";
-                callback = lib.generators.mkLuaInline ''
-                function()
-                conform.format({ bufnr = args.buf })
-                end
-                '';
-        }];
-        telescope = {
-          enable = true;
+       telescope = {
+          enable = true; 
         };
         lazy = {
                 enable = true;
@@ -57,6 +40,10 @@
         };
         lsp = {
           enable = true;
+        };
+        statusline.lualine = {
+          enable = true;
+          theme = "auto";
         };
         visuals = {
           nvim-web-devicons = {
