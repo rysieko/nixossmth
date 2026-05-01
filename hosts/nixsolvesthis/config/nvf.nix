@@ -9,8 +9,8 @@
         }; 
         options = { 
          shiftwidth = 2;
-         };
-          startPlugins = ["neo-tree-nvim"];
+        };
+        startPlugins = ["neo-tree-nvim"];
         formatter = {
           conform-nvim = {
             enable = true;
@@ -26,7 +26,7 @@
           enable = true; 
         };
         lazy = {
-                enable = true;
+          enable = true;
         };
         autocomplete = {
           blink-cmp = {
@@ -40,6 +40,7 @@
         };
         lsp = {
           enable = true;
+          formatOnSave = true;
         };
         statusline.lualine = {
           enable = true;

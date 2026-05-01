@@ -133,9 +133,21 @@
         }  
       }'';
   };
+  xdg.userDirs = {
+    pictures = "${config.home.homeDirectory}/Obrazy";
+    download = "${config.home.homeDirectory}/Pobrane";
+    music = "${config.home.homeDirectory}/Muzyka";
+    templates = "${config.home.homeDirectory}/Szablony";
+    projects = "${config.home.homeDirectory}/Projekty";
+    documents = "${config.home.homeDirectory}/Dokumenty";
+    videos = "${config.home.homeDirectory}/Wideo";
+    publicShare = "${config.home.homeDirectory}/Publiczne";
+    desktop = "${config.home.homeDirectory}/Pulpit";
+    createDirectories = true;
+  };
   home.sessionVariables = {
     EDITOR = "nvim";
-
+    NIXPKGS_ALLOW_UNFREE = 1;
     XCURSOR_SIZE = 24;
     HYPRCURSOR_SIZE = 24;
     XDG_TERMINAL_COMMAND = "kitty";

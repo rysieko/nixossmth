@@ -34,6 +34,37 @@
         hyprwayland-scanner.follows = "hyprland";
       };
     };
+    hyprtoolkit = {
+      url = github:hyprwm/hyprtoolkit;
+      inputs = {
+        hyprgraphics.follows = "hyprland";
+        hyprlang.follows = "hyprland";
+        hyprwayland-scanner.follows = "hyprland";
+        aquamarine.follows = "hyprland";
+        hyprutils.follows = "hyprland";
+      };
+    };
+    hyprshutdown = {
+      url = github:hyprwm/hyprshutdown;
+      inputs = {
+        hyprgraphics.follows = "hyprland";
+        hyprutils.follows = "hyprland";
+        aquamarine.follows = "hyprland";
+        hyprtoolkit.follows = "hyprtoolkit";
+        
+      };
+    };
+    hyprlauncher = {
+      url = github:hyprwm/hyprlauncher;
+      inputs = {
+        hyprgraphics.follows = "hyprland";
+        hyprlang.follows = "hyprland";
+        aquamarine.follows = "hyprland";
+        hyprtoolkit.follows = "hyprtoolkit";
+        hyprutils.follows = "hyprland";
+        hyprwire.follows = "hyprland";
+        };
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -54,6 +85,9 @@
     dolphin-overlay,
     hyprlock,
     nvf,
+    hyprshutdown,
+    hyprtoolkit,
+    hyprlauncher,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {

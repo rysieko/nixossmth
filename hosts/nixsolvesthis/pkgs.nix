@@ -13,7 +13,7 @@
     cliphist
     prismlauncher
                 # lutris
-    hyprlauncher
+    inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.hyprshutdown
     fastfetch
     spotify-cli-linux
     btop
@@ -22,12 +22,11 @@
     udiskie
     wine
     kitty
-    hyprshutdown
+    inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.hyprlauncher
     swaynotificationcenter
     wlogout
-    hyprpaper
     gh
-    hyprshot
+    libnotify
     cmatrix
     feh
     hyprpwcenter
