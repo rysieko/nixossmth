@@ -1,11 +1,11 @@
-{lib,config,...}: {
+{...}: {
   programs.nvf = {
     enable = true;
     settings = {
       vim = {
         theme = {
           name = "nord";
-        enable = true;
+              enable = true;
         }; 
         options = { 
          shiftwidth = 2;
@@ -57,6 +57,7 @@
             enable = true;
           };
         };
+        withPython3 = true;
         languages = {
           lua = {
             enable = true;
@@ -85,6 +86,17 @@
             };
             format = {
               type = ["alejandra"];
+            };
+              };
+               python = {
+              enable = true;
+              extraDiagnostics = {
+                enable = true; 
+                types =  ["mypy"];
+              };
+              format =  {
+                  enable = true;
+                  type = ["ruff"];
             };
           };
         };

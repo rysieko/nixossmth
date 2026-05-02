@@ -17,7 +17,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("spotifycli --prev"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("spotifycli --playpause"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
-    "grim -g (slurp) |wl-copy && wl-paste > ~~/Obrazy/Screenshots/Screenshot-$(date +%F_%T).png  | notify-send \"Screenshot took and copied\" "))
+    "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2 notify-send \"Screenshot took and copied\" \" :) \" "))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("pkill -9 gamescope"))
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("pkill -9 steam"))
 hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("pkill -9 waybar | waybar"))

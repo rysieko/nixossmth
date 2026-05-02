@@ -12,7 +12,7 @@
     git
     cliphist
     prismlauncher
-                # lutris
+    #  lutris
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.hyprshutdown
     fastfetch
     spotify-cli-linux
@@ -42,6 +42,14 @@
     nh
     lua-language-server
     stylua
+    deadnix 
+    ruff
+    mypy
+    pyright
+    slurp
+    wl-clipboard
+    grim
+    xdg-user-dirs
   ];
   fonts = {
     enableDefaultPackages = true;

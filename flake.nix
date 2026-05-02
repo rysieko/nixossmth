@@ -35,7 +35,7 @@
       };
     };
     hyprtoolkit = {
-      url = github:hyprwm/hyprtoolkit;
+      url = "github:hyprwm/hyprtoolkit";
       inputs = {
         hyprgraphics.follows = "hyprland";
         hyprlang.follows = "hyprland";
@@ -45,7 +45,7 @@
       };
     };
     hyprshutdown = {
-      url = github:hyprwm/hyprshutdown;
+      url = "github:hyprwm/hyprshutdown";
       inputs = {
         hyprgraphics.follows = "hyprland";
         hyprutils.follows = "hyprland";
@@ -55,7 +55,7 @@
       };
     };
     hyprlauncher = {
-      url = github:hyprwm/hyprlauncher;
+      url = "github:hyprwm/hyprlauncher";
       inputs = {
         hyprgraphics.follows = "hyprland";
         hyprlang.follows = "hyprland";
