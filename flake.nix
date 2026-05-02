@@ -9,20 +9,10 @@
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
     stylix = {
       url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs"; 
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-gaming-edge = {
-      url = "github:powerofthe69/nix-gaming-edge";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.millennium.follows = "millennium";
-    };
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprlock = {

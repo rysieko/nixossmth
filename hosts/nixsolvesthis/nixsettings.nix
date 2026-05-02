@@ -1,7 +1,5 @@
 {inputs, ...}: {
-  nixpkgs.overlays = with inputs; [
-           nix-gaming-edge.overlays.default
-        nix-gaming-edge.overlays.proton-cachyos
+  nixpkgs.overlays = with inputs; [ 
         millennium.overlays.default
   ];
 
