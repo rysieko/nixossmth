@@ -70,7 +70,6 @@
     nixpkgs,
     stylix,
     hyprland,
-    nix-index-database,
     spicetify-nix,
     dolphin-overlay,
     hyprlock,
@@ -87,8 +86,6 @@
         ./hosts/nixsolvesthis/configuration.nix
         ./hosts/nixsolvesthis/nixsettings.nix
         inputs.home-manager.nixosModules.default
-        inputs.nix-gaming-edge.nixosModules.default
-        nix-index-database.nixosModules.default
         stylix.nixosModules.stylix
         nvf.nixosModules.default 
       ];

@@ -480,11 +480,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1777752370,
-        "narHash": "sha256-5McRjIeO/LO4XfEjdxewZP/zr8YsY6VasKZxG+h2lQs=",
+        "lastModified": 1777754489,
+        "narHash": "sha256-tNOF32bo6ei/S0ORmqre3+LiXBWPQpoa0S5AczD609c=",
         "owner": "hyprwm",
         "repo": "hyprland",
-        "rev": "5202ab22f53c3298d599dbae0781037a1b1184d7",
+        "rev": "fe17cea39ed9e001b61035e8edbbf2f12871659b",
         "type": "github"
       },
       "original": {
@@ -1159,49 +1159,6 @@
         "type": "github"
       }
     },
-    "nix-gaming-edge": {
-      "inputs": {
-        "millennium": [
-          "millennium"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1777730630,
-        "narHash": "sha256-bRJ0gAxAMtv6X4sFgiJfEZMRaHxzT37yp6Mj0rAULcI=",
-        "owner": "powerofthe69",
-        "repo": "nix-gaming-edge",
-        "rev": "78319d4a685238bb5611dc7a35d6ca812a035af4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "powerofthe69",
-        "repo": "nix-gaming-edge",
-        "type": "github"
-      }
-    },
-    "nix-index-database": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1777181277,
-        "narHash": "sha256-yVJbd07ortDRAttDFmDV5p220aOLTHgVAx//0nW/xW8=",
-        "owner": "nix-community",
-        "repo": "nix-index-database",
-        "rev": "b8eb7acee0f7604fe1bf6a5b3dcf5254369180fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nix-index-database",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1743890059,
@@ -1475,8 +1432,6 @@
         "hyprshutdown": "hyprshutdown",
         "hyprtoolkit": "hyprtoolkit_2",
         "millennium": "millennium",
-        "nix-gaming-edge": "nix-gaming-edge",
-        "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_9",
         "nvf": "nvf",
         "spicetify-nix": "spicetify-nix",
