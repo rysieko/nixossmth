@@ -50,6 +50,7 @@
     wl-clipboard
     grim
     xdg-user-dirs
+    r2modman
   ];
   fonts = {
     enableDefaultPackages = true;
