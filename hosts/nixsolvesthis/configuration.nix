@@ -12,14 +12,6 @@
     ./pkgs.nix
     inputs.home-manager.nixosModules.default
   ];
-  services.displayManager.ly = {
-    enable = true; # TRUE
-    #settings = { # for testing in vm
-    # auto_login_session = "hyprland";
-    #auto_login_user = "rysieko";
-    # };
-  };
-  # use limine as a bootloader
   boot.loader.limine = {
     enable = true;
     efiSupport = true;

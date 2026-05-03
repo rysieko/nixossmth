@@ -12,7 +12,7 @@
     git
     cliphist
     prismlauncher
-    #  lutris
+    #    lutris
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.hyprshutdown
     fastfetch
     spotify-cli-linux

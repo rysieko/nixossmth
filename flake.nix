@@ -68,15 +68,9 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     stylix,
-    hyprland,
-    spicetify-nix,
-    dolphin-overlay,
-    hyprlock,
     nvf,
-    hyprshutdown,
-    hyprtoolkit,
-    hyprlauncher,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
@@ -85,7 +79,8 @@
         ./hosts/nixsolvesthis/gamingstuff.nix
         ./hosts/nixsolvesthis/configuration.nix
         ./hosts/nixsolvesthis/nixsettings.nix
-        inputs.home-manager.nixosModules.default
+        ./hosts/nixsolvesthis/greetd.nix
+        home-manager.nixosModules.default
         stylix.nixosModules.stylix
         nvf.nixosModules.default 
       ];

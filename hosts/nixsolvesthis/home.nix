@@ -135,6 +135,7 @@
   };
   xdg.userDirs = {
     enable = true;
+    setSessionVariables = true;
     pictures = "${config.home.homeDirectory}/Obrazy";
     download = "${config.home.homeDirectory}/Pobrane";
     music = "${config.home.homeDirectory}/Muzyka";
