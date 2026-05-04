@@ -1,6 +1,9 @@
+local s = require("addons/scripts")
+
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(mainMod .. " + q", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
+hl.bind(mainMod .. " + q", function()
+  s:endApp(hl.get_active_window())
+end)
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Tab", hl.dsp.window.float({ action = "toggle" }))
@@ -18,12 +21,8 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("spotifycli --playpause"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
     "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2 notify-send \"Screenshot took and copied\" \" :) \" "))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("pkill -9 gamescope"))
-hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("pkill -9 steam"))
-hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("pkill -9 waybar | waybar"))
-hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd("pkill -9 awww; awww img ${config.stylix.image} "))
 -- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
+-- Move active window to a workspace with mainMod + SHIFT + 0-9
 for i = 1, 10 do
   local key = i % 10 -- 10 maps to key 0
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))

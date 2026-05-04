@@ -21,7 +21,7 @@
     portalPackage = hyprflake.xdg-desktop-portal-hyprland;
   };
   xdg.configFile."hypr/hyprland.lua".source = ../../../lua/hyprland.lua;
-  xdg.configFile."hypr/addons/scripts.lua".source = ../../../lua/scripts.lua;
+  xdg.configFile."hypr/addons/scripts.lua".source = ../../../lua/addons/scripts.lua;
   xdg.configFile."hypr/binds.lua".source = ../../../lua/binds.lua;
   xdg.configFile."hypr/windows.lua".source = ../../../lua/windows.lua;
   xdg.configFile."hypr/var.lua" = let
@@ -35,7 +35,11 @@
       base0D_b = "${color.base0D-rgb-b}"
       base0D_g = "${color.base0D-rgb-g}"
       wallpaper = "${config.stylix.image}"
+      mainMod     = "SUPER"
+      terminal    = "kitty"
+      fileManager = "dolphin"
+      menu        = "hyprlauncher"
     '';
   };
-  xdg.configFile."hypr/stubs/hl.meta.lua".source = "${inputs.hyprland}/share/hypr/stubs/hl.meta.lua";
+  xdg.configFile."hypr/stubs/hl.meta.lua".source = "${inputs.hyprland}/meta/hl.meta.lua";
 }

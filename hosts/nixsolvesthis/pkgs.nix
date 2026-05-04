@@ -12,7 +12,8 @@
     git
     cliphist
     prismlauncher
-    #    lutris
+    inputs.fok-quote.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # lutris
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.hyprshutdown
     fastfetch
     spotify-cli-linux
@@ -51,6 +52,7 @@
     grim
     xdg-user-dirs
     r2modman
+    mangohud
   ];
   fonts = {
     enableDefaultPackages = true;

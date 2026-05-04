@@ -7,6 +7,7 @@
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
+    fok-quote.url = "github:FokoHetman/fok-quote";
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs"; 

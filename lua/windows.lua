@@ -127,7 +127,3 @@ hl.window_rule({
   move  = "20 monitor_h-120",
   float = true,
 })
-game = hl.workspace_rule({
-  workspace = "5",
-  no_shadow = true
-})

@@ -1,9 +1,4 @@
-mainMod     = "SUPER"
-terminal    = "kitty"
-fileManager = "dolphin"
-menu        = "hyprlauncher"
 require("var")
-require("addons/scripts")
 require("windows")
 require("binds")
 

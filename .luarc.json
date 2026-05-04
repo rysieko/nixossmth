@@ -1,7 +1,7 @@
 {
   "workspace": {
     "library": [
-      "./stubs"
+      "~/.config/hypr/stubs/"
     ]
   },
   "diagnostics": {
