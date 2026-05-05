@@ -27,7 +27,8 @@
     nftables.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [443 80 22 config.services.tailscale.port ];
+      allowedTCPPorts = [443 80 22 4533];
+      allowedUDPPorts = [config.services.tailscale.port];
     };
     defaultGateway = "192.168.0.1";
     useDHCP = lib.mkForce false;
