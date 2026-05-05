@@ -53,6 +53,7 @@
     xdg-user-dirs
     r2modman
     mangohud
+    tailscale
   ];
   fonts = {
     enableDefaultPackages = true;

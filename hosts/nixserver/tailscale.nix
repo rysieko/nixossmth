@@ -9,7 +9,7 @@
   
   services.caddy = {
     enable = true;
-    virtualHosts."nixserver.<TAILNET_NAME>".extraConfig = ''
+    virtualHosts."nixserver.rysieko.github".extraConfig = ''
       reverse_proxy 127.0.0.1:4533
     '';
   };

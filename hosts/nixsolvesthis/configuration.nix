@@ -32,6 +32,7 @@
     "ipv6.method" = "ignore";
     "ipv6.never-default" = "true";
   };
+  services.tailscale.enable = true;
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
