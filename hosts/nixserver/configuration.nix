@@ -11,20 +11,23 @@
   imports = [
     ./hardware-configuration.nix
     ./music.nix
+    ./tailscale.nix
   ];
   time.timeZone = "Europe/Warsaw";
   # Name your host machine
   networking = {
     hostName = "nixserver";
+    networkmanager.enable = true;
     interfaces.eth0.ipv4.addresses = [
       {
         address = "192.168.0.183";
         prefixLength = 24;
       }
     ];
+    nftables.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [443 80 22];
+      allowedTCPPorts = [443 80 22 config.services.tailscale.port ];
     };
     defaultGateway = "192.168.1.1";
     useDHCP = lib.mkForce false;
