@@ -12,8 +12,10 @@
     inputs.nvf.homeManagerModules.default
   ];
   nixpkgs.config.allowUnfree = true; # Home Manager needs a bit of information about you and the paths it should # manage.
-  home.username = "rysieko";
-  home.homeDirectory = "/home/rysieko";
+  home = { 
+    username = "rysieko";        
+    homeDirectory = "/home/rysieko";
+    };
   programs.vesktop = {
     enable = true;
     vencord.settings = {
@@ -80,6 +82,9 @@
         enable = true;
         colors.enable = true;
         fonts.enable = true;
+      };
+      kde = {
+        enable = true;
       };
     };
     image = ./config/wallpapers/deltarune.gif;

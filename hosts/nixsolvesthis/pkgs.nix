@@ -6,8 +6,8 @@
 }: {
   # https://search.nixos.org/
   environment.systemPackages = with pkgs; [
+    
     wget
-
     hyprland-qt-support
     git
     cliphist

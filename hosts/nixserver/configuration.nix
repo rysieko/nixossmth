@@ -10,14 +10,12 @@
   # paths in nix expressions are always relative the file which defines them
   imports = [
     ./hardware-configuration.nix
-    ./pihole.nix
-    ./mc.nix
+    ./music.nix
   ];
   time.timeZone = "Europe/Warsaw";
   # Name your host machine
   networking = {
     hostName = "nixserver";
-    networkmanager.enable = true;
     interfaces.eth0.ipv4.addresses = [
       {
         address = "192.168.0.183";
@@ -76,9 +74,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
-  services.openssh.settings = {
-    PermitRootLogin = "yes";
-  };
   nix.settings.trusted-users = ["192.168.0.141" "rysieko@nixsolvesthis"];
   system.stateVersion = "26.05"; # DO NOT TOUCH YOU FUCKING IDIOT
 }

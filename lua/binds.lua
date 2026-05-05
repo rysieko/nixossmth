@@ -20,7 +20,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("spotifycli --prev"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("spotifycli --playpause"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
-    "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2 notify-send \"Screenshot took and copied\" \" :) \" "))
+    "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2; notify-send \"Screenshot took and copied\" \" :) \" "))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + 0-9
 for i = 1, 10 do
