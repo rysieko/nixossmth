@@ -29,7 +29,7 @@
       enable = true;
       allowedTCPPorts = [443 80 22 config.services.tailscale.port ];
     };
-    defaultGateway = "192.168.1.1";
+    defaultGateway = "192.168.0.1";
     useDHCP = lib.mkForce false;
     nameservers = [
       "8.8.8.8"
