@@ -50,8 +50,7 @@
       "149.112.112.11"
       "9.9.9.11"
     ];
-  };
-  services.resolved.enable = true;
+  }; 
   boot.loader.grub.enable = true;
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
