@@ -25,6 +25,7 @@
       }
     ];
     nftables.enable = true;
+    enableIPv6 = lib.mkForce false;
     firewall = {
       enable = true;
       allowedTCPPorts = [443 80 22 4533];
