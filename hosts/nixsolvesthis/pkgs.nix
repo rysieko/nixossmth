@@ -54,6 +54,17 @@
     r2modman
     mangohud
     tailscale
+    gelly #.overrideAttrs (final: prev: { 
+    #version = "1.2.2";
+    # src = pkgs.fetchFromGitHub {
+    #   owner = "Fingel";
+    #   repo = "gelly";
+    #   tag = "v1.2.2";
+    #   hash = "sha256-qiTT2ZhpV/0qMb7S0JoN9PJfbZa6AnT/rUMEK0KsqfM=";
+    #   cargoHash = "sha256-dPscQzt+n6V3IWJwl61lb5+BlITlMmxncusbjCwdIBU=";
+    # };
+    # }))
+    rose-pine-icon-theme
   ];
   fonts = {
     enableDefaultPackages = true;
@@ -81,4 +92,6 @@
   programs.hyprlock.enable = true;
   programs.gamescope.enable = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 }

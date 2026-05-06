@@ -10,7 +10,7 @@
       MusicFolder = "/navidrome/music";
       PlaylistPath = "/navidrome/playlist";
       DefaultLanguage = "pl";
-      DefaultTheme = "dark"; 
+      DefaultTheme = "AMusic"; 
       EnableTranscodingCancellation = true;
     };
 

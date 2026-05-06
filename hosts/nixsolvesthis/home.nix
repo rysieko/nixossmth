@@ -38,6 +38,10 @@
   gtk = {
     gtk4.theme = lib.mkDefault null;
     enable = true;
+    iconTheme = { 
+      package = pkgs.rose-pine-icon-theme;
+      name = "rose-pine-icons";
+    };
   };
   qt.enable = true;
   programs.git = {

@@ -15,9 +15,9 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 hl.bind(mainMod .. "+ SHIFT + P", hl.dsp.exec_cmd("hyprpicker -f rgb -a"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("spotifycli --next"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("spotifycli --prev"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("spotifycli --playpause"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("gelly -n"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("gelly -p"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("gelly -t"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
     "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2; notify-send \"Screenshot took and copied\" \" :) \" "))

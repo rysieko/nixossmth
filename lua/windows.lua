@@ -61,7 +61,14 @@ hl.window_rule({
   match = {
     class = "spotify",
   },
-  workspace = 2,
+  tag = "music",
+})
+hl.window_rule({
+  name = "navidrome",
+  match = {
+    class = "io.m51.Gelly",
+  },
+  tag = "music",
 })
 hl.window_rule({
   name = "dolphin",
@@ -116,6 +123,13 @@ hl.window_rule({
   name = "gamelaunch move",
   match = {
     tag = "gamelaunch",
+  },
+  workspace = 2,
+})
+hl.window_rule({
+  name = "move music",
+  match = {
+    tag = "music",
   },
   workspace = 2,
 })

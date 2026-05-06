@@ -32,6 +32,23 @@
     "ipv6.method" = "ignore";
     "ipv6.never-default" = "true";
   };
+  systemd.services.tailscale-autoconnect = {
+  description = "Automatic connection to Tailscale";
+  after = [ "network-pre.target" "tailscale.service" ];
+  wants = [ "network-pre.target" "tailscale.service" ];
+  serviceConfig.Type = "oneshot";
+  script = with pkgs; ''
+    # Wait for Tailscale service to start
+    sleep 5
+    # Check if already authenticated
+    status="$(${tailscale}/bin/tailscale status -json | jq -r .BackendState)"
+    if [ "$status" = "Running" ]; then
+      exit 0
+    fi
+    # Authenticate with Tailscale using the pre-auth key
+    ${tailscale}/bin/tailscale up --auth-key file:/etc/tailscale/tskey-reusable
+  '';
+};
   services.tailscale.enable = true;
   services.devmon.enable = true;
   services.gvfs.enable = true;
