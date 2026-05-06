@@ -50,7 +50,12 @@
       "149.112.112.11"
       "9.9.9.11"
     ];
-  }; 
+  };
+  networking.networkmanager.connectionConfig = {
+    "ipv6.method" = "ignore";
+    "ipv6.never-default" = "true";
+  };
+
   boot.loader.grub.enable = true;
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
