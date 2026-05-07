@@ -12,6 +12,8 @@
       DefaultLanguage = "pl";
       DefaultTheme = "AMusic"; 
       EnableTranscodingCancellation = true;
+      EnableInsightsCollector = false;
+
     };
 
   };
