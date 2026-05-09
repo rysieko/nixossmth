@@ -96,5 +96,15 @@
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
-
+  
+  programs.hyprland = let 
+    hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+    in 
+    {
+    enable = true;
+    withUWSM = true;
+    package = hyprflake.hyprland;
+    portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+    
+  };
 }

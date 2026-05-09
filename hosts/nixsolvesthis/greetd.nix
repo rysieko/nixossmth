@@ -4,7 +4,7 @@
   enable = true;
   settings = rec {
     initial_session = {
-      command = "start-hyprland";
+      command = "uwsm start hyprland.desktop";
       user = "rysieko";
     };
     default_session = initial_session;

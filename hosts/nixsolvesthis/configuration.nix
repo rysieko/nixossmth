@@ -4,6 +4,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -25,12 +26,12 @@
     networkmanager.enable = true;
     networkmanager.connectionConfig = {
       "ethernet.mtu" = "1368";
+      "ipv6.method" = "ignore";
+      "ipv6.never-default" = "true";
     };
     useDHCP = false;
-  };
-  networking.networkmanager.connectionConfig = {
-    "ipv6.method" = "ignore";
-    "ipv6.never-default" = "true";
+    enableIPv6 = lib.mkForce false;
+    
   };
   systemd.services.tailscale-autoconnect = {
   description = "Automatic connection to Tailscale";

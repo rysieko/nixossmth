@@ -7,18 +7,18 @@
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   wayland.windowManager.hyprland = let
-    hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-    #hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+    
+    hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
   in {
     plugins = [
-      #      hyprplugins.hyprtrails
-      #     hyprplugins.xtra-dispatchers
+      # hyprplugins.hyprtrails
+      #hyprplugins.xtra-dispatchers
       #    pkgs.hyprlandPlugins.hyprtrails
       #   pkgs.hyprlandPlugins.xtra-dispatchers
     ];
     enable = true;
-    package = hyprflake.hyprland;
-    portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+    package = null;
+    portalPackage = null;
     systemd.enable = false;
   };
   xdg.configFile."hypr/hyprland.lua".source = ../../../lua/hyprland.lua;
