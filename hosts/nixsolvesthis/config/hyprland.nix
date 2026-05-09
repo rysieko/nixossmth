@@ -19,6 +19,7 @@
     enable = true;
     package = hyprflake.hyprland;
     portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+    systemd.enable = false;
   };
   xdg.configFile."hypr/hyprland.lua".source = ../../../lua/hyprland.lua;
   xdg.configFile."hypr/addons/scripts.lua".source = ../../../lua/addons/scripts.lua;

@@ -23,7 +23,8 @@
     udiskie
     wine
     kitty
-    inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.hyprlauncher
+    #inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.
+    hyprlauncher
     swaynotificationcenter
     wlogout
     gh
@@ -96,8 +97,4 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
 
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri;
-  };
 }

@@ -3,7 +3,6 @@
     enable = true;
     systemd = {
       enable = true;
-      target = [ "graphical-session.target" ];
     };
     settings = [
       {
@@ -14,9 +13,15 @@
         spacing = 8;
 
         modules-left = ["cpu" "memory" "temperature"];
-        modules-center = ["hyprland/workspaces"];
+        modules-center = ["hyprland/workspaces" "niri/workspaces"];
         modules-right = ["pulseaudio" "tray" "clock" "custom/notification"];
-
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            active = "";
+	    default = "";
+           };
+        };
         "hyprland/workspaces" = {
           persistent-workspaces = {
             "*" = 5;

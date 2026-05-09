@@ -141,6 +141,7 @@
         "source": "${FETCHLOGO}",      // Built-in logo name or file path
         }  
       }'';
+    ".config/niri/".source = ../../niri;
   };
   xdg.userDirs = {
     enable = true;
@@ -165,7 +166,6 @@
     font = "noto";
     terminalApplication = "kitty";
   };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

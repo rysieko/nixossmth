@@ -8,9 +8,9 @@ spawn-at-startup "swaync"
 prefer-no-csd
 screenshot-path "~/Obrazy/Screenshots/%Y-%m-%d %H-%M-%S-screenshot.png"
 
-xwayland-satelite {
-  path "xwayland-satelite"
-}
+//xwayland-satelite {
+ // path "xwayland-satelite"
+//}
 hotkey-overlay {
     skip-at-startup
 }
@@ -70,7 +70,7 @@ input {
       layout "pl"
     }
   }
-  mod-key = "Super"
+  mod-key "Super"
 
 }
 
@@ -82,9 +82,9 @@ binds {
    Mod+E {spawn "dolphin";}
    Mod+D {spawn "hyprlauncher";}
    Mod+Tab {toggle-window-floating;}
-   Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-left; }
-   Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-right; }
-   Mod+Left {focus-workspace-left;}
-   Mod+Right {focus-workspace-right;}
+   Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+   Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+   Mod+Left {focus-workspace-down;}
+   Mod+Right {focus-workspace-up;}
    Mod+Print {screenshot;}
   }
