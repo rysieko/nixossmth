@@ -4,7 +4,7 @@
   enable = true;
   settings = rec {
     initial_session = {
-      command = "start-hyprland";
+      command = "niri-session";
       user = "rysieko";
     };
     default_session = initial_session;

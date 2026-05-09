@@ -13,13 +13,15 @@
       "bottom"
     ];
   };
-  services.hypridle.enable = true;
-  services.hypridle.settings = {
-    general = {
-      before_sleep_cmd = "loginctl lock-session";
-      after_sleep_cmd = "hyprctl dispatch dpms on";
-      lock_cmd = "pidof hyprlock || hyprlock";
-    };
+  services.hypridle = {
+    enable = true;
+    systemdTarget = "graphical.target";
+    settings = {
+      general = {
+        before_sleep_cmd = "loginctl lock-session";
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        lock_cmd = "pidof hyprlock || hyprlock";
+      };
 
     listener = [
       {
@@ -45,7 +47,8 @@
         timeout = 1800; # 30min
         on-timeout = "systemctl suspend";
       }
-    ];
+      ];
+    };
   };
   programs.hyprlock = {
     enable = true;

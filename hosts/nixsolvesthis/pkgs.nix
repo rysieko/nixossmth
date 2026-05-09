@@ -79,6 +79,7 @@
         mplus-outline-fonts.githubRelease
         dina-font
         proggyfonts
+        xdg-desktop-portal-gnome
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
@@ -94,4 +95,9 @@
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri;
+  };
 }

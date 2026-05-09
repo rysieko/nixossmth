@@ -49,20 +49,6 @@
     ${tailscale}/bin/tailscale up --auth-key file:/etc/tailscale/tskey-reusable
   '';
 };
-  services.tailscale.enable = true;
-  services.devmon.enable = true;
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  services.resolved.enable = true;
-  # users.users.root.initialHashedPassword = "sudo";
-  #auto updates
-  system.autoUpgrade = {
-    enable = true;
-    dates = "weekly";
-  };
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
-  #auto cleanup
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
   services.xserver.xkb.layout = "pl";
@@ -99,6 +85,7 @@
       rysieko = import ./home.nix;
     };
   };
+  
   # do not fucking touch it does not change nixpkgs version it doesnt update the fucking system
   system.stateVersion = "26.05"; # Please read the comment before changing.
 }
