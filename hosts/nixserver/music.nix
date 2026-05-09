@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   services.navidrome = {
     enable = true;
     openFirewall = true;
@@ -13,6 +9,7 @@
       DefaultTheme = "AMusic"; 
       EnableTranscodingCancellation = true;
       EnableInsightsCollector = false;
+
 
     };
 
