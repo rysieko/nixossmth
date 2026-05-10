@@ -3,13 +3,14 @@ require("windows")
 require("binds")
 
 hl.on("hyprland.start", function()
-  hl.exec_cmd("uswm app -- steam")
-  hl.exec_cmd("uswm --app vesktop")
-  hl.exec_cmd("uswm --app swaync")
-  hl.exec_cmd("uswm --app systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("uswm --app wl-paste --type text --watch-cliphist-store")
-  hl.exec_cmd("uswm --app wl-paste --type image --watch cliphist-store")
-  hl.exec_cmd("uswm --app gelly")
+  hl.exec_cmd("uwsm app -- steam")
+  hl.exec_cmd("uwsm --app vesktop")
+  hl.exec_cmd("uwsm --app swaync")
+  hl.exec_cmd("uwsm --app systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("uwsm --app wl-paste --type text --watch-cliphist-store")
+  hl.exec_cmd("uwsm --app wl-paste --type image --watch cliphist-store")
+  hl.exec_cmd("uwsm --app gelly")
+  hl.exec_cmd("aww img " .. wallpaper)
 end)
 hl.config({
   input = {
@@ -75,7 +76,12 @@ hl.config({
 
     -- https://wiki.hypr.land/Configuring/Variables/#blur
     blur             = {
-      enabled = false,
+      enabled = true,
+      size = 6,
+      passes = 4,
+      new_optimizations = true,
+      xray = true,
+      popups = true,
     },
   },
 })

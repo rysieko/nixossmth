@@ -23,15 +23,12 @@
     udiskie
     wine
     kitty
-    #inputs.hyprlauncher.packages.${pkgs.stdenv.hostPlatform.system}.
-    hyprlauncher
     swaynotificationcenter
     wlogout
     gh
     libnotify
     cmatrix
     feh
-    hyprpwcenter
     kdePackages.dolphin
     dolphin-emu
     melonds
@@ -55,17 +52,10 @@
     r2modman
     mangohud
     tailscale
-    gelly #.overrideAttrs (final: prev: { 
-    #version = "1.2.2";
-    # src = pkgs.fetchFromGitHub {
-    #   owner = "Fingel";
-    #   repo = "gelly";
-    #   tag = "v1.2.2";
-    #   hash = "sha256-qiTT2ZhpV/0qMb7S0JoN9PJfbZa6AnT/rUMEK0KsqfM=";
-    #   cargoHash = "sha256-dPscQzt+n6V3IWJwl61lb5+BlITlMmxncusbjCwdIBU=";
-    # };
-    # }))
+    gelly 
+    pwvucontrol
     rose-pine-icon-theme
+    xwayland-satellite
   ];
   fonts = {
     enableDefaultPackages = true;
@@ -95,8 +85,10 @@
   programs.gamescope.enable = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   services.gnome.gnome-keyring.enable = true;
+  services.tailscale.enable = true;
+  services.resolved.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
-  
+  programs.uwsm.enable = true;
   programs.hyprland = let 
     hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
     in 
@@ -106,5 +98,9 @@
     package = hyprflake.hyprland;
     portalPackage = hyprflake.xdg-desktop-portal-hyprland;
     
+  };
+  programs.niri ={
+  enable = true;
+  package =  pkgs.niri;
   };
 }

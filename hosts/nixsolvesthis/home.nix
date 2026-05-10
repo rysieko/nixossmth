@@ -57,15 +57,15 @@
   stylix = {
     autoEnable = true;
     enable = true;
-    # icons = {
-    #  enable = true;
-    #};
     fonts.sizes = {
       applications = 11;
       desktop = 9;
     };
     opacity = {
       desktop = 0.0;
+      applications = 0.8;
+      popups = 0.7;
+      terminal = 0.7;
     };
     polarity = "dark";
     targets = {
@@ -93,6 +93,7 @@
     };
     image = ./config/wallpapers/deltarune.gif;
   };
+  services.hyprpaper.enable = lib.mkForce false;
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 
   # This value determines the Home Manager release that your configuration is
@@ -142,6 +143,9 @@
         }  
       }'';
     ".config/niri/".source = ../../niri;
+  };
+  programs.fuzzel = {
+    enable = true;
   };
   xdg.userDirs = {
     enable = true;

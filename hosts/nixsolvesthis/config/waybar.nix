@@ -13,18 +13,18 @@
         spacing = 8;
 
         modules-left = ["cpu" "memory" "temperature"];
-        modules-center = ["hyprland/workspaces" "niri/workspaces"];
+        modules-center = ["hyprland/workspaces" "niri/workspaces" ];
         modules-right = ["pulseaudio" "tray" "clock" "custom/notification"];
-        "niri/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            active = "";
-	    default = "";
-           };
-        };
         "hyprland/workspaces" = {
           persistent-workspaces = {
             "*" = 5;
+          };
+        };
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+          active = "";
+	  default = "";
           };
         };
 
@@ -49,7 +49,7 @@
           format-icons = {
             default = ["" "" ""];
           };
-          on-click = "hyprpwcenter";
+          on-click = "pwvucontrol";
         };
         clock = {
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";

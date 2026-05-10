@@ -1,7 +1,7 @@
 {inputs, ...}: {
   nixpkgs.overlays = with inputs; [ 
-        millennium.overlays.default
-       
+    millennium.overlays.default
+    niri.overlays.default   
   ];
 
   nix = {

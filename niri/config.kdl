@@ -4,18 +4,39 @@ spawn-at-startup "vesktop"
 spawn-at-startup "gelly"
 spawn-at-startup "hyprlock"
 spawn-at-startup "swaync"
+spawn-at-startup "aww restore"
+
 
 prefer-no-csd
 screenshot-path "~/Obrazy/Screenshots/%Y-%m-%d %H-%M-%S-screenshot.png"
-
-//xwayland-satelite {
- // path "xwayland-satelite"
-//}
+workspace "gaming"
 hotkey-overlay {
     skip-at-startup
 }
 recent-windows {
    off
+}
+blur {
+  passes 4 
+  offset 2
+  saturation 1.1
+}
+layout {
+  border {
+    on
+    width 2
+  }
+   gaps 10
+  default-column-width { proportion 0.7; }
+  focus-ring {
+    off
+  }
+}
+output "DP-1" {
+  mode "2560x1440@180"
+  hot-corners {
+    off
+  }
 }
 animations {
       workspace-switch {
@@ -64,6 +85,7 @@ animations {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.001
     }
 }
+
 input {
   keyboard {
     xkb {
@@ -75,16 +97,57 @@ input {
 }
 
 binds {
-   Mod+Q repeat=false { close-window; }
+   Mod+Q repeat=false {close-window;}
    Mod+Return {spawn "kitty";}
    Mod+Delete {quit;}
    Mod+L repeat=false {spawn "hyprlock";}
    Mod+E {spawn "dolphin";}
-   Mod+D {spawn "hyprlauncher";}
+   Mod+D {spawn "fuzzel";}
+   Mod+F {fullscreen-window;}
    Mod+Tab {toggle-window-floating;}
    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
-   Mod+Left {focus-workspace-down;}
-   Mod+Right {focus-workspace-up;}
+   Mod+Left {focus-column-left;}
+   Mod+Right {focus-column-right;}
+   Mod+Up {focus-workspace-up;}
+   Mod+Down {focus-workspace-down;}
    Mod+Print {screenshot;}
+
+   Mod+O {toggle-overview;}
+
+
   }
+  window-rule  {
+    exclude app-id="gamescope"
+    opacity 0.7
+    background-effect {
+          blur true
+          xray true
+          }
+    geometry-corner-radius 10
+    clip-to-geometry true 
+    draw-border-with-background false
+   }
+  window-rule {
+    match app-id="firefox-nightly"
+    open-maximized true
+  }
+  window-rule {
+    match app-id="gamescope"
+    open-fullscreen true
+    open-on-workspace "gaming"
+  }
+  layer-rule {
+    match namespace="^launcher$"
+    opacity 0.80
+    geometry-corner-radius 10
+    background-effect {
+      blur true
+      xray true
+    }
+}
+layer-rule {
+    match namespace="aww-daemon"
+    place-within-backdrop true
+}
+

@@ -39,7 +39,7 @@
       mainMod     = "SUPER"
       terminal    = "kitty"
       fileManager = "dolphin"
-      menu        = "hyprlauncher"
+      menu        = "fuzzel"
     '';
   };
   xdg.configFile."hypr/stubs/hl.meta.lua".source = "${inputs.hyprland}/meta/hl.meta.lua";

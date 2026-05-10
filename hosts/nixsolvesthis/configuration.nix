@@ -13,14 +13,20 @@
     ./pkgs.nix
     inputs.home-manager.nixosModules.default
   ];
-  boot.loader.limine = {
-    enable = true;
-    efiSupport = true;
-    style.wallpapers = [./config/wallpapers/nordic.jpg];
-    style.interface.resolution = "2560x1440";
+  boot = { 
+    loader= {
+      limine = {
+        enable = true;
+        efiSupport = true;
+        style = { 
+          wallpapers = [./config/wallpapers/nordic.jpg];
+          interface.resolution = "2560x1440";
+        };
+      };
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_zen;
   };
-
-  boot.loader.efi.canTouchEfiVariables = true;
   networking = {
     hostName = "nixsolvesthis";
     networkmanager.enable = true;

@@ -8,6 +8,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
     fok-quote.url = "github:FokoHetman/fok-quote";
+    niri.url = "github:niri-wm/niri";
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs"; 
@@ -45,17 +46,6 @@
         hyprtoolkit.follows = "hyprtoolkit";
         
       };
-    };
-    hyprlauncher = {
-      url = "github:hyprwm/hyprlauncher";
-      inputs = {
-        hyprgraphics.follows = "hyprland";
-        hyprlang.follows = "hyprland";
-        aquamarine.follows = "hyprland";
-        hyprtoolkit.follows = "hyprtoolkit";
-        hyprutils.follows = "hyprland";
-        hyprwire.follows = "hyprland";
-        };
     };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
