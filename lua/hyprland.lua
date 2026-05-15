@@ -4,13 +4,13 @@ require("binds")
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("uwsm app -- steam")
-  hl.exec_cmd("uwsm --app vesktop")
-  hl.exec_cmd("uwsm --app swaync")
-  hl.exec_cmd("uwsm --app systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("uwsm --app wl-paste --type text --watch-cliphist-store")
-  hl.exec_cmd("uwsm --app wl-paste --type image --watch cliphist-store")
-  hl.exec_cmd("uwsm --app gelly")
-  hl.exec_cmd("aww img " .. wallpaper)
+  hl.exec_cmd("uwsm app -- vesktop")
+  hl.exec_cmd("uwsm app -- swaync")
+  hl.exec_cmd("uwsm app -- systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("uwsm app -- wl-paste --type text --watch-cliphist-store")
+  hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist-store")
+  hl.exec_cmd("uwsm app -- gelly")
+  hl.exec_cmd("uwsm app -- hyprlock")
 end)
 hl.config({
   input = {
@@ -28,14 +28,14 @@ hl.monitor({
   position = "0x0",
   scale = 1,
   bitdepth = 10,
-  cm = "hdr",
+  cm = "wide",
   vrr = 0,
   supports_hdr = 1,
   supports_wide_color = 1,
-  sdr_max_luminance = 135,
-  sdr_min_luminance = 0.035,
-  sdrbrightness = 0.9,
-  sdr_eotf = 1,
+  --  sdr_max_luminance = 135,
+  --  sdr_min_luminance = 0.035,
+  --  sdrbrightness = 0.9,
+  --  sdr_eotf = 1,
 })
 hl.config({
   misc = {
@@ -65,23 +65,22 @@ hl.config({
 
     -- Change transparency of focused and unfocused windows
     active_opacity   = 1.0,
-    inactive_opacity = 1.0,
+    inactive_opacity = 0.8,
 
     shadow           = {
-      enabled      = true,
-      range        = 4,
-      render_power = 3,
+      enabled      = false,
+      range        = 2,
+      render_power = 2,
       color        = "rgb(0,0,0)",
     },
-
-    -- https://wiki.hypr.land/Configuring/Variables/#blur
     blur             = {
-      enabled = true,
-      size = 6,
+      enabled = true, -- kurwa blur bluruj
+      size = 5,
       passes = 4,
       new_optimizations = true,
       xray = true,
       popups = true,
+      ignore_opacity = true,
     },
   },
 })

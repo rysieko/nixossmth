@@ -6,7 +6,7 @@
     initial_session = {
         #   command = "uwsm start hyprland.desktop";
       user = "rysieko";
-      command = "niri-session";
+      command = "uwsm start hyprland.desktop";
     };
     default_session = initial_session;
     };

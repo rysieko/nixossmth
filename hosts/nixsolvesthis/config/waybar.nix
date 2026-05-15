@@ -13,7 +13,7 @@
         spacing = 8;
 
         modules-left = ["cpu" "memory" "temperature"];
-        modules-center = ["hyprland/workspaces" "niri/workspaces" ];
+        modules-center = ["hyprland/workspaces" ];
         modules-right = ["pulseaudio" "tray" "clock" "custom/notification"];
         "hyprland/workspaces" = {
           persistent-workspaces = {

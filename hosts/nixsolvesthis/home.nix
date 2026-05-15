@@ -19,6 +19,11 @@
   programs.vesktop = {
     enable = true;
     vencord.settings = {
+      autoUpdate = true;
+      #      themes = [../../DiscordPlus.theme.css];
+      #  enabledThemes = ["DiscordPlus.theme.css"];      
+      transparent = true;
+      frameless = true;
       plugins = {
         MessageLogger = {
           enabled = true;
@@ -83,9 +88,18 @@
         enable = true;
       };
       vencord = {
-        enable = true;
+        enable = false;
         colors.enable = true;
         fonts.enable = true;
+        extraCss = ''
+            *  = {
+              opacity: 0.0;
+            }
+            text {
+              opacity 1.0
+            };
+
+        '';
       };
       kde = {
         enable = true;

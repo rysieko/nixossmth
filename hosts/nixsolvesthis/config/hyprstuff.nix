@@ -6,12 +6,7 @@
   ...
 }: {
   services.awww = {
-    enable = true;
-    extraArgs = [
-      "--no-cache"
-      "--layer"
-      "bottom"
-    ];
+    enable = true; 
   };
   services.hypridle = {
     enable = true;
@@ -66,7 +61,7 @@
           bezier = "easeOutQuint";
         };
         fade_out = {
-          duration = 100;
+          duration = 20;
           bezier = "easeOutQuint";
         };
       };

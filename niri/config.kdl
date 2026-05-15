@@ -9,7 +9,9 @@ spawn-at-startup "aww restore"
 
 prefer-no-csd
 screenshot-path "~/Obrazy/Screenshots/%Y-%m-%d %H-%M-%S-screenshot.png"
+workspace "music+games"
 workspace "gaming"
+workspace "dc"
 hotkey-overlay {
     skip-at-startup
 }
@@ -22,13 +24,14 @@ blur {
   saturation 1.1
 }
 layout {
-  border {
+background-color "transparent"
+   focus-ring {
     on
     width 2
   }
    gaps 10
   default-column-width { proportion 0.7; }
-  focus-ring {
+  border {
     off
   }
 }
@@ -67,7 +70,7 @@ animations {
     config-notification-open-close {
         spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
     }
-
+io.m51.Gelly
     exit-confirmation-open-close {
         spring damping-ratio=0.6 stiffness=500 epsilon=0.01
     }
@@ -114,12 +117,30 @@ binds {
    Mod+Print {screenshot;}
 
    Mod+O {toggle-overview;}
-
-
+     Mod+1 { focus-workspace 1; }
+  Mod+2 { focus-workspace "stuff"; }
+  Mod+3 { focus-workspace "dc"; }
+  Mod+4 { focus-workspace 4; }
+  Mod+5 { focus-workspace "gaming"; }
+  Mod+6 { focus-workspace 6; }
+  Mod+7 { focus-workspace 7; }
+  Mod+8 { focus-workspace 8; }
+  Mod+9 { focus-workspace 9; }
+  Mod+Shift+1 { move-column-to-workspace 1; }
+  Mod+Shift+2 { move-column-to-workspace 2; }
+  Mod+Shift+3 { move-column-to-workspace 3; }
+  Mod+Shift+4 { move-column-to-workspace 4; }
+  Mod+Shift+5 { move-column-to-workspace 5; }
+  Mod+Shift+6 { move-column-to-workspace 6; }
+  Mod+Shift+7 { move-column-to-workspace 7; }
+  Mod+Shift+8 { move-column-to-workspace 8; }
+  Mod+Shift+9 { move-column-to-workspace 9; }
   }
   window-rule  {
     exclude app-id="gamescope"
-    opacity 0.7
+    opacity 0.8
+  match app-id=r#".*"#
+  
     background-effect {
           blur true
           xray true
@@ -133,6 +154,15 @@ binds {
     open-maximized true
   }
   window-rule {
+    match app-id="vesktop"
+    open-on-workspace "dc"
+  }
+  window-rule {
+    match app-id="steam"
+    match app-id="lutris"
+    match app-id="io.m51.Gelly"
+    open-on-workspace "stuff"
+  window-rule {
     match app-id="gamescope"
     open-fullscreen true
     open-on-workspace "gaming"
@@ -140,14 +170,15 @@ binds {
   layer-rule {
     match namespace="^launcher$"
     opacity 0.80
-    geometry-corner-radius 10
+    clip-to-geometry tru
+    geometry-corner-radius 15
     background-effect {
       blur true
       xray true
     }
 }
 layer-rule {
-    match namespace="aww-daemon"
+    match namespace="awww-daemon"
     place-within-backdrop true
 }
 
