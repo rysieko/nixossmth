@@ -2,25 +2,10 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }: {
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-
-   wayland.windowManager.hyprland = let
-    
-   hyprplugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
-   in {
-   plugins = [
-    #     hyprplugins.hyprtrails
-    #hyprplugins.xtra-dispatchers
-      #    pkgs.hyprlandPlugins.hyprtrails
-      #   pkgs.hyprlandPlugins.xtra-dispatchers
-  ];
-   enable = true;
-   package = null;
-   portalPackage = null;
-   systemd.enable = false;
-   };
   xdg.configFile = {
     "hypr/hyprland.lua".source = ../../../lua/hyprland.lua;
     "hypr/addons/scripts.lua".source = ../../../lua/addons/scripts.lua;
@@ -38,11 +23,11 @@
         base0D_g = "${color.base0D-rgb-g}"
         wallpaper = "${config.stylix.image}"
         mainMod     = "SUPER"
-        terminal    = "kitty"
-        fileManager = "dolphin"
+        terminal    = "ghostty +new-window"
+        fileManager = "ghostty -e  fish -c yazi "
         menu        = "fuzzel"
       '';
     };
-  "hypr/stubs/hl.meta.lua".source = "${inputs.hyprland}/meta/hl.meta.lua";
+  "hypr/stubs/hl.meta.lua".source = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/usr/share/hypr/hl.meta.lua";
   };
 }

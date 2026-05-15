@@ -7,9 +7,9 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("uwsm app -- vesktop")
   hl.exec_cmd("uwsm app -- swaync")
   hl.exec_cmd("uwsm app -- systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("uwsm app -- wl-paste --type text --watch-cliphist-store")
+  hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist-store")
   hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist-store")
-  hl.exec_cmd("uwsm app -- gelly")
+  hl.exec_cmd("uwsm app -- subtui")
   hl.exec_cmd("uwsm app -- hyprlock")
 end)
 hl.config({
@@ -28,14 +28,14 @@ hl.monitor({
   position = "0x0",
   scale = 1,
   bitdepth = 10,
-  cm = "wide",
+  cm = "hdr",
   vrr = 0,
   supports_hdr = 1,
   supports_wide_color = 1,
-  --  sdr_max_luminance = 135,
-  --  sdr_min_luminance = 0.035,
-  --  sdrbrightness = 0.9,
-  --  sdr_eotf = 1,
+  sdr_max_luminance = 145,
+  sdr_min_luminance = 0.045,
+  sdrbrightness = 0.9,
+  sdr_eotf = 1,
 })
 hl.config({
   misc = {
@@ -60,23 +60,23 @@ hl.config({
 })
 hl.config({
   decoration = {
-    rounding         = 10,
-    rounding_power   = 2,
+    rounding       = 10,
+    rounding_power = 2,
 
     -- Change transparency of focused and unfocused windows
-    active_opacity   = 1.0,
-    inactive_opacity = 0.8,
+    --   active_opacity   = 1.0,
+    --   inactive_opacity = 0.8,
 
-    shadow           = {
+    shadow         = {
       enabled      = false,
       range        = 2,
       render_power = 2,
       color        = "rgb(0,0,0)",
     },
-    blur             = {
-      enabled = true, -- kurwa blur bluruj
+    blur           = {
+      enabled = false, -- kurwa blur bluruj
       size = 5,
-      passes = 4,
+      passes = 3,
       new_optimizations = true,
       xray = true,
       popups = true,

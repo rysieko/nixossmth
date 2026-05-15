@@ -21,6 +21,7 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(" gelly -t"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
     "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2; notify-send \"Screenshot took and copied\" \" :) \" "))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + 0-9
 for i = 1, 10 do

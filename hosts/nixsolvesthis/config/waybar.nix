@@ -45,7 +45,7 @@
         };
 
         pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
+          format = "{volume}% {icon}";# {format_source}";
           format-icons = {
             default = ["" "" ""];
           };

@@ -13,7 +13,7 @@
     cliphist
     prismlauncher
     inputs.fok-quote.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # lutris
+    inputs.subtui.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.hyprshutdown
     fastfetch
     spotify-cli-linux
@@ -52,10 +52,8 @@
     r2modman
     mangohud
     tailscale
-    gelly 
     pwvucontrol
     rose-pine-icon-theme
-    xwayland-satellite
   ];
   fonts = {
     enableDefaultPackages = true;

@@ -3,7 +3,6 @@
     ./hyprland.nix
     ./hyprstuff.nix
     ./kitty.nix
-    ./spicetify.nix
     ./fish.nix
     ./waybar.nix
     ./swaync.nix

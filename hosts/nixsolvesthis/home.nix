@@ -6,8 +6,7 @@
   ...
 }: {
   imports = [
-    ./config/config.nix
-    inputs.spicetify-nix.homeManagerModules.default
+    ./config/config.nix 
     inputs.stylix.homeModules.stylix
     inputs.nvf.homeManagerModules.default
   ];
@@ -68,9 +67,9 @@
     };
     opacity = {
       desktop = 0.0;
-      applications = 0.8;
+      applications = 1.0;
       popups = 0.7;
-      terminal = 0.7;
+      terminal = 1.0;
     };
     polarity = "dark";
     targets = {
@@ -108,6 +107,13 @@
     image = ./config/wallpapers/deltarune.gif;
   };
   services.hyprpaper.enable = lib.mkForce false;
+  programs.yazi = { 
+    enable = true;
+    enableFishIntegration = true;
+  };
+  programs.mpv = {
+    enable = true;
+  };
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 
   # This value determines the Home Manager release that your configuration is
@@ -157,6 +163,104 @@
         }  
       }'';
     ".config/niri/".source = ../../niri;
+    ".config/subtui/config.toml".text = ''' 
+      [app]
+replaygain = 'track' # Options: 'track', 'album', 'no' https://mpv.io/manual/stable/#options-replaygain
+gapless_playback = 'yes' # Options:  'yes', 'no', 'weak' https://mpv.io/manual/stable/#options-gapless-audio
+desktop_notifications = false
+discord_rich_presence = true
+mouse_support         = false
+default_volume = 90  
+[theme]
+display_album_art  = true
+[columns]
+  [columns.songs]
+  track_number = false
+  title = true
+  artist = true
+  album = true
+  year = false
+  genre = false
+  rating = false
+  play_count = false
+  duration = true
+
+  [columns.albums]
+  name = true
+  artist = true
+  song_count = false
+  year = false
+  genre = false
+  rating = true
+  duration = true
+
+  [columns.artists]
+  name = true
+  album_count = true
+  rating = true
+
+[keybinds]
+  [keybinds.global]
+  cycle_focus_next = ['tab']
+  cycle_focus_prev = ['shift+tab']
+  back             = ['backspace', 'esc']
+  help             = ['?']
+  quit             = ['q']
+  hard_quit        = ['ctrl+c']
+
+  [keybinds.navigation]
+  up                = ['k', 'up']
+  down              = ['j', 'down']
+  top               = ['gg']
+  bottom            = ['G']
+  select            = ['enter']
+  toggle_selection  = ['x']
+  play_shuffled     = ['alt+enter']
+  go_half_page_up   = ['ctrl+u']
+  go_half_page_down = ['ctrl+d']
+
+  [keybinds.search]
+  focus_search = ['/']
+  filter_next  = ['ctrl+n']
+  filter_prev  = ['ctrl+b']
+
+  [keybinds.library]
+  add_to_playlist = ['A']
+  add_rating      = ['R']
+  go_to_album     = ['ga']
+  go_to_artist    = ['gr']
+  rate_0          = ['0']
+  rate_1          = ['1']
+  rate_2          = ['2']
+  rate_3          = ['3']
+  rate_4          = ['4']
+  view_favorites   = ['F']
+
+  rate_5          = ['5']
+
+  [keybinds.media]
+  play_pause          = ['p', 'P']
+  next                = ['n']
+  prev                = ['b']
+  shuffle             = ['S']
+  loop                = ['L']
+  restart             = ['w']
+  rewind              = [',']
+  forward             = [';']
+  volume_up           = ['v']
+  volume_down         = ['V']
+  toggle_media_player = ['m', 'M']
+
+  [keybinds.queue]
+  toggle_queue_view = ['Q']
+  queue_next        = ['N']
+  queue_last        = ['a']
+  remove_from_queue = ['d']
+  clear_queue       = ['D']
+  move_up           = ['K']
+  move_down         = ['J']
+      ''; 
+      
   };
   programs.fuzzel = {
     enable = true;
