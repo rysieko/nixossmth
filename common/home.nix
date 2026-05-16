@@ -66,6 +66,7 @@
       _7zz
       imagemagick
     ];
+    shellWrapperName = "y";
     enableFishIntegration = true;
   keymap = {
     mgr.prepend_keymap = [ {
