@@ -19,7 +19,7 @@
         enable = true;
         efiSupport = true;
         style = { 
-          wallpapers = [./config/wallpapers/nordic.jpg];
+          wallpapers = [../../common/config/wallpapers/nordic.jpg];
           interface.resolution = "2560x1440";
         };
       };
