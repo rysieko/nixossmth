@@ -7,6 +7,7 @@
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     fok-quote.url = "github:FokoHetman/fok-quote";
     subtui.url = "github:MattiaPun/SubTUI";
+    concord.url = "github:chojs23/concord";
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs"; 
@@ -66,7 +67,6 @@
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/nixsolvesthis/gamingstuff.nix
         ./hosts/nixsolvesthis/configuration.nix
         ./hosts/nixsolvesthis/nixsettings.nix
         ./hosts/nixsolvesthis/greetd.nix

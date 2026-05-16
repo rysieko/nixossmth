@@ -54,6 +54,7 @@
     tailscale
     pwvucontrol
     rose-pine-icon-theme
+    inputs.concord.packages.${system}.default
   ];
   fonts = {
     enableDefaultPackages = true;
@@ -95,6 +96,10 @@
    withUWSM = true;
    package = hyprflake.hyprland;
    portalPackage = hyprflake.xdg-desktop-portal-hyprland;  
+  }; 
+  programs.steam = {
+    enable = true;
+    #  package = pkgs.millennium-steam;
   };
   #programs.niri ={
   #enable = true;
