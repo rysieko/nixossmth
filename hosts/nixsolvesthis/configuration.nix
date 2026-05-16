@@ -89,7 +89,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      rysieko = import ./home.nix;
+      rysieko = import ../../common/home.nix;
     };
   };
   

@@ -2,25 +2,21 @@
   pkgs,
   inputs,
   lib,
+  self,
   ...
 }: {
   # https://search.nixos.org/
   environment.systemPackages = with pkgs; [
-    
     wget
     hyprland-qt-support
-    git
     cliphist
     prismlauncher
     inputs.fok-quote.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.subtui.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.hyprshutdown
+    hyprshutdown
     fastfetch
-    spotify-cli-linux
     btop
-    spotify
     mangohud
-    udiskie
     wine
     kitty
     swaynotificationcenter
@@ -52,6 +48,7 @@
     r2modman
     mangohud
     tailscale
+    inputs.self.packages.x86_64-linux.nvim
     pwvucontrol
     rose-pine-icon-theme
     inputs.concord.packages.${system}.default

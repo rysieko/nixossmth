@@ -1,8 +1,6 @@
 {...}: {
-  programs.nvf = {
-    enable = true;
-    settings = {
-      vim = {
+ 
+  config.vim = {
         theme = {
           name = "nord";
           enable = true;
@@ -95,11 +93,9 @@
                 enable = true; 
                 types =  ["mypy"];
               };
-              format =  {
-                  enable = true;
-                  type = ["ruff"];
-            };
-          };
+        format =  {
+          enable = true;
+          type = ["ruff"];
         };
       };
     };

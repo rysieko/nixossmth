@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
-    hyprland.url = "github:hyprwm/hyprland";
+    hyprland.url = "github:hyprwm/hyprland/v0.55.2";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     fok-quote.url = "github:FokoHetman/fok-quote";
     subtui.url = "github:MattiaPun/SubTUI";
@@ -69,10 +69,9 @@
       modules = [
         ./hosts/nixsolvesthis/configuration.nix
         ./hosts/nixsolvesthis/nixsettings.nix
-        ./hosts/nixsolvesthis/greetd.nix
+        ./common/greetd.nix
         home-manager.nixosModules.default
-        stylix.nixosModules.stylix
-        nvf.nixosModules.default 
+        stylix.nixosModules.stylix 
       ];
     };
     nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {
@@ -81,5 +80,14 @@
         ./hosts/nixserver/configuration.nix
       ];
     };
+    packages.x86_64-linux = {
+        nvim = 
+        (nvf.lib.neovimConfiguration { 
+            pkgs = nixpkgs.legacyPackages.x86_64-linux;
+            modules = [./nvf.nix ];
+        })
+      .neovim;
+      default = self.packages.x86_64-linux.nvim;
+      }; 
   };
-}
+} 

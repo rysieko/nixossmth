@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./config/config.nix 
+    ./config/default.nix 
     inputs.stylix.homeModules.stylix
     inputs.nvf.homeManagerModules.default
   ];
@@ -43,8 +43,7 @@
     gtk4.theme = lib.mkDefault null;
     enable = true;
     iconTheme = { 
-      package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine-icons";
+      package = lib.mkDefault pkgs.rose-pine-icon-theme;
     };
   };
   qt.enable = true;
@@ -109,6 +108,11 @@
   services.hyprpaper.enable = lib.mkForce false;
   programs.yazi = { 
     enable = true;
+    extraPackages = with pkgs; [ 
+      mpv
+      _7zz
+      imagemagick
+    ];
     enableFishIntegration = true;
   keymap = {
     mgr.prepend_keymap = [ {
@@ -170,8 +174,7 @@
         "source": "${FETCHLOGO}",      // Built-in logo name or file path
         }  
       }'';
-    ".config/niri/".source = ../../niri;
-    ".config/subtui/config.toml".source = ../../subtui.toml; 
+    ".config/subtui/config.toml".source = ./subtui.toml; 
       
   };
   programs.fuzzel = {
@@ -203,3 +206,4 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
+
