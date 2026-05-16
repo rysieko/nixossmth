@@ -9,7 +9,7 @@
         options = { 
          shiftwidth = 2;
         };
-        startPlugins = ["neo-tree-nvim"];
+    #startPlugins = ["neo-tree-nvim"];
         formatter = {
           conform-nvim = {
             enable = true;
@@ -51,11 +51,11 @@
           };
         };
 
-        filetree = {
-          neo-tree = {
-            enable = true;
-          };
-        };
+     filetree = {
+         neo-tree = {
+           enable = true;
+         };
+       };
         withPython3 = true;
         languages = {
           lua = {
