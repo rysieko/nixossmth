@@ -5,12 +5,12 @@
   pkgs,
   inputs,
   lib,
+  self,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./pkgs.nix
+    
     inputs.home-manager.nixosModules.default
   ];
   boot = { 
@@ -19,7 +19,7 @@
         enable = true;
         efiSupport = true;
         style = { 
-          wallpapers = [../../common/config/wallpapers/nordic.jpg];
+          wallpapers = [ ../../common/config/wallpapers/nordic.jpg ];
           interface.resolution = "2560x1440";
         };
       };

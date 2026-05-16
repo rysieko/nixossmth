@@ -25,31 +25,7 @@
         hyprlang.follows = "hyprland";
         hyprwayland-scanner.follows = "hyprland";
       };
-    };
-    hyprtoolkit = {
-      url = "github:hyprwm/hyprtoolkit";
-      inputs = {
-        hyprgraphics.follows = "hyprland";
-        hyprlang.follows = "hyprland";
-        hyprwayland-scanner.follows = "hyprland";
-        aquamarine.follows = "hyprland";
-        hyprutils.follows = "hyprland";
-      };
-    };
-    hyprshutdown = {
-      url = "github:hyprwm/hyprshutdown";
-      inputs = {
-        hyprgraphics.follows = "hyprland";
-        hyprutils.follows = "hyprland";
-        aquamarine.follows = "hyprland";
-        hyprtoolkit.follows = "hyprtoolkit";
-        
-      };
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    }; 
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,9 +45,11 @@
       modules = [
         ./hosts/nixsolvesthis/configuration.nix
         ./hosts/nixsolvesthis/nixsettings.nix
+        ./hosts/nixsolvesthis/hardware-configuration.nix
+        ./hosts/nixsolvesthis/pkgs.nix
         ./common/greetd.nix
-        home-manager.nixosModules.default
-        stylix.nixosModules.stylix 
+          home-manager.nixosModules.default
+        stylix.nixosModules.stylix
       ];
     };
     nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {
