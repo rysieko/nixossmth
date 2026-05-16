@@ -1,1 +1,1 @@
-{...}:{ import = [./term.nix ./firefox.nix ./fish.nix ./hyprstuff.nix ./swaync.nix ./waybar.nix ];}
+{...}:{ imports = [./term.nix ./firefox.nix ./fish.nix ./hyprstuff.nix ./swaync.nix ./waybar.nix ./stylix.nix ];}
