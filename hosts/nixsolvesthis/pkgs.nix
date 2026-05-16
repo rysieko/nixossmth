@@ -37,7 +37,7 @@
     nh
     lua-language-server
     stylua
-    deadnix 
+    deadnix
     ruff
     mypy
     pyright
@@ -85,15 +85,14 @@
   services.resolved.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
   programs.uwsm.enable = true;
-    programs.hyprland = let 
-   hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-   in 
-   {
-   enable = true;
-   withUWSM = true;
-   package = hyprflake.hyprland;
-   portalPackage = hyprflake.xdg-desktop-portal-hyprland;  
-  }; 
+  programs.hyprland = let
+    hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+  in {
+    enable = true;
+    withUWSM = true;
+    package = hyprflake.hyprland;
+    portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+  };
   programs.steam = {
     enable = true;
     #  package = pkgs.millennium-steam;

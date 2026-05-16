@@ -10,16 +10,16 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    
+
     inputs.home-manager.nixosModules.default
   ];
-  boot = { 
-    loader= {
+  boot = {
+    loader = {
       limine = {
         enable = true;
         efiSupport = true;
-        style = { 
-          wallpapers = [ ../../common/config/wallpapers/nordic.jpg ];
+        style = {
+          wallpapers = [../../common/config/wallpapers/nordic.jpg];
           interface.resolution = "2560x1440";
         };
       };
@@ -37,25 +37,24 @@
     };
     useDHCP = false;
     enableIPv6 = lib.mkForce false;
-    
   };
   systemd.services.tailscale-autoconnect = {
-  description = "Automatic connection to Tailscale";
-  after = [ "network-pre.target" "tailscale.service" ];
-  wants = [ "network-pre.target" "tailscale.service" ];
-  serviceConfig.Type = "oneshot";
-  script = with pkgs; ''
-    # Wait for Tailscale service to start
-    sleep 5
-    # Check if already authenticated
-    status="$(${tailscale}/bin/tailscale status -json | jq -r .BackendState)"
-    if [ "$status" = "Running" ]; then
-      exit 0
-    fi
-    # Authenticate with Tailscale using the pre-auth key
-    ${tailscale}/bin/tailscale up --auth-key file:/etc/tailscale/tskey-reusable
-  '';
-};
+    description = "Automatic connection to Tailscale";
+    after = ["network-pre.target" "tailscale.service"];
+    wants = ["network-pre.target" "tailscale.service"];
+    serviceConfig.Type = "oneshot";
+    script = with pkgs; ''
+      # Wait for Tailscale service to start
+      sleep 5
+      # Check if already authenticated
+      status="$(${tailscale}/bin/tailscale status -json | jq -r .BackendState)"
+      if [ "$status" = "Running" ]; then
+        exit 0
+      fi
+      # Authenticate with Tailscale using the pre-auth key
+      ${tailscale}/bin/tailscale up --auth-key file:/etc/tailscale/tskey-reusable
+    '';
+  };
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
   services.xserver.xkb.layout = "pl";
@@ -92,7 +91,7 @@
       rysieko = import ../../common/home.nix;
     };
   };
-  
+
   # do not fucking touch it does not change nixpkgs version it doesnt update the fucking system
   system.stateVersion = "26.05"; # Please read the comment before changing.
 }

@@ -1,5 +1,5 @@
 {...}: {
-stylix = {
+  stylix = {
     autoEnable = true;
     enable = true;
     fonts.sizes = {
@@ -17,7 +17,7 @@ stylix = {
       vscode = {
         enable = false;
       };
-        nvf.enable = false;
+      nvf.enable = false;
       firefox = {
         profileNames = ["rysieko"];
         colors.enable = true;
@@ -32,12 +32,12 @@ stylix = {
         colors.enable = true;
         fonts.enable = true;
         extraCss = ''
-            *  = {
-              opacity: 0.0;
-            }
-            text {
-              opacity 1.0
-            };
+          *  = {
+            opacity: 0.0;
+          }
+          text {
+            opacity 1.0
+          };
 
         '';
       };
@@ -46,4 +46,5 @@ stylix = {
       };
     };
     image = ./wallpapers/deltarune.gif;
-  }; }
+  };
+}

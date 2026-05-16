@@ -6,7 +6,7 @@
   ...
 }: {
   services.awww = {
-    enable = true; 
+    enable = true;
   };
   services.hypridle = {
     enable = true;
@@ -18,30 +18,30 @@
         lock_cmd = "pidof hyprlock || hyprlock";
       };
 
-    listener = [
-      {
-        timeout = 180; # 3min.
-        on-timeout = "brightnessctl -s set 10"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
-        on-resume = "brightnessctl -r"; # monitor backlight restore.
-      }
-      {
-        timeout = 180; # 3min.
-        on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0";
-        on-resume = "brightnessctl -rd rgb:kbd_backlight";
-      }
-      {
-        timeout = 300; # 5min
-        on-timeout = "loginctl lock-session";
-      }
-      {
-        timeout = 330; # 5.5min
-        on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
-        on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
-      }
-      {
-        timeout = 1800; # 30min
-        on-timeout = "systemctl suspend";
-      }
+      listener = [
+        {
+          timeout = 180; # 3min.
+          on-timeout = "brightnessctl -s set 10"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
+          on-resume = "brightnessctl -r"; # monitor backlight restore.
+        }
+        {
+          timeout = 180; # 3min.
+          on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0";
+          on-resume = "brightnessctl -rd rgb:kbd_backlight";
+        }
+        {
+          timeout = 300; # 5min
+          on-timeout = "loginctl lock-session";
+        }
+        {
+          timeout = 330; # 5.5min
+          on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
+          on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+        }
+        {
+          timeout = 1800; # 30min
+          on-timeout = "systemctl suspend";
+        }
       ];
     };
   };
@@ -93,7 +93,7 @@
     };
   };
   home.sessionVariables.NIXOS_OZONE_WL = "1";
- 
+
   xdg.configFile = {
     "hypr/hyprland.lua".source = ../hyprland/hyprland.lua;
     "hypr/addons/scripts.lua".source = ../hyprland/addons/scripts.lua;
@@ -101,7 +101,7 @@
     "hypr/windows.lua".source = ../hyprland/windows.lua;
     "hypr/var.lua" = let
       color = config.lib.stylix.colors;
-     in {
+    in {
       text = ''
         base03_r = "${color.base03-rgb-r}"
         base03_g = "${color.base03-rgb-g}"
@@ -116,6 +116,6 @@
         menu        = "fuzzel"
       '';
     };
-  "hypr/stubs/hl.meta.lua".source = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/usr/share/hypr/hl.meta.lua";
- };
+    "hypr/stubs/hl.meta.lua".source = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/usr/share/hypr/hl.meta.lua";
+  };
 }

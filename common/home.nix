@@ -6,21 +6,21 @@
   ...
 }: {
   imports = [
-    ./config/default.nix 
+    ./config/default.nix
     inputs.stylix.homeModules.stylix
     inputs.nvf.homeManagerModules.default
   ];
   nixpkgs.config.allowUnfree = true; # Home Manager needs a bit of information about you and the paths it should # manage.
-  home = { 
-    username = "rysieko";        
+  home = {
+    username = "rysieko";
     homeDirectory = "/home/rysieko";
-    };
+  };
   programs.vesktop = {
     enable = true;
     vencord.settings = {
       autoUpdate = true;
       #      themes = [../../DiscordPlus.theme.css];
-      #  enabledThemes = ["DiscordPlus.theme.css"];      
+      #  enabledThemes = ["DiscordPlus.theme.css"];
       transparent = true;
       frameless = true;
       plugins = {
@@ -42,7 +42,7 @@
   gtk = {
     gtk4.theme = lib.mkDefault null;
     enable = true;
-    iconTheme = { 
+    iconTheme = {
       package = lib.mkDefault pkgs.rose-pine-icon-theme;
       name = "Rosé Pine Moon";
     };
@@ -59,22 +59,24 @@
     };
   };
   services.hyprpaper.enable = lib.mkForce false;
-  programs.yazi = { 
+  programs.yazi = {
     enable = true;
-    extraPackages = with pkgs; [ 
+    extraPackages = with pkgs; [
       mpv
       _7zz
       imagemagick
     ];
     shellWrapperName = "y";
     enableFishIntegration = true;
-  keymap = {
-    mgr.prepend_keymap = [ {
-      on   = "t";
-      for  = "unix";
-      run  = "shell fish --block";
-      desc = "Open fish here";
-      }];
+    keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = "t";
+          for = "unix";
+          run = "shell fish --block";
+          desc = "Open fish here";
+        }
+      ];
     };
   };
   programs.mpv = {
@@ -128,8 +130,7 @@
         "source": "${FETCHLOGO}",      // Built-in logo name or file path
         }  
       }'';
-    ".config/subtui/config.toml".source = ./subtui.toml; 
-      
+    ".config/subtui/config.toml".source = ./subtui.toml;
   };
   programs.fuzzel = {
     enable = true;
@@ -160,4 +161,3 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
-

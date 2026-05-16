@@ -2,16 +2,13 @@
   services.navidrome = {
     enable = true;
     openFirewall = true;
-    settings = { 
+    settings = {
       MusicFolder = "/navidrome/music";
       PlaylistPath = "/navidrome/playlist";
       DefaultLanguage = "pl";
-      DefaultTheme = "AMusic"; 
+      DefaultTheme = "AMusic";
       EnableTranscodingCancellation = true;
       EnableInsightsCollector = false;
-
-
     };
-
   };
 }
