@@ -14,6 +14,7 @@
     };
     polarity = "dark";
     targets = {
+      fish.enable = false;
       vscode = {
         enable = false;
       };

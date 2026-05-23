@@ -1,14 +1,14 @@
-{...}:
-{
- services.greetd = {
-  enable = true;
-  settings = rec {
-    initial_session = {
+{...}: {
+  services.greetd = {
+    enable = true;
+    restart = false;
+    settings = rec {
+      initial_session = {
         #   command = "uwsm start hyprland.desktop";
-      user = "rysieko";
-      command = "uwsm start hyprland.desktop";
-    };
-    default_session = initial_session;
+        user = "rysieko";
+        command = "start-hyprland";
+      };
+      default_session = initial_session;
     };
   };
 }

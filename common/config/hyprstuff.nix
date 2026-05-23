@@ -66,16 +66,13 @@
         };
       };
       #time
-      label = let
-        colors = config.lib.stylix.colors;
-      in [
+      label = [
         {
           monitor = "DP-1";
           text = "cmd[update:600]echo $TIME";
           position = "0,400";
           halign = "center";
           valign = "center";
-          color = "rgb(${colors.base01-rgb-r},${colors.base01-rgb-g},${colors.base01-rgb-b})";
           font_size = 128;
           font_family = "noto";
         }
@@ -85,7 +82,6 @@
           position = "0,250";
           halign = "center";
           valign = "center";
-          color = "rgb(${colors.base01-rgb-r},${colors.base01-rgb-g},${colors.base01-rgb-b})";
           font_size = 52;
           font_family = "noto";
         }
@@ -99,23 +95,6 @@
     "hypr/addons/scripts.lua".source = ../hyprland/addons/scripts.lua;
     "hypr/binds.lua".source = ../hyprland/binds.lua;
     "hypr/windows.lua".source = ../hyprland/windows.lua;
-    "hypr/var.lua" = let
-      color = config.lib.stylix.colors;
-    in {
-      text = ''
-        base03_r = "${color.base03-rgb-r}"
-        base03_g = "${color.base03-rgb-g}"
-        base03_b = "${color.base03-rgb-b}"
-        base0D_r = "${color.base0D-rgb-r}"
-        base0D_b = "${color.base0D-rgb-b}"
-        base0D_g = "${color.base0D-rgb-g}"
-        wallpaper = "${config.stylix.image}"
-        mainMod     = "SUPER"
-        terminal    = "ghostty +new-window"
-        fileManager = "ghostty -e  fish -c yazi "
-        menu        = "fuzzel"
-      '';
-    };
     "hypr/stubs/hl.meta.lua".source = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/usr/share/hypr/hl.meta.lua";
   };
 }

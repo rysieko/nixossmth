@@ -2,13 +2,10 @@
   config,
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   imports = [
     ./config/default.nix
-    inputs.stylix.homeModules.stylix
-    inputs.nvf.homeManagerModules.default
   ];
   nixpkgs.config.allowUnfree = true; # Home Manager needs a bit of information about you and the paths it should # manage.
   home = {
@@ -96,42 +93,6 @@
   # environment.
   home.packages = [
   ];
-  home.file = let
-    color = config.lib.stylix.colors;
-    FETCHLOGO = ./config/fastfetch/kris.jpeg;
-  in {
-    ".config/hypr/hyprtoolkit.conf".text = ''
-      font-family = noto
-      font-size = 11
-      background = rgb(${color.base00-rgb-r},${color.base00-rgb-g},${color.base00-rgb-b})
-      base = rgb(${color.base01-rgb-r},${color.base01-rgb-g},${color.base01-rgb-b})
-      accent = rgb(${color.base02-rgb-r},${color.base02-rgb-g},${color.base02-rgb-b})
-      text = rgb(${color.base05-rgb-r},${color.base05-rgb-g},${color.base05-rgb-b})
-    '';
-    ".config/fastfetch/config.jsonc".text = ''
-        {
-        "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json", 
-        "modules": [
-          "title",
-          "separator",
-          "os",
-          "host",
-          "kernel",
-          "shell",
-          "wm",
-          "terminal",
-          "cpu",
-          "gpu",
-          "memory",
-          "localip",
-          ],
-        "logo": {
-        "type": "kitty",        // Logo type: auto, builtin, small, file, etc.
-        "source": "${FETCHLOGO}",      // Built-in logo name or file path
-        }  
-      }'';
-    ".config/subtui/config.toml".source = ./subtui.toml;
-  };
   programs.fuzzel = {
     enable = true;
   };

@@ -3,7 +3,7 @@
     theme = {
       name = "nord";
       enable = true;
-      #   transparent = true;
+      transparent = true;
     };
     options = {
       shiftwidth = 2;

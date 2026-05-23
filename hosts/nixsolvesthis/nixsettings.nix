@@ -1,8 +1,4 @@
 {inputs, ...}: {
-  nixpkgs.overlays = with inputs; [
-    millennium.overlays.default
-  ];
-
   nix = {
     gc = {
       automatic = true;

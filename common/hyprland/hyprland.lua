@@ -1,16 +1,17 @@
-require("var")
 require("windows")
 require("binds")
-
+local c = require("colors")
 hl.on("hyprland.start", function()
-  hl.exec_cmd("uwsm app -- steam")
-  hl.exec_cmd("uwsm app -- ghostty -e fish -c concord")
-  hl.exec_cmd("uwsm app -- swaync")
-  hl.exec_cmd("uwsm app -- systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist-store")
-  hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist-store")
-  hl.exec_cmd("uwsm app -- ghostty -e fish -c subtui")
-  hl.exec_cmd("uwsm app -- hyprlock")
+  hl.exec_cmd("steam")
+  hl.exec_cmd("ghostty -e fish -c concord")
+  hl.exec_cmd("wl-paste --type text --watch cliphist-store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist-store")
+  hl.exec_cmd("ghostty -e fish -c subtui")
+  hl.exec_cmd("hyprlock")
+  hl.exec_cmd("mako")
+  hl.exec_cmd("waybar")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
 end)
 hl.config({
   input = {
@@ -28,7 +29,7 @@ hl.monitor({
   position = "0x0",
   scale = 1,
   bitdepth = 10,
-  cm = "hdr",
+  cm = "wide",
   vrr = 0,
   supports_hdr = 1,
   supports_wide_color = 1,
@@ -50,8 +51,8 @@ hl.config({
     gaps_out         = 10,
     border_size      = 2,
     col              = {
-      active_border   = "rgb(" .. base0D_r .. "," .. base0D_g .. "," .. base0D_b .. ")",
-      inactive_border = "rgb(" .. base03_r .. "," .. base03_g .. "," .. base03_b .. ")",
+      active_border   = c.outline,
+      inactive_border = c.outline_variant,
     },
     resize_on_border = false,
     allow_tearing    = false,
@@ -74,7 +75,7 @@ hl.config({
       color        = "rgb(0,0,0)",
     },
     blur           = {
-      enabled = false, -- kurwa blur bluruj
+      enabled = true, -- kurwa blur bluruj
       size = 5,
       passes = 3,
       new_optimizations = true,

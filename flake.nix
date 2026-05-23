@@ -3,15 +3,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
-    hyprland.url = "github:hyprwm/hyprland/v0.55.2";
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    hyprland.url = "github:hyprwm/hyprland";
     fok-quote.url = "github:FokoHetman/fok-quote";
     subtui.url = "github:MattiaPun/SubTUI";
     concord.url = "github:chojs23/concord";
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +34,6 @@
     self,
     nixpkgs,
     home-manager,
-    stylix,
     nvf,
     hjem,
     ...
@@ -54,7 +48,6 @@
         ./common/greetd.nix
         ./common/hjem.nix
         home-manager.nixosModules.default
-        stylix.nixosModules.stylix
         hjem.nixosModules.default
       ];
     };

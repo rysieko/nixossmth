@@ -7,19 +7,16 @@
 }: {
   # https://search.nixos.org/
   environment.systemPackages = with pkgs; [
-    wget
     hyprland-qt-support
     cliphist
     prismlauncher
     inputs.fok-quote.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.subtui.packages.${pkgs.stdenv.hostPlatform.system}.default
     hyprshutdown
     fastfetch
     btop
     mangohud
     wine
     kitty
-    swaynotificationcenter
     wlogout
     gh
     libnotify
@@ -30,8 +27,6 @@
     melonds
     obs-studio
     hyprpicker
-    kdePackages.kdenlive
-    ffmpeg_7-full
     nixd
     alejandra
     nh
@@ -47,11 +42,11 @@
     xdg-user-dirs
     r2modman
     mangohud
-    tailscale
     inputs.self.packages.x86_64-linux.nvim
     pwvucontrol
     rose-pine-icon-theme
     inputs.concord.packages.${system}.default
+    mako
   ];
   fonts = {
     enableDefaultPackages = true;
@@ -95,7 +90,6 @@
   };
   programs.steam = {
     enable = true;
-    #  package = pkgs.millennium-steam;
   };
   #programs.niri ={
   #enable = true;

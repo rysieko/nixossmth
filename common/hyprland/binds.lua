@@ -1,14 +1,21 @@
-local s = require("addons/scripts")
+local s           = require("addons/scripts")
+local mainMod     = "SUPER"
+local terminal    = "ghostty +new-window"
+local fileManager = "ghostty +new-window -e  fish -c yazi "
+local menu        = "fuzzel"
+
+
+
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + q", function()
   s:endApp(hl.get_active_window())
 end)
 hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("wlogout"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("uwsm app -- " .. fileManager))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Tab", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(1))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("uwsm app -- " .. menu))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
