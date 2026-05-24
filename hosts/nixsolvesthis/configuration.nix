@@ -3,16 +3,9 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   pkgs,
-  inputs,
   lib,
-  self,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-
-    inputs.home-manager.nixosModules.default
-  ];
   boot = {
     loader = {
       limine = {
@@ -81,15 +74,8 @@
   users.users.rysieko = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     password = "sudo";
-  };
-  home-manager.backupFileExtension = ".bak";
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      rysieko = import ../../common/home.nix;
-    };
   };
 
   # do not fucking touch it does not change nixpkgs version it doesnt update the fucking system

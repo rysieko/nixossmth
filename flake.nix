@@ -2,7 +2,7 @@
   description = "nix solves this smth";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
+
     hyprland.url = "github:hyprwm/hyprland";
     fok-quote.url = "github:FokoHetman/fok-quote";
     subtui.url = "github:MattiaPun/SubTUI";
@@ -11,9 +11,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
+    hjem.follows = "hjem-rum/hjem";
+    #hjem = {
+    #url = "github:feel-co/hjem";
+    #inputs = {
+    #   nixpkgs.follows = "nixpkgs";
+    # hjem.follows = "hjem-rum/hjem";
+    #};
+    #};
+    hjem-rum = {
+      url = "github:FokoHetman/hjem-rum/";
+      inputs = {
+        #nixpkgs.follows = "nixpkgs";
+        #hjem.follows = "hjem";
+      };
     };
     hyprlock = {
       url = "github:mcgi5sr2/hyprlock/feature/video-background";
@@ -26,6 +37,10 @@
     };
     nvf = {
       url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -47,8 +62,10 @@
         ./hosts/nixsolvesthis/pkgs.nix
         ./common/greetd.nix
         ./common/hjem.nix
+        ./common/zen.nix
         home-manager.nixosModules.default
         hjem.nixosModules.default
+        ./common/modules/default.nix
       ];
     };
     nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {

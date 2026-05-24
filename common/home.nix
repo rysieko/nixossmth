@@ -4,9 +4,6 @@
   lib,
   ...
 }: {
-  imports = [
-    ./config/default.nix
-  ];
   nixpkgs.config.allowUnfree = true; # Home Manager needs a bit of information about you and the paths it should # manage.
   home = {
     username = "rysieko";
@@ -30,52 +27,22 @@
     };
   };
   home.pointerCursor = {
-    gtk.enable = true;
+    # gtk.enable = true;
     x11.enable = true; # Optional: enable if using X11 apps
     package = pkgs.rose-pine-cursor;
     name = "BreezeX-RosePine-Linux"; # Standard name for the Rose Pine xcursor
     size = 24;
   };
-  gtk = {
-    gtk4.theme = lib.mkDefault null;
-    enable = true;
-    iconTheme = {
-      package = lib.mkDefault pkgs.rose-pine-icon-theme;
-      name = "Rosé Pine Moon";
-    };
-  };
+
+  #gtk = {
+  # gtk4.theme = lib.mkDefault null;
+  # enable = true;
+  # iconTheme = {
+  #   package = lib.mkDefault pkgs.rose-pine-icon;
+  #   name = "Rosé Pine Moon";
+  # };
+  #};
   qt.enable = true;
-  programs.git = {
-    enable = true;
-    settings = {
-      init.defaultBranch = "main";
-      user = {
-        name = "rysieko";
-        email = "rrx9506@proton.me";
-      };
-    };
-  };
-  services.hyprpaper.enable = lib.mkForce false;
-  programs.yazi = {
-    enable = true;
-    extraPackages = with pkgs; [
-      mpv
-      _7zz
-      imagemagick
-    ];
-    shellWrapperName = "y";
-    enableFishIntegration = true;
-    keymap = {
-      mgr.prepend_keymap = [
-        {
-          on = "t";
-          for = "unix";
-          run = "shell fish --block";
-          desc = "Open fish here";
-        }
-      ];
-    };
-  };
   programs.mpv = {
     enable = true;
   };
@@ -91,11 +58,7 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-  ];
-  programs.fuzzel = {
-    enable = true;
-  };
+
   xdg.userDirs = {
     enable = true;
     setSessionVariables = true;
@@ -115,9 +78,9 @@
     NIXPKGS_ALLOW_UNFREE = 1;
     XCURSOR_SIZE = 24;
     HYPRCURSOR_SIZE = 24;
-    XDG_TERMINAL_COMMAND = "kitty";
+    XDG_TERMINAL_COMMAND = "ghostty +new-window -e";
     font = "noto";
-    terminalApplication = "kitty";
+    terminalApplication = "ghostty +new-window -e";
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

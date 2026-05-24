@@ -1,5 +1,17 @@
-{...}: {
+{pkgs, ...}: {
   config.vim = {
+    extraPackages = with pkgs; [
+      nixd
+      alejandra
+      stylua
+      deadnix
+      ruff
+      mypy
+      pyright
+      lua-language-server
+      fish-lsp
+      fish
+    ];
     theme = {
       name = "nord";
       enable = true;
@@ -75,6 +87,16 @@
           enable = true;
           types = ["luacheck"];
         };
+      };
+      fish = {
+        enable = true;
+        lsp = {
+          enable = true;
+        };
+        format = {
+          enable = true;
+        };
+        treesitter.enable = true;
       };
       nix = {
         enable = true;

@@ -1,9 +1,9 @@
 {...}: {
   imports = [
-    ./firefox.nix
-    ./fish.nix
     ./hyprstuff.nix
-    #    ./stylix.nix
-    # ./matugen.nix
+    ./waybar.nix
+    ./term.nix
+    ./fuzzel.nix
+    ./fish.nix
   ];
 }

@@ -27,15 +27,7 @@
     melonds
     obs-studio
     hyprpicker
-    nixd
-    alejandra
     nh
-    lua-language-server
-    stylua
-    deadnix
-    ruff
-    mypy
-    pyright
     slurp
     wl-clipboard
     grim
@@ -47,6 +39,7 @@
     rose-pine-icon-theme
     inputs.concord.packages.${system}.default
     mako
+    pywalfox-native
   ];
   fonts = {
     enableDefaultPackages = true;

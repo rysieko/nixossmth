@@ -29,7 +29,7 @@
           enable-mouse = "yes";
           sort-result = "yes";
           tabs = 10;
-          prompt = ">Input stuff :) | ";
+          prompt = "Input stuff :) > ";
           list-executables-in-path = "yes";
         };
       };
