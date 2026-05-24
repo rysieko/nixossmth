@@ -9,14 +9,12 @@
       ghostty
     ];
   hjem.users.rysieko.files = {
-    ".config/ghostty/config.ghostty".text =
-      ''
-        wait-after-command = false
-        shell-integration = nushell
-        background-opacity = 0.7
-        background-blur = true
-        confirm-close-surface = false
-      ''
-      ++ lib.modules.mkIf config.rysieko.matugen.targets.ghostty ''theme = "matugen" '';
+    ".config/ghostty/config.ghostty".text = ''
+      wait-after-command = false
+      shell-integration = nushell
+      background-opacity = 0.7
+      background-blur = true
+      confirm-close-surface = false
+    '';
   };
 }

@@ -38,7 +38,7 @@ in {
       mako = true;
     };
     hjem.users.rysieko.files = {
-      ".config/matugen/config.toml" = mkIf cfg {
+      ".config/matugen/config.toml" = mkIf cfg.enable {
         generator = (pkgs.formats.toml {}).generate "config.toml";
         value = {
           templates = {
@@ -97,7 +97,7 @@ in {
               post_hook = "makoctl reload";
               type = "SchemeExpressive";
             };
-            notyfication = mkIf cfg {
+            notyfication = mkIf cfg.enable {
               post_hook = "sleep 0.5 | notify-send \"Wallpaper changed\" \" (: \" ";
             };
           };
@@ -117,7 +117,7 @@ in {
          <* for name, value in colors *>
          @define-color {{name}} {{value.default.hex}};
         <* endfor *>    '';
-      ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''             
+      ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''       
             return {
               image = "{{image}}",
           <* for name, value in colors *>
@@ -286,7 +286,7 @@ in {
          }
 
       '';
-
+      ".config/ghostty/config.ghostty".text = mkIf cfg.targets.ghostty ''theme = matugen '';
       ".config/matugen/hyprlang.conf".text = mkIf cfg.targets.hyprstuff ''
         $image = {{image}}
         <* for name, value in colors *>
