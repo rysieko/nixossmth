@@ -19,7 +19,7 @@
       enable = true;
       autoEnable = true;
     };
-    qt.enable = true;
+    themes.qt.enable = true;
   };
   hjem = {
     extraModules = [inputs.hjem-rum.hjemModules.default];
