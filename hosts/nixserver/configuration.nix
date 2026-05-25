@@ -69,6 +69,7 @@
   users.users.rysieko = {
     extraGroups = ["wheel" "networkmanager"];
     isNormalUser = true;
+    shell = pkgs.nushell;
   };
 
   # Install some packages

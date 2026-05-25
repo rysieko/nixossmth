@@ -4,10 +4,28 @@
   config,
   ...
 }: let
-  inherit (lib.options) mkEnableOption;
+  inherit (lib.options) mkEnableOption mkOption;
   inherit (lib.modules) mkIf;
+  inherit (lib.generators) toINI toJSON;
+  inherit (pkgs.formats) toml;
 
   cfg = config.rysieko.matugen;
+  cava-template = {
+    color = {
+      background = "default";
+      foreground = "{{colors.primary.default.hex}}";
+      gradient = 1;
+      gradient_color_1 = "{{colors.primary_container.default.hex}}";
+      gradient_color_2 = "{{colors.primary.default.hex}}";
+      gradient_color_3 = "{{colors.on_primary_container.default.hex}}";
+      horizontal_gradient = 1;
+      horizontal_gradient_color_1 = "{{colors.primary_container.default.hex}}";
+      horizontal_gradient_color_2 = "{{colors.primary.default.hex}}";
+      horizontal_gradient_color_3 = "{{colors.on_primary_container.default.hex}}";
+      horizontal_gradient_color_4 = "{{colors.primary.default.hex}}";
+      horizontal_gradient_color_5 = "{{colors.primary_container.default.hex}}";
+    };
+  };
 in {
   options.rysieko.matugen = {
     enable = mkEnableOption "enable Matugen theming (templates hardcoded fuck you) NOTE: temp add manually matugen to pkgs";
@@ -22,10 +40,18 @@ in {
       fuzzel = mkEnableOption "enable Fuzzel target";
       pywalfox = mkEnableOption "enable Pywalfox firefox extension target";
       mako = mkEnableOption "enable Mako target";
+      cava = {
+        enable = mkEnableOption "enable Cava target";
+        template = mkOption {
+          description = "what to pass to the INI generator to make a theme";
+          default = cava-template;
+          example = cava-template;
+        };
+      };
     };
   };
-
-  config = {
+  config = mkIf cfg.enable {
+    environment.systemPackages = [pkgs.glib pkgs.matugen];
     rysieko.matugen.targets = mkIf cfg.autoEnable {
       gtk = true;
       qt = true;
@@ -36,10 +62,11 @@ in {
       fuzzel = true;
       pywalfox = true;
       mako = true;
+      cava.enable = true;
     };
     hjem.users.rysieko.files = {
-      ".config/matugen/config.toml" = mkIf cfg.enable {
-        generator = (pkgs.formats.toml {}).generate "config.toml";
+      ".config/matugen/config.toml" = {
+        generator = (toml {}).generate "config.toml";
         value = {
           templates = {
             waybar = mkIf cfg.targets.waybar {
@@ -91,14 +118,16 @@ in {
               output_path = "~/.cache/wal/colors.json";
               post_hook = "pywalfox update";
             };
+            cava = mkIf cfg.targets.cava {
+              input_path = "~/.config/matugen/cava-colors.ini";
+              output_path = "~/.config/cava/themes/matugen";
+              post_hook = "pkill -USR1 cava";
+            };
             mako = mkIf cfg.targets.mako {
               input_path = "~/.config/matugen/mako";
               output_path = "~/.config/mako/colors";
-              post_hook = "makoctl reload";
+              post_hook = "makoctl reload && sleep 0.5 | notify-send \"Wallpaper changed\" \" (: \" ";
               type = "SchemeExpressive";
-            };
-            notyfication = mkIf cfg.enable {
-              post_hook = "sleep 0.5 | notify-send \"Wallpaper changed\" \" (: \" ";
             };
           };
           config = {
@@ -137,6 +166,19 @@ in {
         on-notify=none
         [urgency=high]
         border-color={{colors.error_container.default.hex}}
+      '';
+      ".config/matugen/gtk-hook.sh".text = mkIf cfg.targets.gtk ''
+        #! /run/current-system/sw/bin/bash
+
+         current=$(gsettings get org.gnome.desktop.interface color-scheme)
+
+         if [[ "$current" == "'prefer-dark'" ]]; then
+             gsettings set org.gnome.desktop.interface color-scheme prefer-light
+             gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+         else
+             gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+             gsettings set org.gnome.desktop.interface color-scheme prefer-light
+         fi
       '';
       ".config/matugen/ghostty".text = mkIf cfg.targets.ghostty ''
           background = {{colors.background.default.hex}}
@@ -294,7 +336,7 @@ in {
         <* endfor *>
       '';
       ".config/matugen/fuzzel.ini" = mkIf cfg.targets.fuzzel {
-        generator = lib.generators.toINI {};
+        generator = toINI {};
         value = {
           colors = {
             background = "{{colors.background.default.hex_stripped}}ff";
@@ -312,7 +354,7 @@ in {
         };
       };
       ".config/matugen/pywalfox.json" = mkIf cfg.targets.pywalfox {
-        generator = lib.generators.toJSON {};
+        generator = toJSON {};
         value = {
           wallpaper = "{{image}}";
           alpha = "100";
@@ -336,6 +378,14 @@ in {
           };
         };
       };
+      ".config/matugen/cava-colors.ini" = mkIf cfg.targets.cava {
+        generator = toINI {};
+        value = cfg.cava.template;
+      };
+    };
+    rysieko = {
+      cava.enable = mkIf cfg.targets.cava.enable true;
+      themes.qt.enable = mkIf cfg.targets.qt true;
     };
   };
 }

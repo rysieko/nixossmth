@@ -70,7 +70,6 @@
     pulse.enable = true;
   };
   # i wish i was a fish
-  programs.fish.enable = true;
   users.users.rysieko = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];

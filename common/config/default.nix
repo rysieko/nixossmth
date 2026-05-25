@@ -4,6 +4,5 @@
     ./waybar.nix
     ./term.nix
     ./fuzzel.nix
-    ./fish.nix
   ];
 }
