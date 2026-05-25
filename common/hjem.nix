@@ -15,6 +15,12 @@
       rose-pine-cursor
     ];
   rysieko = {
+    cava = {
+      enable = true;
+      settings = {
+        inputs.method = "pipewire";
+      };
+    };
     matugen = {
       enable = true;
       autoEnable = true;

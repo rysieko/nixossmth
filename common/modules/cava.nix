@@ -15,10 +15,10 @@ in {
     settings = mkOption {
       description = "Shit to write to cava config file";
       default = {};
-      example = {
-        general.framerate = 60;
-        input.method = "pipewire";
-      };
+    };
+    example = {
+      general.framerate = 60;
+      input.method = "pipewire";
     };
     package = mkOption {
       description = "Package to use for Cava";
@@ -26,6 +26,7 @@ in {
       default = pkgs.cava;
     };
   };
+
   config = mkIf cfg.enable {
     environment.systemPackages = [cfg.package];
 

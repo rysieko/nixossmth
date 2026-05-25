@@ -122,7 +122,7 @@ in {
             cava = mkIf cfg.targets.cava.enable {
               input_path = "~/.config/matugen/cava-colors.ini";
               output_path = "~/.config/cava/themes/matugen";
-              post_hook = "pkill -USR1 cava";
+              post_hook = "pkill -USR2 cava";
             };
             mako = mkIf cfg.targets.mako {
               input_path = "~/.config/matugen/mako";
@@ -147,7 +147,7 @@ in {
          <* for name, value in colors *>
          @define-color {{name}} {{value.default.hex}};
         <* endfor *>    '';
-      ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''       
+      ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''           
             return {
               image = "{{image}}",
           <* for name, value in colors *>
@@ -381,11 +381,14 @@ in {
       };
       ".config/matugen/cava-colors.ini" = mkIf cfg.targets.cava.enable {
         generator = toINI {};
-        value = cfg.cava.template;
+        value = cfg.targets.cava.template;
       };
     };
     rysieko = {
-      cava.enable = mkIf cfg.targets.cava.enable true;
+      cava = {
+        enable = mkIf cfg.targets.cava.enable true;
+        settings.colors.theme = "matugen";
+      };
       themes.qt.enable = mkIf cfg.targets.qt true;
     };
   };
