@@ -45,7 +45,6 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     nvf,
     hjem,
     ...
@@ -60,7 +59,7 @@
         ./common/greetd.nix
         ./common/hjem.nix
         ./common/zen.nix
-        home-manager.nixosModules.default
+       
         hjem.nixosModules.default
         ./common/modules/default.nix
       ];
