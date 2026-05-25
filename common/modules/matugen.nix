@@ -1,3 +1,4 @@
+# TODO: fix this war crime
 {
   pkgs,
   lib,
@@ -28,7 +29,7 @@
   };
 in {
   options.rysieko.matugen = {
-    enable = mkEnableOption "enable Matugen theming (templates hardcoded fuck you) NOTE: temp add manually matugen to pkgs";
+    enable = mkEnableOption "enable Matugen theming (templates hardcoded since i was stupid and i will fix it soon™)";
     autoEnable = mkEnableOption "auto enable targets";
     targets = {
       gtk = mkEnableOption "enable GTK target";
@@ -118,7 +119,7 @@ in {
               output_path = "~/.cache/wal/colors.json";
               post_hook = "pywalfox update";
             };
-            cava = mkIf cfg.targets.cava {
+            cava = mkIf cfg.targets.cava.enable {
               input_path = "~/.config/matugen/cava-colors.ini";
               output_path = "~/.config/cava/themes/matugen";
               post_hook = "pkill -USR1 cava";
@@ -378,7 +379,7 @@ in {
           };
         };
       };
-      ".config/matugen/cava-colors.ini" = mkIf cfg.targets.cava {
+      ".config/matugen/cava-colors.ini" = mkIf cfg.targets.cava.enable {
         generator = toINI {};
         value = cfg.cava.template;
       };
