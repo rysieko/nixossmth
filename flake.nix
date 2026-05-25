@@ -7,10 +7,7 @@
     fok-quote.url = "github:FokoHetman/fok-quote";
     subtui.url = "github:MattiaPun/SubTUI";
     concord.url = "github:chojs23/concord";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    
     hjem.follows = "hjem-rum/hjem";
     #hjem = {
     #url = "github:feel-co/hjem";
