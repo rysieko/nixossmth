@@ -6,25 +6,28 @@
 }: let
   inherit (lib.options) mkEnableOption mkOption;
   inherit (lib.modules) mkIf;
-  inherit (lib.types) string attrsOf anything;
+  inherit (lib.types) str attrsOf anything;
   inherit (lib.generators) toJSON;
   cfg = config.rysieko.waybar;
 in {
   options.rysieko.waybar = {
     enable = mkEnableOption "whenever to enable Waybar";
     settings = mkOption {
-      descriprtion = "What to write into waybar config.jsonc file";
+      description = "What to write into waybar config.jsonc file";
       type = attrsOf anything;
       default = {};
     };
     style = mkOption {
       description = "waybars style.css file";
-      type = string;
+      type = str;
       default = '''';
     };
   };
   config = mkIf cfg.enable {
-    environment.systemPackages = [pkgs.waybar];
+    programs.waybar = {
+      enable = true;
+      systemd.target = "graphical-session.target";
+    };
     hjem.users.rysieko = {
       files = {
         ".config/waybar/config" = {

@@ -176,7 +176,7 @@ in {
            <* for name, value in colors *>
            @define-color {{name}} {{value.default.hex}};
           <* endfor *>    '';
-        ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''                 
+        ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''           
               return {
                 image = "{{image}}",
             <* for name, value in colors *>
@@ -258,110 +258,6 @@ in {
         ".config/mako/config".text = mkIf cfg.targets.mako ''
           include=~/.config/mako/colors
         '';
-        ".config/waybar/style.css".text = mkIf cfg.targets.waybar ''
-          @import "colors.css";
-          window#waybar, tooltip {
-           background: alpha(@background, 0.000000);
-           }
-
-           * {
-           font-family: "DejaVu Sans Mono";
-           font-size: 9pt;
-           }
-
-           window#waybar, tooltip {
-               color: @tertiary_container;
-           }
-
-           tooltip {
-               border-color: @on_tertiary_container;
-           }
-
-           tooltip label {
-               color: @primary;
-           }
-           #wireplumber,
-           #pulseaudio,
-           #sndio {
-             padding: 0 5px;
-           }
-           #wireplumber.muted,
-           #pulseaudio.muted,
-           #sndio.muted {
-             padding: 0 5px;
-           }
-           #upower,
-           #battery {
-             padding: 0 5px;
-           }
-           #upower.charging,
-           #battery.Charging {
-             padding: 0 5px;
-           }
-           #network {
-             padding: 0 5px;
-           }
-           #network.disconnected {
-             padding: 0 5px;
-           }
-           #user {
-             padding: 0 5px;
-           }
-           #clock {
-             padding: 0 5px;
-           }
-           #backlight {
-             padding: 0 5px;
-           }
-           #cpu {
-             padding: 0 5px;
-           }
-           #disk {
-             padding: 0 5px;
-           }
-           #idle_inhibitor {
-             padding: 0 5px;
-           }
-           #temperature {
-             padding: 0 5px;
-           }
-           #mpd {
-             padding: 0 5px;
-           }
-           #language {
-             padding: 0 5px;
-           }
-           #keyboard-state {
-             padding: 0 5px;
-           }
-           #memory {
-             padding: 0 5px;
-           }
-           #window {
-             padding: 0 5px;
-           }
-           #bluetooth {
-             padding: 0 5px;
-           }
-           #bluetooth.disabled {
-             padding: 0 5px;
-           }
-            .modules-center #workspaces button {
-               border-bottom: 3px solid transparent;
-               color: @primary;
-           }
-           .modules-center #workspaces button.focused,
-           .modules-center #workspaces button.active {
-               border-bottom: 3px solid @primary_container;
-           }
-
-           .modules-center #workspaces button.urgent {
-               border-bottom: 3px solid @outline;
-               background-color: @primary;
-               color: @on_primary;
-           }
-
-        '';
         ".config/ghostty/config.ghostty".text = mkIf cfg.targets.ghostty ''theme = matugen '';
         ".config/matugen/hyprlang.conf".text = mkIf cfg.targets.hyprstuff ''
           $image = {{image}}
@@ -440,6 +336,110 @@ in {
           qt6-conf = qt_shit;
         };
       };
+      waybar.style = mkIf cfg.targets.waybar ''
+        @import "colors.css";
+        window#waybar, tooltip {
+         background: alpha(@background, 0.000000);
+         }
+
+         * {
+         font-family: "DejaVu Sans Mono";
+         font-size: 9pt;
+         }
+
+         window#waybar, tooltip {
+             color: @tertiary_container;
+         }
+
+         tooltip {
+             border-color: @on_tertiary_container;
+         }
+
+         tooltip label {
+             color: @primary;
+         }
+         #wireplumber,
+         #pulseaudio,
+         #sndio {
+           padding: 0 5px;
+         }
+         #wireplumber.muted,
+         #pulseaudio.muted,
+         #sndio.muted {
+           padding: 0 5px;
+         }
+         #upower,
+         #battery {
+           padding: 0 5px;
+         }
+         #upower.charging,
+         #battery.Charging {
+           padding: 0 5px;
+         }
+         #network {
+           padding: 0 5px;
+         }
+         #network.disconnected {
+           padding: 0 5px;
+         }
+         #user {
+           padding: 0 5px;
+         }
+         #clock {
+           padding: 0 5px;
+         }
+         #backlight {
+           padding: 0 5px;
+         }
+         #cpu {
+           padding: 0 5px;
+         }
+         #disk {
+           padding: 0 5px;
+         }
+         #idle_inhibitor {
+           padding: 0 5px;
+         }
+         #temperature {
+           padding: 0 5px;
+         }
+         #mpd {
+           padding: 0 5px;
+         }
+         #language {
+           padding: 0 5px;
+         }
+         #keyboard-state {
+           padding: 0 5px;
+         }
+         #memory {
+           padding: 0 5px;
+         }
+         #window {
+           padding: 0 5px;
+         }
+         #bluetooth {
+           padding: 0 5px;
+         }
+         #bluetooth.disabled {
+           padding: 0 5px;
+         }
+          .modules-center #workspaces button {
+             border-bottom: 3px solid transparent;
+             color: @primary;
+         }
+         .modules-center #workspaces button.focused,
+         .modules-center #workspaces button.active {
+             border-bottom: 3px solid @primary_container;
+         }
+
+         .modules-center #workspaces button.urgent {
+             border-bottom: 3px solid @outline;
+             background-color: @primary;
+             color: @on_primary;
+         }
+
+      '';
     };
   };
 }

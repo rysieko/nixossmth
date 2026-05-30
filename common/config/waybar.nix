@@ -1,53 +1,47 @@
-{lib, ...}: {
-  programs.waybar = {
+{...}: {
+  rysieko.waybar = {
     enable = true;
-    systemd.target = "graphical-session.target";
-  };
-  hjem.users.rysieko.files = {
-    ".config/waybar/config" = {
-      generator = lib.generators.toJSON {};
-      value = {
-        layer = "top";
-        position = "top";
-        width = 2560;
-        height = 34;
-        spacing = 8;
+    settings = {
+      layer = "top";
+      position = "top";
+      width = 2560;
+      height = 34;
+      spacing = 8;
 
-        modules-left = ["cpu" "memory" "temperature"];
-        modules-center = ["hyprland/workspaces"];
-        modules-right = ["pulseaudio" "tray" "clock"];
-        "hyprland/workspaces" = {
-          persistent-workspaces = {
-            "*" = 5;
-          };
+      modules-left = ["cpu" "memory" "temperature"];
+      modules-center = ["hyprland/workspaces"];
+      modules-right = ["pulseaudio" "tray" "clock"];
+      "hyprland/workspaces" = {
+        persistent-workspaces = {
+          "*" = 5;
         };
-        tray = {
-          spacing = 10;
-        };
+      };
+      tray = {
+        spacing = 10;
+      };
 
-        cpu = {
-          format = "{usage}% ";
-        };
+      cpu = {
+        format = "{usage}% ";
+      };
 
-        memory = {
-          format = "{}% ";
-        };
+      memory = {
+        format = "{}% ";
+      };
 
-        temperature = {
-          format = "{temperatureC}°C ";
-        };
+      temperature = {
+        format = "{temperatureC}°C ";
+      };
 
-        pulseaudio = {
-          format = "{volume}% {icon}"; # {format_source}";
-          format-icons = {
-            default = ["" "" ""];
-          };
-          on-click = "pwvucontrol";
+      pulseaudio = {
+        format = "{volume}% {icon}"; # {format_source}";
+        format-icons = {
+          default = ["" "" ""];
         };
-        "clock" = {
-          "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "format-alt" = "{:%Y-%m-%d}";
-        };
+        on-click = "pwvucontrol";
+      };
+      "clock" = {
+        "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        "format-alt" = "{:%Y-%m-%d}";
       };
     };
   };
