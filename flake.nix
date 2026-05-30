@@ -54,14 +54,12 @@
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/nixsolvesthis/configuration.nix
-        ./hosts/nixsolvesthis/nixsettings.nix
-        ./hosts/nixsolvesthis/hardware-configuration.nix
-        ./hosts/nixsolvesthis/pkgs.nix
+        #config
+        ./hosts/nixsolvesthis/default.nix
         ./common/greetd.nix
         ./common/hjem.nix
         ./common/zen.nix
-
+        #modules
         hjem.nixosModules.default
         ./common/modules/default.nix
       ];
@@ -69,7 +67,7 @@
     nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/nixserver/configuration.nix
+        ./hosts/nixserver/default.nix
       ];
     };
     packages.x86_64-linux = {

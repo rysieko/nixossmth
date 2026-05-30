@@ -58,34 +58,34 @@
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
-  programs.git.enable = true;
-  programs.neovim.enable = true;
-  programs.kdeconnect.enable = true;
-  services.devmon.enable = true;
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
-  programs.gamescope.enable = true;
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-  services.gnome.gnome-keyring.enable = true;
-  services.tailscale.enable = true;
-  services.resolved.enable = true;
+  programs = {
+    git.enable = true;
+    kdeconnect.enable = true;
+    hyprlock.enable = true;
+    gamescope.enable = true;
+    steam.enable = true;
+    hyprland = let
+      hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+    in {
+      enable = true;
+      package = hyprflake.hyprland;
+      portalPackage = hyprflake.xdg-desktop-portal-hyprland;
+    };
+  };
+  services = {
+    devmon.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
+    hypridle.enable = true;
+    gnome.gnome-keyring.enable = true;
+    tailscale.enable = true;
+    resolved.enable = true;
+    playerctld.enable = true;
+  };
   security.pam.services.greetd.enableGnomeKeyring = true;
-  programs.uwsm.enable = true;
-  programs.hyprland = let
-    hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-  in {
-    enable = true;
-    withUWSM = true;
-    package = hyprflake.hyprland;
-    portalPackage = hyprflake.xdg-desktop-portal-hyprland;
-  };
-  programs.steam = {
-    enable = true;
-  };
   #programs.niri ={
   #enable = true;
   #package =  pkgs.niri;
   # };
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 }
