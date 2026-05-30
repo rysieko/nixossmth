@@ -24,6 +24,7 @@
     matugen = {
       enable = true;
       autoEnable = true;
+      targets.pywalfox = false;
     };
   };
   hjem = {
@@ -45,8 +46,8 @@
                 {
                   on = "t";
                   for = "unix";
-                  run = "shell fish --block";
-                  desc = "Open fish here";
+                  run = "shell nu --block";
+                  desc = "Open nushell here";
                 }
               ];
             };
@@ -64,7 +65,6 @@
             };
           };
         };
-
         misc = {
           gtk = {
             enable = true;
@@ -88,9 +88,8 @@
           };
         };
       };
-      files = lib.modules.mkIf config.rysieko.matugen.enable {
+      files = {
         ".config/mako/config".text = ''
-          include=~/.config/mako/colors
           sort=-time
           layer=overlay
           background-color=#2e3440

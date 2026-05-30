@@ -3,25 +3,14 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    #package inputs
     hyprland.url = "github:hyprwm/hyprland";
     fok-quote.url = "github:FokoHetman/fok-quote";
     subtui.url = "github:MattiaPun/SubTUI";
     concord.url = "github:chojs23/concord";
-    
-    hjem.follows = "hjem-rum/hjem";
-    #hjem = {
-    #url = "github:feel-co/hjem";
-    #inputs = {
-    #   nixpkgs.follows = "nixpkgs";
-    # hjem.follows = "hjem-rum/hjem";
-    #};
-    #};
-    hjem-rum = {
-      url = "github:FokoHetman/hjem-rum/";
-      inputs = {
-        #nixpkgs.follows = "nixpkgs";
-        #hjem.follows = "hjem";
-      };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprlock = {
       url = "github:mcgi5sr2/hyprlock/feature/video-background";
@@ -32,14 +21,27 @@
         hyprwayland-scanner.follows = "hyprland";
       };
     };
+
+    #modules and shit
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+    hjem.follows = "hjem-rum/hjem";
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs = {
+        #nixpkgs.follows = "nixpkgs";
+        #hjem.follows = "hjem";
+      };
     };
+    #hjem = {
+    #url = "github:feel-co/hjem";
+    #inputs = {
+    #   nixpkgs.follows = "nixpkgs";
+    # hjem.follows = "hjem-rum/hjem";
+    #};
+    #};
   };
 
   outputs = {
@@ -59,7 +61,7 @@
         ./common/greetd.nix
         ./common/hjem.nix
         ./common/zen.nix
-       
+
         hjem.nixosModules.default
         ./common/modules/default.nix
       ];

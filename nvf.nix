@@ -9,8 +9,6 @@
       mypy
       pyright
       lua-language-server
-      fish-lsp
-      fish
     ];
     theme = {
       name = "nord";
@@ -51,6 +49,13 @@
       presets = {
         nixd = {
           enable = true;
+        };
+      };
+      servers = {
+        nixd = {
+          nixos = {
+            expr = "(builtins.getFlake (builtins.toString /home/rysieko/nixossmth/)).nixosConfigurations.nixsolvesthis.options";
+          };
         };
       };
       enable = true;
@@ -112,6 +117,11 @@
           enable = true;
           type = ["alejandra"];
         };
+      };
+      nu = {
+        enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
       };
       python = {
         enable = true;

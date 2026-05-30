@@ -39,7 +39,7 @@
     rose-pine-icon-theme
     inputs.concord.packages.${system}.default
     mako
-    pywalfox-native
+    strawberry
   ];
   fonts = {
     enableDefaultPackages = true;

@@ -16,6 +16,9 @@
     "extensions.autoDisableScopes" = 0;
     "extensions.pocket.enabled" = false;
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    "layout.css.prefers-color-scheme.content-override" = 0;
+    "ui.systemUsesDarkTheme" = 1;
+    "browser.theme.dark-private-windows" = true;
   };
 
   extensions = [
@@ -25,13 +28,12 @@
     (extension "ublock-origin" "uBlock0@raymondhill.net")
     (extension "sponsorblock" "sponsorBlocker@ajay.app")
     (extension "return-youtube-dislikes" "{762f9885-5a13-4abd-9c77-433dcd38b8fd}")
-    (extension "pywalfox" "pywalfox@frewacom.org")
   ];
 in {
   environment.systemPackages = lib.mkAfter [
     (
       pkgs.wrapFirefox
-      pkgs.firefox-unwrapped
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped
       {
         extraPrefs = lib.concatLines (
           lib.mapAttrsToList (
