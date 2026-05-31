@@ -10,6 +10,7 @@
   inherit (lib.modules) mkIf;
   inherit (lib.generators) toINI toJSON;
   inherit (pkgs.formats) toml;
+  inherit (lib.types) attrsOf anything;
   qt_shit = {
     Appearance = {
       color_scheme_path = "~/.local/share/color-schemes/Matugen.colors";
@@ -58,7 +59,28 @@ in {
       hyprland = mkEnableOption "enable Hyprland target";
       hyprstuff = mkEnableOption "enable Hypr* target";
       ghostty = mkEnableOption "enable Ghostty target";
-      fuzzel = mkEnableOption "enable Fuzzel target";
+      fuzzel = {
+        enable = mkEnableOption "enable fuzzel target";
+        template = mkOption {
+          description = "what to pass to ini gen to make a theme";
+          type = attrsOf anything;
+          default = {
+            colors = {
+              background = "{{colors.background.default.hex_stripped}}ff";
+              text = "{{colors.on_surface.default.hex_stripped}}ff";
+              prompt = "{{colors.secondary.default.hex_stripped}}ff";
+              placeholder = "{{colors.tertiary.default.hex_stripped}}ff";
+              input = "{{colors.primary.default.hex_stripped}}ff";
+              match = "{{colors.tertiary.default.hex_stripped}}ff";
+              selection = "{{colors.primary.default.hex_stripped}}ff";
+              selection-text = "{{colors.on_surface.default.hex_stripped}}ff";
+              selection-match = "{{colors.on_primary.default.hex_stripped}}ff";
+              counter = "{{colors.secondary.default.hex_stripped}}ff";
+              border = "{{colors.primary.default.hex_stripped}}ff";
+            };
+          };
+        };
+      };
       pywalfox = mkEnableOption "enable Pywalfox firefox extension target";
       mako = mkEnableOption "enable Mako target";
       cava = {
@@ -80,7 +102,7 @@ in {
       hyprland = mkDefault true;
       hyprstuff = mkDefault true;
       ghostty = mkDefault true;
-      fuzzel = mkDefault true;
+      fuzzel.enable = mkDefault true;
       pywalfox = mkDefault true;
       mako = mkDefault true;
       cava.enable = mkDefault true;
@@ -117,7 +139,7 @@ in {
                 post_hook = "pkill -SIGUSR2 ghostty";
                 type = "SchemeExpressive";
               };
-              fuzzel = mkIf cfg.targets.fuzzel {
+              fuzzel = mkIf cfg.targets.fuzzel.enable {
                 input_path = "~/.config/matugen/fuzzel.ini";
                 output_path = "~/.config/fuzzel/colors.ini";
               };
@@ -266,23 +288,9 @@ in {
           <* endfor *>
         '';
 
-        ".config/matugen/fuzzel.ini" = mkIf cfg.targets.fuzzel {
+        ".config/matugen/fuzzel.ini" = mkIf cfg.targets.fuzzel.enable {
           generator = toINI {};
-          value = {
-            colors = {
-              background = "{{colors.background.default.hex_stripped}}ff";
-              text = "{{colors.on_surface.default.hex_stripped}}ff";
-              prompt = "{{colors.secondary.default.hex_stripped}}ff";
-              placeholder = "{{colors.tertiary.default.hex_stripped}}ff";
-              input = "{{colors.primary.default.hex_stripped}}ff";
-              match = "{{colors.tertiary.default.hex_stripped}}ff";
-              selection = "{{colors.primary.default.hex_stripped}}ff";
-              selection-text = "{{colors.on_surface.default.hex_stripped}}ff";
-              selection-match = "{{colors.on_primary.default.hex_stripped}}ff";
-              counter = "{{colors.secondary.default.hex_stripped}}ff";
-              border = "{{colors.primary.default.hex_stripped}}ff";
-            };
-          };
+          value = cfg.targets.fuzzel.template;
         };
         ".config/matugen/pywalfox.json" = mkIf cfg.targets.pywalfox {
           generator = toJSON {};
@@ -438,7 +446,6 @@ in {
              background-color: @primary;
              color: @on_primary;
          }
-
       '';
     };
   };
