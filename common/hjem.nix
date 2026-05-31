@@ -10,7 +10,6 @@
     lib.mkAfter [
       mako
       fastfetch
-      inputs.subtui.packages.${pkgs.stdenv.hostPlatform.system}.default
       vesktop
       rose-pine-cursor
     ];
@@ -139,7 +138,6 @@
             };
           };
         };
-        ".config/subtui/config.toml".source = ./subtui.toml;
         "Obrazy/Wallpapers".source = ./config/wallpapers;
       };
       environment.sessionVariables = {

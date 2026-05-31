@@ -176,7 +176,7 @@ in {
            <* for name, value in colors *>
            @define-color {{name}} {{value.default.hex}};
           <* endfor *>    '';
-        ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''           
+        ".config/matugen/hyprland-colors.lua".text = mkIf cfg.targets.hyprland ''                 
               return {
                 image = "{{image}}",
             <* for name, value in colors *>
@@ -262,7 +262,7 @@ in {
         ".config/matugen/hyprlang.conf".text = mkIf cfg.targets.hyprstuff ''
           $image = {{image}}
           <* for name, value in colors *>
-          $\{{name}} = rgba({{value.default.hex_stripped}}ff)
+          $color.{{name}} = rgba({{value.default.hex_stripped}}ff)
           <* endfor *>
         '';
 

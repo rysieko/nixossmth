@@ -24,7 +24,7 @@ hl.window_rule({
 hl.window_rule({
   name = "browser",
   match = {
-    class = "firefox-nightly",
+    class = "zen",
   },
   workspace = 1
 })

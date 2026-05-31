@@ -4,5 +4,6 @@
     ./waybar.nix
     ./term.nix
     ./fuzzel.nix
+    ./subtui.nix
   ];
 }

@@ -51,13 +51,13 @@ in {
             Add = [
               {
                 Name = "nixpkgs packages";
-                URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
+                URLTemplate = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
                 IconURL = "https://wiki.nixos.org/favicon.ico";
                 Alias = "@np";
               }
               {
                 Name = "NixOS options";
-                URLTemplate = "https://search.nixos.org/options?query={searchTerms}";
+                URLTemplate = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
                 IconURL = "https://wiki.nixos.org/favicon.ico";
                 Alias = "@no";
               }

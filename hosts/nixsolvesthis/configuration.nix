@@ -76,7 +76,12 @@
     shell = pkgs.nushell;
     password = "sudo";
   };
-
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true;
+    };
+  };
   # do not fucking touch it does not change nixpkgs version it doesnt update the fucking system
   system.stateVersion = "26.05"; # Please read the comment before changing.
 }

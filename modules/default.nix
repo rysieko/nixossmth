@@ -4,5 +4,6 @@
     ./qt.nix
     ./cava.nix
     ./waybar.nix
+    ./subtui.nix
   ];
 }

@@ -50,7 +50,7 @@
         hide_cursor = true;
         ignore_empty_input = true;
       };
-      source = "~/.config/hypr/colors.conf";
+      source = "colors.conf";
       background = {
         monitor = "DP-1";
         path = "$image";
@@ -73,11 +73,11 @@
           monitor = "DP-1";
           size = "20%, 5%";
           outline_thickness = 3;
-          inner_color = "$on_primary";
-          outer_color = "$primary";
-          check_color = "$green";
-          fail_color = "$red";
-          font_color = "$";
+          inner_color = "$color.on_primary";
+          outer_color = "$color.primary";
+          check_color = "$color.green";
+          fail_color = "$color.red";
+          font_color = "$color.on_background";
           fade_on_empty = true;
           rounding = 10;
           font_family = "noto";
@@ -120,6 +120,5 @@
     ".config/hypr/addons/scripts.lua".source = ../hyprland/addons/scripts.lua;
     ".config/hypr/binds.lua".source = ../hyprland/binds.lua;
     ".config/hypr/windows.lua".source = ../hyprland/windows.lua;
-    #  "hypr/stubs/hl.meta.lua".source = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/sw/usr/share/hypr/hl.meta.lua";
   };
 }

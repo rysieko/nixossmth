@@ -61,7 +61,7 @@
         ./common/zen.nix
         #modules
         hjem.nixosModules.default
-        ./common/modules/default.nix
+        ./modules/default.nix
       ];
     };
     nixosConfigurations.nixserver = nixpkgs.lib.nixosSystem {
