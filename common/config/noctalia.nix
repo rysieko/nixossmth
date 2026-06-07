@@ -58,6 +58,7 @@
           ];
           center = ["workspaces"];
           end = [
+            "weather"
             "volume"
             "tray"
 
@@ -69,6 +70,11 @@
         workspaces = {
           display = "id";
           minimal = false;
+        };
+      };
+      system = {
+        monitor = {
+          cpu_usage_activity_threshold = 20;
         };
       };
       hooks = {

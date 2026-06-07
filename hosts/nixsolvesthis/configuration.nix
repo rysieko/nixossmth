@@ -59,8 +59,13 @@
     #useXkbConfig = true; # use xkb.options in tty.
   };
 
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    bluetooth.enable = true;
+  };
   # Enable Bluetooth support.
   #  services.bluetooth.enable = true;
   # Enable sound.

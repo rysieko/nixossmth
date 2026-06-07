@@ -1,6 +1,6 @@
 local s           = require("addons/scripts")
 
-local ipc         = "noctalia msg"
+ipc               = "noctalia msg"
 local mainMod     = "SUPER"
 local terminal    = "ghostty +new-window"
 local fileManager = "ghostty +new-window -e  nu -c yazi "
@@ -13,7 +13,7 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + q", function()
   s:endApp(hl.get_active_window())
 end)
-hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd("wlogout"))
+hl.bind(mainMod .. " + Delete", hl.dsp.exec_cmd(ipc .. "panel-open session"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Tab", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(1))
@@ -31,6 +31,7 @@ hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
     "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2; notify-send \"Screenshot took and copied\" \" :) \" "))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " panel-toggle wallpaper"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " wallpaper-random"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + 0-9

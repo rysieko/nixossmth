@@ -62,7 +62,7 @@
   programs = {
     git.enable = true;
     kdeconnect.enable = true;
-    hyprlock.enable = true;
+
     gamescope.enable = true;
     steam = {
       enable = true;
@@ -80,7 +80,6 @@
     devmon.enable = true;
     gvfs.enable = true;
     udisks2.enable = true;
-    hypridle.enable = true;
     gnome.gnome-keyring.enable = true;
     tailscale.enable = true;
     resolved.enable = true;

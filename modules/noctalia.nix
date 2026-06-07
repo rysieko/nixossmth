@@ -22,8 +22,6 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-      libsForQt5.qt5ct
-      qt6Packages.qt6ct
     ];
     hjem.users.rysieko.files.".config/noctalia/config.toml" = {
       generator = (toml {}).generate "config.toml";

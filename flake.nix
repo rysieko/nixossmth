@@ -26,15 +26,6 @@
       url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprlock = {
-      url = "github:mcgi5sr2/hyprlock/feature/video-background";
-      inputs = {
-        hyprgraphics.follows = "hyprland";
-        hyprutils.follows = "hyprland";
-        hyprlang.follows = "hyprland";
-        hyprwayland-scanner.follows = "hyprland";
-      };
-    };
 
     #modules and shit
     nvf = {
@@ -48,6 +39,10 @@
         nixpkgs.follows = "nixpkgs";
         #hjem.follows = "hjem";
       };
+    };
+    qtengine = {
+      url = "github:kossLAN/qtengine";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     #hjem = {
     #url = "github:feel-co/hjem";
@@ -63,6 +58,7 @@
     nixpkgs,
     nvf,
     hjem,
+    qtengine,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
@@ -70,11 +66,10 @@
       modules = [
         #config
         ./hosts/nixsolvesthis/default.nix
-        ./common/greetd.nix
-        ./common/hjem.nix
-        ./common/zen.nix
+        ./common/default.nix
         #modules
         hjem.nixosModules.default
+        qtengine.nixosModules.default
         ./modules/default.nix
       ];
     };
@@ -82,6 +77,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/nixserver/default.nix
+        ./common/run0.nix
       ];
     };
     packages.x86_64-linux = {

@@ -6,5 +6,6 @@
     ./waybar.nix
     ./subtui.nix
     ./noctalia.nix
+    ./vesktop.nix
   ];
 }

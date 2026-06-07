@@ -6,14 +6,23 @@
   ...
 }: {
   imports = [./config/default.nix];
-  environment.systemPackages = with pkgs;
-    lib.mkAfter [
-      mako
-      fastfetch
-      vesktop
-      rose-pine-cursor
-    ];
   rysieko = {
+    vesktop = {
+      enable = true;
+      vencordSettings = {
+        autoUpdate = false;
+        transparent = true;
+        frameless = true;
+        enabledThemes = ["file:///home/rysieko/.config/vesktop/themes/noctalia-material.theme.css"];
+        plugins = {
+          MessageLogger = {
+            enabled = true;
+            ignoreSelf = true;
+          };
+          FakeNitro.enabled = true;
+        };
+      };
+    };
     cava = {
       enable = true;
       settings = {
@@ -24,6 +33,25 @@
       enable = true;
       autoEnable = true;
       targets.pywalfox = false;
+    };
+  };
+  programs.qtengine = {
+    enable = true;
+    config = {
+      theme = {
+        colorScheme = "/home/rysieko/.config/qt6ct/colors/noctalia.conf";
+        iconTheme = "breeze-dark";
+
+        font = {
+          family = "noto-music";
+          size = 11;
+        };
+      };
+      misc = {
+        singleClickActivate = true;
+        menusHaveIcons = true;
+        shortcutsForContextMenus = true;
+      };
     };
   };
   hjem = {
@@ -79,7 +107,7 @@
                 @import 'colors.css';
               '';
             };
-            settings = lib.modules.mkIf config.rysieko.matugen.enable {
+            settings = {
               application-prefer-dark-theme = true;
               decoration-layout = "menu:close";
               enable-primary-paste = false;
@@ -123,33 +151,43 @@
             ];
           };
         };
-        ".config/vesktop/settings/settings.json" = {
-          generator = lib.generators.toJSON {};
+        # thank you kaktus
+        ".config/user-dirs.dirs" = {
+          generator = lib.generators.toKeyValue {mkKeyValue = k: v: "${k}='${v}'";};
           value = {
-            autoUpdate = false;
-            transparent = true;
-            frameless = true;
-            plugins = {
-              MessageLogger = {
-                enabled = true;
-                ignoreSelf = true;
-              };
-              FakeNitro.enabled = true;
-            };
+            XDG_DOCUMENTS_DIR = "Dokumenty";
+            XDG_DOWNLOAD_DIR = "Pobrane";
+            XDG_MUSIC_DIR = "Muzyka";
+            XDG_PICTURES_DIR = "Obrazy";
+            XDG_PROJECTS_DIR = "Projekty";
+            XDG_VIDEOS_DIR = "Wideo";
           };
         };
+
         "Obrazy/Wallpapers".source = ./config/wallpapers;
       };
-      environment.sessionVariables = {
-        EDITOR = "nvim";
-        NIXPKGS_ALLOW_UNFREE = 1;
-        XCURSOR_THEME = "BreezeX-RosePine-Linux";
-        XCURSOR_SIZE = 24;
-        HYPRCURSOR_SIZE = 24;
-        XDG_TERMINAL_COMMAND = "ghostty +new-window -e";
-        font = "noto";
-        terminalApplication = "ghostty +new-window -e";
-      };
+    };
+  };
+  environment = {
+    systemPackages = with pkgs; [
+      kdePackages.breeze
+      kdePackages.breeze.qt5 # Needed if you want Qt5 support.
+      kdePackages.breeze-icons
+      mako
+      fastfetch
+      rose-pine-cursor
+      xdg-user-dirs
+    ];
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      NIXPKGS_ALLOW_UNFREE = 1;
+      XCURSOR_THEME = "BreezeX-RosePine-Linux";
+      XCURSOR_SIZE = 24;
+      HYPRCURSOR_SIZE = 24;
+      XDG_TERMINAL_COMMAND = "ghostty +new-window -e";
+      font = "noto";
+      terminalApplication = "ghostty +new-window -e";
     };
   };
 }

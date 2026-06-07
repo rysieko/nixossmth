@@ -138,7 +138,6 @@ hl.layer_rule({
   match = {
     namespace = "^noctalia-(bar-.+|notification|dock|panel|osd)$",
   },
-  ignore_alpha = 0.5,
   blur = true,
   blur_popups = true,
 })
