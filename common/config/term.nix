@@ -15,6 +15,8 @@
       background-opacity = 0.7
       background-blur = true
       confirm-close-surface = false
+      font-family = "noto-music"
+      theme=noctalia
     '';
   };
 }

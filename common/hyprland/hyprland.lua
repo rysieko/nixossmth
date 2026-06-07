@@ -9,10 +9,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("ghostty -e nu -c subtui")
   hl.exec_cmd("hyprlock")
   hl.exec_cmd("hypridle")
-  hl.exec_cmd("mako")
-  hl.exec_cmd("waybar")
-  hl.exec_cmd("awww-daemon")
-  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("noctalia")
 end)
 hl.config({
   input = {
@@ -77,7 +74,7 @@ hl.config({
     },
     blur           = {
       enabled = true, -- kurwa blur bluruj
-      size = 5,
+      size = 10,
       passes = 3,
       new_optimizations = true,
       xray = true,

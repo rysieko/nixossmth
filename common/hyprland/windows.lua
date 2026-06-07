@@ -133,6 +133,15 @@ hl.window_rule({
   },
   workspace = 2,
 })
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|osd)$",
+  },
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
+})
 -- Hyprland-run windowrule
 hl.window_rule({
   name  = "move-hyprland-run",

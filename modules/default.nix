@@ -5,5 +5,6 @@
     ./cava.nix
     ./waybar.nix
     ./subtui.nix
+    ./noctalia.nix
   ];
 }

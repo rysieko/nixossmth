@@ -24,10 +24,11 @@
     feh
     kdePackages.dolphin
     dolphin-emu
+    lutris
     melonds
+    lutris-unwrapped
     obs-studio
     hyprpicker
-    nh
     slurp
     wl-clipboard
     grim
@@ -63,7 +64,10 @@
     kdeconnect.enable = true;
     hyprlock.enable = true;
     gamescope.enable = true;
-    steam.enable = true;
+    steam = {
+      enable = true;
+      package = pkgs.millennium-steam;
+    };
     hyprland = let
       hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
     in {

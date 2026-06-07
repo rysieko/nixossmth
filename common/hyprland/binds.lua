@@ -1,8 +1,10 @@
 local s           = require("addons/scripts")
+
+local ipc         = "noctalia msg"
 local mainMod     = "SUPER"
 local terminal    = "ghostty +new-window"
 local fileManager = "ghostty +new-window -e  nu -c yazi "
-local menu        = "fuzzel"
+local menu        = " noctalia msg panel-toggle launcher"
 
 
 
@@ -17,20 +19,18 @@ hl.bind(mainMod .. " + Tab", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(1))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 hl.bind(mainMod .. "+ SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("gelly -n"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("gelly -p"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(" gelly -t"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("playerctl next"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("playerctl previous"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
     "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2; notify-send \"Screenshot took and copied\" \" :) \" "))
-hl.bind(mainMod .. " + W",
-  hl.dsp.exec_cmd(
-    "ls -1 $(xdg-user-dir PICTURES)/Wallpapers | fuzzel --dmenu | xargs -I{} matugen image --source-color-index 2 $(xdg-user-dir PICTURES)/Wallpapers/{}"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " panel-toggle wallpaper"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + 0-9

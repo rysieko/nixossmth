@@ -61,7 +61,6 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
-  programs.hyprland.enable = true;
   # Enable Bluetooth support.
   #  services.bluetooth.enable = true;
   # Enable sound.
@@ -76,10 +75,21 @@
     shell = pkgs.nushell;
     password = "sudo";
   };
-  programs.direnv = {
-    enable = true;
-    nix-direnv = {
+
+  programs = {
+    direnv = {
       enable = true;
+      nix-direnv = {
+        enable = true;
+      };
+    };
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        dates = "daily";
+      };
+      flake = "/home/rysieko/nixossmth/";
     };
   };
   # do not fucking touch it does not change nixpkgs version it doesnt update the fucking system

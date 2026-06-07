@@ -9,6 +9,7 @@
       mypy
       pyright
       lua-language-server
+      nushell
     ];
     theme = {
       name = "nord";
@@ -40,6 +41,7 @@
         enable = true;
       };
     };
+
     tabline = {
       nvimBufferline = {
         enable = true;
@@ -56,6 +58,12 @@
           nixos = {
             expr = "(builtins.getFlake (builtins.toString /home/rysieko/nixossmth/)).nixosConfigurations.nixsolvesthis.options";
           };
+          nvf = {
+            expr = "(builtins.getFlake ./.).packages.x86_64-linux.nvim.options";
+          };
+          #   nvf = {
+          # expr = "(builtins.getFlake (builtins.toString /)";
+          #};
         };
       };
       enable = true;
@@ -125,6 +133,9 @@
       };
       python = {
         enable = true;
+        lsp = {
+          enable = true;
+        };
         extraDiagnostics = {
           enable = true;
           types = ["mypy"];

@@ -5,11 +5,25 @@
 
     #package inputs
     hyprland.url = "github:hyprwm/hyprland";
-    fok-quote.url = "github:FokoHetman/fok-quote";
-    subtui.url = "github:MattiaPun/SubTUI";
-    concord.url = "github:chojs23/concord";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    fok-quote = {
+      url = "github:FokoHetman/fok-quote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    subtui = {
+      url = "github:MattiaPun/SubTUI";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    concord = {
+      url = "github:chojs23/concord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprlock = {
@@ -31,7 +45,7 @@
     hjem-rum = {
       url = "github:snugnug/hjem-rum";
       inputs = {
-        #nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs";
         #hjem.follows = "hjem";
       };
     };
