@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v5";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -40,10 +40,6 @@
         #hjem.follows = "hjem";
       };
     };
-    qtengine = {
-      url = "github:kossLAN/qtengine";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     #hjem = {
     #url = "github:feel-co/hjem";
     #inputs = {
@@ -58,7 +54,6 @@
     nixpkgs,
     nvf,
     hjem,
-    qtengine,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
@@ -69,7 +64,6 @@
         ./common/default.nix
         #modules
         hjem.nixosModules.default
-        qtengine.nixosModules.default
         ./modules/default.nix
       ];
     };

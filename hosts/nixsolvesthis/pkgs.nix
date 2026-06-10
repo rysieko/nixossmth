@@ -2,7 +2,6 @@
   pkgs,
   inputs,
   lib,
-  self,
   ...
 }: {
   # https://search.nixos.org/
@@ -38,7 +37,6 @@
     inputs.self.packages.x86_64-linux.nvim
     pwvucontrol
     rose-pine-icon-theme
-    inputs.concord.packages.${system}.default
     mako
     strawberry
   ];

@@ -13,7 +13,7 @@
         autoUpdate = false;
         transparent = true;
         frameless = true;
-        enabledThemes = ["file:///home/rysieko/.config/vesktop/themes/noctalia-material.theme.css"];
+        enabledThemes = ["/home/rysieko/.config/vesktop/themes/noctalia-material.theme.css"];
         plugins = {
           MessageLogger = {
             enabled = true;
@@ -33,25 +33,6 @@
       enable = true;
       autoEnable = true;
       targets.pywalfox = false;
-    };
-  };
-  programs.qtengine = {
-    enable = true;
-    config = {
-      theme = {
-        colorScheme = "/home/rysieko/.config/qt6ct/colors/noctalia.conf";
-        iconTheme = "breeze-dark";
-
-        font = {
-          family = "noto-music";
-          size = 11;
-        };
-      };
-      misc = {
-        singleClickActivate = true;
-        menusHaveIcons = true;
-        shortcutsForContextMenus = true;
-      };
     };
   };
   hjem = {
@@ -171,12 +152,14 @@
   environment = {
     systemPackages = with pkgs; [
       kdePackages.breeze
-      kdePackages.breeze.qt5 # Needed if you want Qt5 support.
+      kdePackages.breeze.qt5
       kdePackages.breeze-icons
       mako
       fastfetch
       rose-pine-cursor
       xdg-user-dirs
+      qt6Packages.qt6ct
+      libsForQt5.qt5ct
     ];
 
     sessionVariables = {
@@ -186,7 +169,6 @@
       XCURSOR_SIZE = 24;
       HYPRCURSOR_SIZE = 24;
       XDG_TERMINAL_COMMAND = "ghostty +new-window -e";
-      font = "noto";
       terminalApplication = "ghostty +new-window -e";
     };
   };

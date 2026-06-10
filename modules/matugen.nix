@@ -115,7 +115,7 @@ in {
       };
       files = {
         ".config/matugen/hyprland-colors.lua" = mkIf cfg.targets.hyprland {
-          text = ''                     
+          text = ''               
                 return {
                   image = "{{image}}",
               <* for name, value in colors *>
@@ -271,6 +271,7 @@ in {
             "kcolorscheme"
             "gtk4"
             "gtk3"
+            "btop"
           ];
           community_ids = [
             "hyprtoolkit"

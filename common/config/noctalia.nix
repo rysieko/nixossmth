@@ -31,6 +31,35 @@
           wallpaper_placement = "floating";
           session_placement = "attached";
         };
+        session.actions = [
+          {
+            action = "logout";
+            command = "hyprshutdown";
+            enabled = true;
+            shortcut = "2";
+            variant = "default";
+          }
+          {
+            action = "reboot";
+            command = "sleep 0,5 && hyprshutdown -t 'Restarting...' --post-cmd 'reboot'";
+            enabled = true;
+            shortcut = "4";
+            variant = "default";
+          }
+          {
+            action = "shutdown";
+            command = "sleep 0,5 && hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'";
+            enabled = true;
+            shortcut = "5";
+            variant = "destructive";
+          }
+          {
+            action = "lock_and_suspend";
+            enabled = true;
+            shortcut = "1";
+            variant = "default";
+          }
+        ];
       };
       bar = {
         order = [
@@ -55,6 +84,7 @@
             "sysmon"
             "media"
             "audio_visualizer"
+            "cat"
           ];
           center = ["workspaces"];
           end = [
@@ -76,11 +106,6 @@
         monitor = {
           cpu_usage_activity_threshold = 20;
         };
-      };
-      hooks = {
-        logging_out = "hyprshutdown";
-        rebooting = "sleep 0,5 && hyprshutdown -t 'Restarting...' --post-cmd 'reboot'";
-        shutting_down = "sleep 0,5 && hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'";
       };
     };
   };

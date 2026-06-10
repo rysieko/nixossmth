@@ -29,7 +29,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind(mainMod .. " + PRINT",
   hl.dsp.exec_cmd(
-    "grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 2; notify-send \"Screenshot took and copied\" \" :) \" "))
+    " grim -g \"$(slurp -d)\" - | wl-copy && wl-paste > $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%T).png | sleep 0.5; notify-send \"Screenshot took and copied\" \" :) \" "))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " panel-toggle wallpaper"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. " wallpaper-random"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))

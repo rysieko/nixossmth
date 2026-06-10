@@ -139,7 +139,6 @@ hl.layer_rule({
     namespace = "^noctalia-(bar-.+|notification|dock|panel|osd)$",
   },
   blur = true,
-  blur_popups = true,
 })
 -- Hyprland-run windowrule
 hl.window_rule({
