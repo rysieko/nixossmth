@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -69,7 +70,7 @@
 
   # Install some packages
   environment.systemPackages = with pkgs; [
-    neovim
+    inputs.self.packages.x86_64-linux.nvim
     git
     wget
     curl
