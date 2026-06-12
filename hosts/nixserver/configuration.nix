@@ -80,6 +80,9 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
-  nix.settings.trusted-users = ["192.168.0.141" "rysieko@nixsolvesthis"];
+  nix.settings = {
+    trusted-users = ["192.168.0.141" "rysieko@nixsolvesthis"];
+    trusted-public-keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7Qg2dawS/WFSNQbs2UxEkIkxJR2RlISxlLCuwx6H0/"];
+  };
   system.stateVersion = "26.05"; # DO NOT TOUCH YOU FUCKING IDIOT
 }

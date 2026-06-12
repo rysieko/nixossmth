@@ -4,5 +4,6 @@
     ./hjem.nix
     ./run0.nix
     ./zen.nix
+    ./nixsettings.nix
   ];
 }

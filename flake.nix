@@ -4,7 +4,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     #package inputs
-    hyprland.url = "github:hyprwm/hyprland";
+    hyprland = {
+      url = "github:hyprwm/hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     fok-quote = {
       url = "github:FokoHetman/fok-quote";
@@ -72,6 +75,7 @@
       modules = [
         ./hosts/nixserver/default.nix
         ./common/run0.nix
+        ./common/nixsettings.nix
       ];
     };
     packages.x86_64-linux = {
