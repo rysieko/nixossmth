@@ -1,14 +1,14 @@
 {...}: {
+  programs.noctalia-greeter = {
+    enable = true;
+  };
   services.greetd = {
     enable = true;
     restart = false;
-    settings = rec {
-      initial_session = {
-        #   command = "uwsm start hyprland.desktop";
-        user = "rysieko";
-        command = "start-hyprland";
+    settings = {
+      default-session = {
+        user = "greeter";
       };
-      default_session = initial_session;
     };
   };
 }

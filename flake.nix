@@ -29,6 +29,10 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #modules and shit
     nvf = {
@@ -57,6 +61,7 @@
     nixpkgs,
     nvf,
     hjem,
+    noctalia-greeter,
     ...
   } @ inputs: {
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
@@ -67,6 +72,7 @@
         ./common/default.nix
         #modules
         hjem.nixosModules.default
+        noctalia-greeter.nixosModules.default
         ./modules/default.nix
       ];
     };

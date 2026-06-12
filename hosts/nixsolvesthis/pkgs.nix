@@ -35,10 +35,8 @@
     r2modman
     mangohud
     inputs.self.packages.x86_64-linux.nvim
-    pwvucontrol
     rose-pine-icon-theme
-    mako
-    strawberry
+    proton-vpn-cli
   ];
   fonts = {
     enableDefaultPackages = true;
