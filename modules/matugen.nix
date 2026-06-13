@@ -115,7 +115,7 @@ in {
       };
       files = {
         ".config/matugen/hyprland-colors.lua" = mkIf cfg.targets.hyprland {
-          text = ''               
+          text = ''                     
                 return {
                   image = "{{image}}",
               <* for name, value in colors *>
@@ -277,6 +277,8 @@ in {
             "hyprtoolkit"
             "steam"
             "zen-browser"
+            "discord"
+            "yazi"
           ];
           user = {
             hyprland = mkIf cfg.targets.hyprland {

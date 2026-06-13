@@ -31,7 +31,7 @@ in {
           generator = toJSON {};
           value = cfg.settings;
         };
-        "~/.config/vesktop/settings/settings.json" = {
+        ".config/vesktop/settings/settings.json" = {
           generator = toJSON {};
           value = cfg.vencordSettings;
         };

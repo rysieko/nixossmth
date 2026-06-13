@@ -12,7 +12,6 @@
     ".config/ghostty/config.ghostty".text = ''
       wait-after-command = false
       shell-integration = nushell
-      background-opacity = 0.7
       background-blur = true
       confirm-close-surface = false
       font-family = "noto-music"

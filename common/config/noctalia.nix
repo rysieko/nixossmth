@@ -2,6 +2,8 @@
   rysieko.noctalia = {
     enable = true;
     settings = {
+      plugins = ["noctalia/bongocat"];
+      wallpaper.directory = "~/Obrazy/Wallpapers";
       shell = {
         lang = "en";
         ui_scale = 1.0;
@@ -23,13 +25,15 @@
           enabled = true;
           size = 25;
         };
+        mpris.blacklist = ["Mozilla zen"];
         panel = {
           transparency_mode = "solid";
           borders = true;
-          launcher_placement = "floating";
           control_center_placement = "attached";
-          wallpaper_placement = "floating";
           session_placement = "attached";
+          launcher_placement = "centered";
+          open_near_click_control_center = true;
+          wallpaper_placement = "attached";
         };
         session.actions = [
           {
@@ -72,10 +76,10 @@
           layer = "top";
           auto_hide = false;
           thickness = 34;
-          background_opacity = 0.2;
+          background_opacity = 1;
           border_width = 0;
           shadow = false;
-          radius = 10;
+          radius = 0;
           margin_edge = 0;
           margin_ends = 0;
           capsule = false;
@@ -96,10 +100,39 @@
           ];
         };
       };
+      location.auto_locate = true;
+      idle = {
+        behavior_order = ["lock" "screen-off" "lock-and-suspend"];
+        pre_action_fade_seconds = 10;
+        behavior = {
+          lock = {
+            action = "lock";
+            enabled = true;
+            timeout = 600;
+          };
+          lock-and-suspend = {
+            action = "lock_and_suspend";
+            enabled = true;
+            timeout = 900;
+          };
+          screen-off = {
+            action = "screen_off";
+            enabled = true;
+            timeout = 660;
+          };
+        };
+      };
       widgets = {
         workspaces = {
           display = "id";
           minimal = false;
+        };
+        audio_visualizer.centered = false;
+        cat = {
+          audio_spectrum = true;
+          tappy_mode = true;
+          type = "noctalia/bongocat:cat";
+          use_mpris_filter = true;
         };
       };
       system = {
@@ -107,6 +140,17 @@
           cpu_usage_activity_threshold = 20;
         };
       };
+      control-center = [
+        {
+          type = "wifi";
+        }
+        {
+          type = "bluetooth";
+        }
+        {
+          type = "notification";
+        }
+      ];
     };
   };
 }

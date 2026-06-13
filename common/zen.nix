@@ -18,7 +18,10 @@
     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
     "layout.css.prefers-color-scheme.content-override" = 0;
     "ui.systemUsesDarkTheme" = 1;
+    "devtools.chrome.enabled" = true;
+    "devtools.debugger.remote-enabled" = true;
     "browser.theme.dark-private-windows" = true;
+    "widget.transparent-windows" = false;
   };
 
   extensions = [

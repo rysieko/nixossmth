@@ -20,7 +20,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = [
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     hjem.users.rysieko.files.".config/noctalia/config.toml" = {

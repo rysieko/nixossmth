@@ -11,14 +11,14 @@
       enable = true;
       vencordSettings = {
         autoUpdate = false;
-        transparent = true;
         frameless = true;
-        enabledThemes = ["/home/rysieko/.config/vesktop/themes/noctalia-material.theme.css"];
+        enabledThemes = ["noctalia-material.theme.css"];
         plugins = {
           MessageLogger = {
             enabled = true;
             ignoreSelf = true;
           };
+          BetterGifPicker.enabled = true;
           FakeNitro.enabled = true;
         };
       };
