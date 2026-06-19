@@ -34,18 +34,6 @@
       "8.8.4.4"
       "1.1.1.1"
       "1.0.0.1"
-      "208.67.222.222"
-      "208.67.220.220"
-      "4.2.2.1"
-      "4.2.2.2"
-      "8.26.56.26"
-      "8.20.247.20"
-      "149.112.112.112"
-      "9.9.9.9"
-      "9.9.9.10"
-      "149.112.112.10"
-      "149.112.112.11"
-      "9.9.9.11"
     ];
   };
   networking.networkmanager.connectionConfig = {
@@ -77,12 +65,11 @@
     btop
     nh
   ];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    trusted-users = ["rysieko@192.168.0.141"];
+  };
   # Enable the OpenSSH daemon
   services.openssh.enable = true;
-  nix.settings = {
-    trusted-users = ["192.168.0.141" "rysieko@nixsolvesthis"];
-    trusted-public-keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG7Qg2dawS/WFSNQbs2UxEkIkxJR2RlISxlLCuwx6H0/"];
-  };
   system.stateVersion = "26.05"; # DO NOT TOUCH YOU FUCKING IDIOT
 }
