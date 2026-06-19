@@ -1,6 +1,6 @@
 {
-  inputs,
   pkgs,
+  inputs,
   ...
 }: {
   nix = {
@@ -14,6 +14,7 @@
     config.allowUnfree = true;
     overlays = [
       inputs.millennium.overlays.default
+      inputs.nix-cachyos-kernel.overlays.default
     ];
   };
 }

@@ -1,89 +1,47 @@
 {pkgs, ...}: {
   config.vim = {
     extraPackages = with pkgs; [
-      nixd
+      nil
       alejandra
       stylua
       deadnix
-      ruff
-      mypy
-      pyright
       lua-language-server
       nushell
+      rust-analyzer
     ];
     theme = {
       name = "nord";
       enable = true;
-      transparent = true;
     };
-    options = {
-      shiftwidth = 2;
-    };
-    #startPlugins = ["neo-tree-nvim"];
-    formatter = {
-      conform-nvim = {
-        enable = true;
-        setupOpts = {
-          formatters = {
-            "stylua".command = "stylua";
-          };
-        };
-      };
-    };
-    telescope = {
+    options.shiftwidth = 2;
+    utility.nix-develop.enable = true;
+    formatter.conform-nvim = {
       enable = true;
+      setupOpts.formatters."stylua".command = "stylua";
     };
-    lazy = {
-      enable = true;
-    };
-    autocomplete = {
-      blink-cmp = {
-        enable = true;
-      };
-    };
-
-    tabline = {
-      nvimBufferline = {
-        enable = true;
-      };
-    };
+    telescope.enable = true;
+    lazy.enable = true;
+    autocomplete.blink-cmp.enable = true;
+    tabline.nvimBufferline.enable = true;
     lsp = {
-      presets = {
-        nixd = {
-          enable = true;
+      presets.nil.enable = true;
+      servers.nil = {
+        formatting = "alejandra";
+        nix = {
+          autoEvalInputs = true;
+          maxMemory = 5120;
         };
       };
-      servers = {
-        nixd = {
-          nixos = {
-            expr = "(builtins.getFlake (builtins.toString /home/rysieko/nixossmth/)).nixosConfigurations.nixsolvesthis.options";
-          };
-          nvf = {
-            expr = "(builtins.getFlake ./.).packages.x86_64-linux.nvim.options";
-          };
-          #   nvf = {
-          # expr = "(builtins.getFlake (builtins.toString /)";
-          #};
-        };
-      };
-      enable = true;
       formatOnSave = true;
+      enable = true;
     };
     statusline.lualine = {
       enable = true;
       theme = "auto";
     };
-    visuals = {
-      nvim-web-devicons = {
-        enable = true;
-      };
-    };
+    visuals.nvim-web-devicons.enable = true;
 
-    filetree = {
-      neo-tree = {
-        enable = true;
-      };
-    };
+    filetree.neo-tree.enable = true;
     withPython3 = true;
     languages = {
       lua = {
@@ -101,25 +59,13 @@
           types = ["luacheck"];
         };
       };
-      fish = {
-        enable = true;
-        lsp = {
-          enable = true;
-        };
-        format = {
-          enable = true;
-        };
-        treesitter.enable = true;
-      };
       nix = {
         enable = true;
-        extraDiagnostics = {
-          enable = true;
-        };
+        extraDiagnostics.enable = true;
         treesitter.enable = true;
         lsp = {
           enable = true;
-          servers = ["nixd"];
+          servers = ["nil"];
         };
         format = {
           enable = true;
@@ -131,19 +77,15 @@
         lsp.enable = true;
         treesitter.enable = true;
       };
-      python = {
+      rust = {
         enable = true;
-        lsp = {
-          enable = true;
-        };
-        extraDiagnostics = {
-          enable = true;
-          types = ["mypy"];
-        };
+        lsp.enable = true;
+        treesitter.enable = true;
         format = {
           enable = true;
-          type = ["ruff"];
+          type = ["rustfmt"];
         };
+        extensions.crates-nvim.enable = true;
       };
     };
   };

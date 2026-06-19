@@ -37,6 +37,7 @@
     inputs.self.packages.x86_64-linux.nvim
     rose-pine-icon-theme
     proton-vpn-cli
+    nix-your-shell
   ];
   fonts = {
     enableDefaultPackages = true;
