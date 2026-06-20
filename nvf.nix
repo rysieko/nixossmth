@@ -23,6 +23,12 @@
     lazy.enable = true;
     autocomplete.blink-cmp.enable = true;
     tabline.nvimBufferline.enable = true;
+    terminal.toggleterm = {
+      enable = true;
+      lazygit.enable = true;
+    };
+    dashboard.alpha.enable = true;
+
     lsp = {
       presets.nil.enable = true;
       servers.nil = {
