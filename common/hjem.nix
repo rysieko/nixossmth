@@ -5,7 +5,6 @@
   config,
   ...
 }: {
-  imports = [./config/default.nix];
   rysieko = {
     vesktop = {
       enable = true;

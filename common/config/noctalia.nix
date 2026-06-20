@@ -4,6 +4,7 @@
     settings = {
       plugins = ["noctalia/bongocat"];
       wallpaper.directory = "~/Obrazy/Wallpapers";
+
       shell = {
         lang = "en";
         ui_scale = 1.0;
@@ -17,6 +18,7 @@
         font_family = "noto-music";
         time_format = "%H:%M:%S";
         date_format = "%D %m %y";
+        screenshot.directory = "~/Obrazy/Screenshots";
         animation = {
           enabled = true;
           speed = 1.0;
