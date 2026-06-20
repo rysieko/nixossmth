@@ -82,10 +82,10 @@
             ];
             css = lib.modules.mkIf config.rysieko.matugen.enable {
               gtk3 = ''
-                @import 'colors.css';
+                @import 'noctalia.css';
               '';
               gtk4 = ''
-                @import 'colors.css';
+                @import 'noctalia.css';
               '';
             };
             settings = {
@@ -130,18 +130,6 @@
               "memory"
               "localip"
             ];
-          };
-        };
-        # thank you kaktus
-        ".config/user-dirs.dirs" = {
-          generator = lib.generators.toKeyValue {mkKeyValue = k: v: "${k}='${v}'";};
-          value = {
-            XDG_DOCUMENTS_DIR = "Dokumenty";
-            XDG_DOWNLOAD_DIR = "Pobrane";
-            XDG_MUSIC_DIR = "Muzyka";
-            XDG_PICTURES_DIR = "Obrazy";
-            XDG_PROJECTS_DIR = "Projekty";
-            XDG_VIDEOS_DIR = "Wideo";
           };
         };
 
