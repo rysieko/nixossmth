@@ -15,11 +15,9 @@
     btop
     mangohud
     wine
-    kitty
     wlogout
     gh
     libnotify
-    cmatrix
     feh
     kdePackages.dolphin
     dolphin-emu
@@ -52,7 +50,6 @@
         mplus-outline-fonts.githubRelease
         dina-font
         proggyfonts
-        xdg-desktop-portal-gnome
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };

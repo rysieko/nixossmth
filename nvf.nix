@@ -27,6 +27,7 @@
       enable = true;
       lazygit.enable = true;
     };
+    session.nvim-session-manager.enable = true;
     dashboard.alpha.enable = true;
 
     lsp = {

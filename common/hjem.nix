@@ -160,6 +160,7 @@
       xdg-user-dirs
       qt6Packages.qt6ct
       libsForQt5.qt5ct
+      adw-gtk3
     ];
 
     sessionVariables = {
@@ -167,6 +168,7 @@
       NIXPKGS_ALLOW_UNFREE = 1;
       XCURSOR_THEME = "BreezeX-RosePine-Linux";
       XCURSOR_SIZE = 24;
+      QT_QPA_PLATFORMTHEME = "qt6ct";
       HYPRCURSOR_SIZE = 24;
       XDG_TERMINAL_COMMAND = "ghostty +new-window -e";
       terminalApplication = "ghostty +new-window -e";
