@@ -9,13 +9,18 @@
     noctalia-greeter,
     import-tree,
     nix-cachyos-kernel,
+    mangowm,
     ...
   } @ inputs: let
+    inherit (nixpkgs) lib;
+
     pkgs = import nixpkgs {
       system = "x86_64-linux";
       overlays = [nix-cachyos-kernel.overlays.default];
     };
+    lib' = import ./lib {inherit self nixpkgs lib;};
   in {
+    lib = lib';
     nixosConfigurations.nixsolvesthis = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
@@ -25,6 +30,7 @@
         #modules
         hjem.nixosModules.default
         noctalia-greeter.nixosModules.default
+        mangowm.nixosModules.mango
         (import-tree ./modules)
       ];
     };
@@ -111,6 +117,13 @@
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
     #modules and shit
     nvf = {

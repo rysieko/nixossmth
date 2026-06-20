@@ -7,5 +7,6 @@
     ./subtui.nix
     ./noctalia.nix
     ./vesktop.nix
+    ./mango.nix
   ];
 }

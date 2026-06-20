@@ -1,0 +1,5 @@
+{...}: {
+  rysieko.mango = {
+    enable = true;
+  };
+}
