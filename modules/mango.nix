@@ -85,7 +85,7 @@ in {
         enable = true;
         package = cfg.package;
       };
-      hjem.users.rysieko.files.".config/mango/config.conf".text = validatedConfig;
+      hjem.users.rysieko.files.".config/mango/config.conf".source = validatedConfig;
     }
   );
 }
