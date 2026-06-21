@@ -6,11 +6,9 @@
 }: {
   # https://search.nixos.org/
   environment.systemPackages = with pkgs; [
-    hyprland-qt-support
     cliphist
     prismlauncher
     inputs.fok-quote.packages.${pkgs.stdenv.hostPlatform.system}.default
-    hyprshutdown
     fastfetch
     btop
     mangohud
@@ -25,13 +23,9 @@
     melonds
     lutris-unwrapped
     obs-studio
-    hyprpicker
-    slurp
     wl-clipboard
-    grim
     xdg-user-dirs
     r2modman
-    mangohud
     inputs.self.packages.x86_64-linux.nvim
     rose-pine-icon-theme
     proton-vpn-cli
@@ -70,7 +64,6 @@
     gnome.gnome-keyring.enable = true;
     tailscale.enable = true;
     resolved.enable = true;
-    playerctld.enable = true;
   };
   security.pam.services.greetd.enableGnomeKeyring = true;
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];

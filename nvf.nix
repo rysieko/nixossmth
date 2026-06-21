@@ -9,10 +9,6 @@
       nushell
       rust-analyzer
     ];
-    theme = {
-      name = "nord";
-      enable = true;
-    };
     options.shiftwidth = 2;
     utility.nix-develop.enable = true;
     formatter.conform-nvim = {

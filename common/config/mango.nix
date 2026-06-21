@@ -23,9 +23,12 @@
         "${main}, TAB, togglefloating"
         "${main}, O, toggleoverview"
         "${main}, F, togglefullscreen"
-        "${main}, P, spawn, playerctl play-pause"
-        "${main}, N, spawn, playerctl next"
-        "${main}, B, spawn, playerctl previous"
+        "${main}, P, spawn, ${ipc} media play-pause"
+        "${main}, N, spawn, ${ipc} media next"
+        "${main}, B, spawn, ${ipc} media previous"
+        "${main}, PRINT, spawn,${ipc} screenshot-region"
+        "${main}, W , spawn, ${ipc}  panel-toggle wallpaper"
+        "${main}, R, spawn, ${ipc} wallpaper-random"
         "${main},1,view,1,0"
         "${main},2,view,2,0"
         "${main},3,view,3,0"
@@ -50,7 +53,11 @@
         "SUPER,DOWN,viewtoright_have_client"
       ];
       windowrule = [
-        "force_tearing:1,appid:gamescope"
+        "force_tearing:1,appid:gamescope,tag,5,0"
+        "appid:zen,tag,1,0"
+        "appid:stean,tag,2,0"
+        "appid:lutris,tag,2,0"
+        "appid:org.kde.kdeconnect.app,"
       ];
       tagrule = [
         "id:1,layout_name:fair"
@@ -69,6 +76,7 @@
         "super, btn_right, moveresize, curresize"
       ];
       borderpx = 0;
+      border_radius = 10;
     };
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
