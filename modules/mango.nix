@@ -9,7 +9,9 @@
   inherit (lib.options) mkEnableOption mkOption;
   inherit (lib.modules) mkIf;
   inherit (lib.types) package listOf str;
-  inherit (lib) toMango;
+  inherit (inputs.self.lib) toMango;
+  inherit (lib) optionalString;
+  inherit (builtins) isString;
 in {
   options.rysieko.mango = {
     enable = mkEnableOption "enable mango";
@@ -59,16 +61,16 @@ in {
       example = ["source"];
     };
   };
-  config = lib.mkIf cfg.enable (
+  config = mkIf cfg.enable (
     let
       finalConfigText =
         # Support old string-based config during transition period
         (
-          if builtins.isString cfg.settings
+          if isString cfg.settings
           then cfg.settings
           else
-            lib.optionalString (cfg.settings != {}) (
-              lib.toMango {
+            optionalString (cfg.settings != {}) (
+              toMango {
                 topCommandsPrefixes = cfg.topPrefixes;
                 bottomCommandsPrefixes = cfg.bottomPrefixes;
               }

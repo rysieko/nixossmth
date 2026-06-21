@@ -60,7 +60,7 @@
     gamescope.enable = true;
     steam = {
       enable = true;
-      package = pkgs.millennium-steam;
+      #  package = pkgs.millennium-steam;
     };
     hyprland = let
       hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
@@ -80,9 +80,5 @@
     playerctld.enable = true;
   };
   security.pam.services.greetd.enableGnomeKeyring = true;
-  #programs.niri ={
-  #enable = true;
-  #package =  pkgs.niri;
-  # };
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 }
