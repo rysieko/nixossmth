@@ -12,6 +12,7 @@
         "vesktop"
         "wl-paste --type text --watch cliphist-store"
         "wl-paste --type image --watch cliphist-store"
+        "systemctl start --user app-com.mitchellh.ghostty.service"
       ];
       monitorrule = "name:DP-1,width:2560,height:1440,refresh:180";
       bind = [
@@ -20,7 +21,11 @@
         "${main}, Q, killclient"
         "${main}, E, spawn,ghostty +new-window -e nu -c yazi"
         "${main}, TAB, togglefloating"
-        "${main}, o, toggleoverlay"
+        "${main}, O, toggleoverview"
+        "${main}, F, togglefullscreen"
+        "${main}, P, spawn, playerctl play-pause"
+        "${main}, N, spawn, playerctl next"
+        "${main}, B, spawn, playerctl previous"
         "${main},1,view,1,0"
         "${main},2,view,2,0"
         "${main},3,view,3,0"
@@ -59,7 +64,12 @@
 
         "id:6,layout_name:scroller"
       ];
+      mousebind = [
+        "super, btn_left, moveresize, curmove"
+        "super, btn_right, moveresize, curresize"
+      ];
       borderpx = 0;
     };
   };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

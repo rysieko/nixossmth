@@ -1,4 +1,5 @@
-local s           = require("addons/scripts")
+s = require("addons/scripts")
+
 
 ipc               = "noctalia msg"
 local mainMod     = "SUPER"

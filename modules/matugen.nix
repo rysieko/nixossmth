@@ -115,7 +115,7 @@ in {
       };
       files = {
         ".config/matugen/hyprland-colors.lua" = mkIf cfg.targets.hyprland {
-          text = ''                     
+          text = ''               
                 return {
                   image = "{{image}}",
               <* for name, value in colors *>
@@ -266,7 +266,7 @@ in {
           builtin_ids = [
             "cava"
             "ghostty"
-            "hyprland"
+            "mango"
             "qt"
             "kcolorscheme"
             "gtk4"

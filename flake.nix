@@ -61,7 +61,6 @@
     #common inputs i dont fucking use them
 
     systems.url = "github:nix-systems/default";
-    systems-linux.url = "github:nix-systems/default-linux";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
@@ -76,13 +75,6 @@
     };
     #package inputs
 
-    hyprland = {
-      url = "github:hyprwm/hyprland";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems-linux";
-      };
-    };
     millennium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       #    inputs.nixpkgs.follows = "nixpkgs";

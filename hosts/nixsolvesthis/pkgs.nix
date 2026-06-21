@@ -62,13 +62,6 @@
       enable = true;
       #  package = pkgs.millennium-steam;
     };
-    hyprland = let
-      hyprflake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-    in {
-      enable = true;
-      package = hyprflake.hyprland;
-      portalPackage = hyprflake.xdg-desktop-portal-hyprland;
-    };
   };
   services = {
     devmon.enable = true;

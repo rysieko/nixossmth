@@ -3,6 +3,9 @@
   lib,
   ...
 }:
+/*
+thank you poz
+*/
 nixpkgs.lib.extend (
   f: p: let
     inherit
