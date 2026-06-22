@@ -134,6 +134,7 @@
 
         "Obrazy/Wallpapers".source = ./config/wallpapers;
       };
+      systemd.enable = true;
     };
   };
   environment = {
