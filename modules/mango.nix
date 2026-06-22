@@ -6,11 +6,18 @@
   ...
 }: let
   cfg = config.rysieko.mango;
+  variables = concatStringsSep " " cfg.systemd.variables;
+  extraCommands = concatStringsSep " && " cfg.systemd.extraCommands;
+  systemdActivation = "${pkgs.dbus}/bin/dbus-update-activation-environment --systemd ${variables}; ${extraCommands}";
+  autostart_sh = pkgs.writeShellScript "autostart.sh" ''
+    ${optionalString cfg.systemd.enable systemdActivation}
+    ${cfg.autostart_sh}
+  '';
   inherit (lib.options) mkEnableOption mkOption;
   inherit (lib.modules) mkIf;
   inherit (lib.types) package listOf str bool lines;
   inherit (inputs.self.lib) toMango;
-  inherit (lib) optionalString optional;
+  inherit (lib) optionalString optional concatStringsSep;
   inherit (builtins) isString;
 in {
   options.rysieko.mango = {
@@ -171,7 +178,7 @@ in {
         files = {
           ".config/mango/config.conf".source = validatedConfig;
           ".config/mango/autostart.sh" = mkIf (cfg.autostart_sh != "") {
-            text = cfg.autostart_sh;
+            source = autostart_sh;
             executable = true;
           };
         };
