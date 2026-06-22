@@ -15,6 +15,11 @@
       enable = true;
       setupOpts.formatters."stylua".command = "stylua";
     };
+    theme = {
+      enable = true;
+      name = "gruvbox";
+      style = "dark";
+    };
     telescope.enable = true;
     lazy.enable = true;
     autocomplete.blink-cmp.enable = true;

@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   rysieko.mango = {
     enable = true;
     settings = let
@@ -21,7 +21,7 @@
         "${main}, Q, killclient"
         "${main}, E, spawn,ghostty +new-window -e nu -c yazi"
         "${main}, TAB, togglefloating"
-        "${main}, O, toggleoverview"
+        "${main}, O, togglejump"
         "${main}, F, togglefullscreen"
         "${main}, P, spawn, ${ipc} media play-pause"
         "${main}, N, spawn, ${ipc} media next"
@@ -29,6 +29,14 @@
         "${main}, PRINT, spawn,${ipc} screenshot-region"
         "${main}, W , spawn, ${ipc}  panel-toggle wallpaper"
         "${main}, R, spawn, ${ipc} wallpaper-random"
+        "${main}, H , focusdir, left"
+        "${main}, L , focusdir, right"
+        "${main}, K , focusdir, up"
+        "${main}, J , focusdir, down"
+        "CTRL+SHIFT,H, exchange_client, left"
+        "CTRL+SHIFT, L, exchange_client, right"
+        "CTRL+SHIFT, K , exchange_client ,up"
+        "CTRL+SHIFT, J, exchange_client, down"
         "${main},1,view,1,0"
         "${main},2,view,2,0"
         "${main},3,view,3,0"
@@ -75,6 +83,7 @@
         "super, btn_left, moveresize, curmove"
         "super, btn_right, moveresize, curresize"
       ];
+      drag_tile_to_tile = 1;
       borderpx = 0;
       border_radius = 10;
     };
