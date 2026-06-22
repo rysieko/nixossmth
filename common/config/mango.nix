@@ -61,11 +61,12 @@
         "SUPER,DOWN,viewtoright_have_client"
       ];
       windowrule = [
-        "force_tearing:1,appid:gamescope,tag,5,0"
-        "appid:zen,tag,1,0"
-        "appid:steam,tag,2,0"
-        "appid:lutris,tag,2,0"
-        "appid:org.kde.kdeconnect.app,"
+        "force_tearing:1,appid:gamescope,tags:5"
+        "appid:zen,tags:1"
+        "appid:steam,tags:2"
+        "appid:lutris,tags:2"
+        "appid:vesktop,tags:3"
+        "appid:org.kde.kdeconnect.app,isfloating"
       ];
       tagrule = [
         "id:1,layout_name:fair"
