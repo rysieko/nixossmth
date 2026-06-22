@@ -1,19 +1,19 @@
 {pkgs, ...}: {
   rysieko.mango = {
     enable = true;
+    autostart_sh = "noctalia &
+        steam &
+        vesktop &
+        wl-paste --type text --watch cliphist-store &
+        wl-paste --type image --watch cliphist-store &
+        systemctl start --user app-com.mitchellh.ghostty.service &
+    ";
     settings = let
       main = "SUPER";
       ipc = "noctalia msg";
     in {
       xkb_rules_layout = "pl";
-      exec-once = [
-        "noctalia"
-        "steam"
-        "vesktop"
-        "wl-paste --type text --watch cliphist-store"
-        "wl-paste --type image --watch cliphist-store"
-        "systemctl start --user app-com.mitchellh.ghostty.service"
-      ];
+
       monitorrule = "name:DP-1,width:2560,height:1440,refresh:180";
       bind = [
         "${main}, Return,spawn,ghostty +new-window"
@@ -63,7 +63,7 @@
       windowrule = [
         "force_tearing:1,appid:gamescope,tag,5,0"
         "appid:zen,tag,1,0"
-        "appid:stean,tag,2,0"
+        "appid:steam,tag,2,0"
         "appid:lutris,tag,2,0"
         "appid:org.kde.kdeconnect.app,"
       ];
