@@ -87,6 +87,7 @@
       drag_tile_to_tile = 1;
       borderpx = 0;
       border_radius = 10;
+      source = "~/.config/mango/noctalia.conf";
     };
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

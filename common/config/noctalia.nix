@@ -142,6 +142,7 @@
           cpu_usage_activity_threshold = 20;
         };
       };
+      hooks.colors_changed = "mmsg dispatch reload_config";
       control-center = [
         {
           type = "wifi";

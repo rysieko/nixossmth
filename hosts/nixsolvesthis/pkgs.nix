@@ -54,7 +54,7 @@
     gamescope.enable = true;
     steam = {
       enable = true;
-      #  package = pkgs.millennium-steam;
+      package = pkgs.millennium-steam;
     };
   };
   services = {
