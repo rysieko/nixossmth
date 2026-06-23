@@ -3,8 +3,14 @@
     enable = true;
     settings = {
       plugins = ["noctalia/bongocat"];
-      wallpaper.directory = "~/Obrazy/Wallpapers";
-
+      wallpaper = {
+        directory = "~/Obrazy/Wallpapers";
+        enable = false;
+      };
+      theme = {
+        source = "wallpaper";
+        wallpaper_theme = "vibrant";
+      };
       shell = {
         lang = "en";
         ui_scale = 1.0;

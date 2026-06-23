@@ -142,7 +142,7 @@
       kdePackages.breeze
       kdePackages.breeze.qt5
       kdePackages.breeze-icons
-      mako
+      kdePackages.plasma-integration
       fastfetch
       rose-pine-cursor
       xdg-user-dirs
