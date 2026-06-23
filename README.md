@@ -1,3 +1,5 @@
+## MOVED TO [GITLAB](https://gitlab.com/rysieko/nixossmth)
+------------------------------------------------------------
 ## asdasd
 Hello. This is my nixos config. Dont use it if you are not a masochist. 
 ## Thanks to
