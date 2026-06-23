@@ -152,6 +152,115 @@
           type = "notification";
         }
       ];
+      /*
+      LOCK SCREEN
+      (thats a lot isnt it)
+      */
+      lockscreen_widgets = {
+        enabled = true;
+        widget = {
+          grid = {
+            cell_size = 16;
+            major_interval = 4;
+            visible = true;
+          };
+          "lockscreen-login-box@WL-1" = {
+            box_height = 70.0;
+            box_width = 400.0;
+            cx = 640.0;
+            cy = 601.0;
+            output = "WL-1";
+            rotation = 0.0;
+            type = "login_box";
+            settings = {
+              background = false;
+              input_opacity = 1.0;
+              input_radius = 6.0;
+              show_login_button = true;
+            };
+          };
+          lockscreen-widget-0000000000000001 = {
+            box_height = 624.0;
+            box_width = 2560.0;
+            cx = 1296.0;
+            cy = 1160.0;
+            flip_y = true;
+            output = "DP-1";
+            rotation = -3.1415927410125732;
+            type = "audio_visualizer";
+            settings = {
+              background = false;
+              bands = 128.0;
+              centered = false;
+              mirrored = true;
+              show_when_idle = false;
+            };
+          };
+          lockscreen-widget-0000000000000003 = {
+            box_height = 187.0;
+            box_width = 508.0;
+            cx = 1280.0;
+            cy = 304.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "clock";
+
+            settings = {
+              background = false;
+              clock_style = "digital";
+              color = "tertiary";
+            };
+          };
+
+          lockscreen-widget-0000000000000004 = {
+            box_height = 78.0;
+            box_width = 324.0;
+            cx = 1280.0;
+            cy = 445.5;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "clock";
+
+            settings = {
+              background = false;
+              clock_style = "digital";
+              color = "tertiary";
+              format = "%D";
+            };
+          };
+
+          lockscreen-widget-0000000000000005 = {
+            box_height = 384.0;
+            box_width = 288.0;
+            cx = 1648.0;
+            cy = 633.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "media_player";
+            lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings = {
+              background = false;
+              color = "tertiary";
+              hide_when_no_media = true;
+              layout = "vertical";
+            };
+          };
+
+          lockscreen_widgets.widget.lockscreen-widget-0000000000000006 = {
+            box_height = 80.0;
+            box_width = 272.0;
+            cx = 1296.0;
+            cy = 544.0;
+            output = "DP-1";
+            rotation = 0.0;
+            type = "weather";
+
+            settings = {
+              background = false;
+              color = "tertiary";
+            };
+          };
+        };
+      };
     };
   };
 }
