@@ -6,6 +6,7 @@
         vesktop &
         wl-paste --type text --watch cliphist-store &
         wl-paste --type image --watch cliphist-store &
+        awww-daemon &
         systemctl start --user app-com.mitchellh.ghostty.service &
     ";
     settings = let
@@ -26,8 +27,9 @@
         "${main}, P, spawn, ${ipc} media play-pause"
         "${main}, N, spawn, ${ipc} media next"
         "${main}, B, spawn, ${ipc} media previous"
-        "${main}, PRINT, spawn, ${./wall.nu}"
+        "${main}, PRINT, spawn,${ipc} screenshot-region"
         "${main}, W , spawn, ${ipc}  panel-toggle wallpaper"
+        "${main}, R, spawn, ${ipc} wallpaper-random"
         "${main}, H , focusdir, left"
         "${main}, L , focusdir, right"
         "${main}, K , focusdir, up"
