@@ -16,6 +16,7 @@
       confirm-close-surface = false
       font-family = "noto-music"
       theme=noctalia
+      quit-after-last-window-closed = false
     '';
   };
 }

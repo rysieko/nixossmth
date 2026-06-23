@@ -25,7 +25,6 @@
     obs-studio
     wl-clipboard
     xdg-user-dirs
-    r2modman
     inputs.self.packages.x86_64-linux.nvim
     rose-pine-icon-theme
     proton-vpn-cli
