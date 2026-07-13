@@ -1,4 +1,4 @@
-## MOVED TO [GITLAB](https://gitlab.com/rysieko/nixossmth)
+## MOVED TO [TANGLED](https://tangled.org/rysieko.pl/nixossmth)
 ------------------------------------------------------------
 ## asdasd
 Hello. This is my nixos config. Dont use it if you are not a masochist. 
